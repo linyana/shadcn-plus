@@ -1,12 +1,12 @@
 import { Button } from 'shadcn-plus';
-import 'shadcn-plus/style.css'
+import 'shadcn-plus/style.css';
 import './App.css';
 
 const App = () => {
   return (
     <>
       <div className="center">
-        <Button>Button</Button>
+        <Button loading>Button</Button>
       </div>
     </>
   );
