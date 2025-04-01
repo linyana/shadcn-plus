@@ -1,0 +1,20 @@
+{
+	"name": "@shacdn-plus/home",
+	"version": "1.0.0",
+	"private": true,
+	"workspaces": [
+		"doc",
+		"packages/*"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev --parallel"
+	},
+	"devDependencies": {
+		"turbo": "latest"
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"packageManager": "yarn@1.22.17"
+}
