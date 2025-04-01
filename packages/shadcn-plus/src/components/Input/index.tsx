@@ -2,7 +2,18 @@ import { IInputPropsType } from './types';
 import { Input as ShadcnInput } from '@/components/ui/input';
 
 export const Input = ({
+  error,
+  warning,
   ...props
 }: IInputPropsType) => {
-  return <ShadcnInput {...props} />;
+  let style = props.style;
+
+  return (
+    <>
+      <ShadcnInput {...props} />
+      <p className="text-[0.8rem] font-medium text-destructive">
+        error message
+      </p>
+    </>
+  );
 };

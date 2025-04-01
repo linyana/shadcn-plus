@@ -1,4 +1,4 @@
-import { Button } from 'shadcn-plus';
+import { Input } from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
 
@@ -6,7 +6,13 @@ const App = () => {
   return (
     <>
       <div className="center">
-        <Button loading>Button</Button>
+        <div
+          style={{
+            width: '200px',
+          }}
+        >
+          <Input />
+        </div>
       </div>
     </>
   );

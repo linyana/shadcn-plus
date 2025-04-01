@@ -1,4 +1,13 @@
 import { Input as ShadcnInput } from '@/components/ui/input';
 
+type IInputStatusType = {
+  message?: string;
+  inputStyle?: React.CSSProperties;
+  messageStyle?: React.CSSProperties;
+};
+
 export type IInputPropsType =
-  React.ComponentProps<typeof ShadcnInput>;
+  React.ComponentProps<typeof ShadcnInput> & {
+    error?: string | IInputStatusType;
+    warning?: string | IInputStatusType;
+  };
