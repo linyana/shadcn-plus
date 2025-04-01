@@ -1,12 +1,31 @@
 {
   "name": "shadcn-plus",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "A configurable wrapper for shadcn/ui that simplifies integration with easy-to-use options.",
+  "keywords": [
+    "react",
+    "components",
+    "shadcn",
+    "shadcn/ui",
+    "shadcn-plus"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "style": "./dist/style.css",
   "license": "MIT",
   "author": "Rik Li",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linyana/shadcn-plus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/linyana/shadcn-plus/issues"
+  },
+  "homepage": "https://github.com/linyana/shadcn-plus",
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "sideEffects": [
     "**/*.css"
   ],
