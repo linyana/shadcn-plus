@@ -1,4 +1,4 @@
-import { Input } from 'shadcn-plus';
+import { Button, Flex, Input } from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
 
@@ -11,7 +11,10 @@ const App = () => {
             width: '200px',
           }}
         >
-          <Input />
+          <Flex gap="16px">
+            <Input />
+            <Button>Submit</Button>
+          </Flex>
         </div>
       </div>
     </>

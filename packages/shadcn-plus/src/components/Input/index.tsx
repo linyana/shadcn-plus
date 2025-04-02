@@ -9,11 +9,11 @@ export const Input = ({
   let style = props.style;
 
   return (
-    <>
+    <div>
       <ShadcnInput {...props} />
       <p className="text-[0.8rem] font-medium text-destructive">
         error message
       </p>
-    </>
+    </div>
   );
 };
