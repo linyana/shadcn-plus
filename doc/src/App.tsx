@@ -8,11 +8,12 @@ const App = () => {
       <div className="center">
         <div
           style={{
-            width: '200px',
+            width: '400px',
           }}
         >
-          <Flex gap="16px">
-            <Input />
+          <Flex gap="16px" flexDirection="column">
+            <Input error="Username must be at least 2 characters." />
+            <Input warning="Username must be at least 2 characters." />
             <Button>Submit</Button>
           </Flex>
         </div>
