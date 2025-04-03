@@ -30,7 +30,8 @@
     "**/*.css"
   ],
   "files": [
-    "dist"
+    "dist",
+    "src/assets"
   ],
   "scripts": {
     "dev": "concurrently \"yarn build:watch\" \"yarn build:css:watch\"",
@@ -68,17 +69,17 @@
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.485.0",
+    "lucide-react": "^0.487.0",
     "nanoid": "^5.1.5",
     "postcss": "^8.5.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-is": "19.0.0",
-    "tailwind-merge": "^3.0.2",
+    "tailwind-merge": "^3.1.0",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.0.17",
     "tailwindcss-animate": "^1.0.7",
-    "tw-animate-css": "^1.2.4"
+    "tw-animate-css": "^1.2.5"
   },
   "devDependencies": {
     "@shadcn-plus/tsconfig": "*",
