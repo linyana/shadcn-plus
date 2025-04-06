@@ -11,4 +11,5 @@ export type IInputPropsType =
   React.ComponentProps<typeof ShadcnInput> & {
     error?: string;
     warning?: string;
+    label?: string;
   };
