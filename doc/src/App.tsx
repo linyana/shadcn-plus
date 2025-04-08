@@ -1,10 +1,8 @@
 import { Button, Flex, Input } from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
-import { useState } from 'react';
 
 const App = () => {
-  const [value, setValue] = useState('')
   return (
     <>
       <div className="center">
