@@ -1,6 +1,7 @@
 # shadcn-plus ⚡️
 
-🚀 A zero-config wrapper library built on top of [shadcn/ui](https://ui.shadcn.com/), designed for out-of-the-box productivity.
+🚀 Extension library based on [shadcn/ui](https://ui.shadcn.com/). Made to help you develop faster by removing the setup hassle, letting you focus on building features.
+
 ✨ Includes practical extended props and reusable components for everyday development needs.
 
 🛠 `This project is currently under active development`, with features being added and improved continuously. If you're interested, feel free to ⭐️ star the repo — updates are coming fast!
