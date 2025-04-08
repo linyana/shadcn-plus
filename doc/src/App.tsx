@@ -1,8 +1,10 @@
 import { Button, Flex, Input } from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
+import { useState } from 'react';
 
 const App = () => {
+  const [value, setValue] = useState('')
   return (
     <>
       <div className="center">
@@ -14,14 +16,6 @@ const App = () => {
           <Flex gap="16px" flexDirection="column">
             <Input
               label="User Name"
-            />
-            <Input
-              label="User Name"
-              error="Username must be at least 2 characters."
-            />
-            <Input
-              label="Email"
-              warning="Username must be at least 2 characters."
             />
             <Button>Submit</Button>
           </Flex>

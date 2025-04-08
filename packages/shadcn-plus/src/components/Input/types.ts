@@ -1,15 +1,11 @@
 import { Input as ShadcnInput } from '@/components/ui/input';
-
-// future 
-type IInputStatusType = {
-  message?: string;
-  inputStyle?: React.CSSProperties;
-  messageStyle?: React.CSSProperties;
-};
+import { IFromControlStatusType, IFormControlValidateRuleType } from '@/types';
 
 export type IInputPropsType =
   React.ComponentProps<typeof ShadcnInput> & {
-    error?: string;
-    warning?: string;
+    status?: IFromControlStatusType
+    message?: string;
     label?: string;
+    validateTrigger?: 'onChange' | 'onBlur' | 'none'
+    rules?: IFormControlValidateRuleType[];
   };

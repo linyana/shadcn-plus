@@ -1,54 +1,75 @@
 import { nanoid } from 'nanoid';
+import React, { useState } from 'react';
 import { Flex } from '../Flex';
 import { IInputPropsType } from './types';
 import { Input as ShadcnInput } from '@/components/ui/input';
+import { checkValidate } from './utils';
+import { INPUT_CLASS_MAP } from './constants';
 
 export const Input = ({
-  error,
-  warning,
-  className,
+  status: externalStatus,
+  message: externalMessage,
+  rules,
   label,
+  validateTrigger = 'onBlur',
+  // Native
+  className,
   id,
+  value,
+  onChange,
+  onBlur,
   ...props
 }: IInputPropsType) => {
-  // Alert
-  const errorMessage = error;
-  const errorClassName = error
-    ? 'focus-visible:ring-destructive border-red-400 shadow-red-300'
-    : '';
-
-  const warningMessage = warning;
-  const warningClassName = warning
-    ? 'focus-visible:ring-orange-400 border-orange-400 shadow-orange-300'
-    : '';
-
   const inputId = id || nanoid();
+  const [internalMessage, setInternalMessage] = useState<string | null>(null);
+  const [internalStatus, setInternalStatus] = useState<'error' | 'warning' | null>(null);
+  const status = externalStatus || internalStatus;
+  const message = externalMessage || internalMessage;
+
+  const triggerValidate = (value: string) => {
+    if (rules) {
+      const validateMessage = checkValidate({ rules, value, type: 'string' });
+      setInternalMessage(validateMessage || null);
+      setInternalStatus(validateMessage ? 'error': null);
+      return !validateMessage;
+    }
+    return true;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange?.(e);
+    if (validateTrigger === 'onChange' || status) {
+      triggerValidate(e.target.value);
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    onBlur?.(e);
+    if (validateTrigger === 'onBlur') {
+      triggerValidate(e.target.value);
+    }
+  };
 
   return (
     <Flex flexDirection="column" gap="8px">
-      <label
-        htmlFor={inputId}
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
-        {label}
-      </label>
+      {label && (
+        <label
+          htmlFor={inputId}
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          {label}
+        </label>
+      )}
       <ShadcnInput
         id={inputId}
+        value={value}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        className={[className, status ? INPUT_CLASS_MAP[status].input : ''].join(' ')}
         {...props}
-        className={[
-          errorClassName,
-          warningClassName,
-        ].join(' ')}
       />
-      {error && (
-        <p className="text-sm font-medium text-destructive">
-          {errorMessage || 'Invalid'}
-        </p>
-      )}
-      {warning && (
-        <p className="text-sm font-medium text-orange-400 font-custom">
-          {warningMessage || 'Invalid'}
-        </p>
+      {message && (
+        <p className={['text-sm font-medium', status ? INPUT_CLASS_MAP[status].message : ''].join(' ')}>{message}</p>
       )}
     </Flex>
   );
