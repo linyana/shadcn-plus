@@ -12,8 +12,9 @@ const App = () => {
           }}
         >
           <Flex gap="16px" flexDirection="column">
-            <Input error="Username must be at least 2 characters." />
-            <Input warning="Username must be at least 2 characters." />
+            <Input
+              label="User Name"
+            />
             <Button>Submit</Button>
           </Flex>
         </div>

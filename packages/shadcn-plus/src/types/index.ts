@@ -1,2 +1,2 @@
 export * from '@/components/types';
-export * from './types/index'
+export * from './Form'
