@@ -31,13 +31,14 @@
   ],
   "files": [
     "dist",
-    "src/assets"
+    "src/assets",
+    "src/icons"
   ],
   "scripts": {
     "dev": "concurrently \"yarn build:watch\" \"yarn build:css:watch\"",
-    "build": "tsup src/index.ts src/types.ts --format esm,cjs --dts --external react",
+    "build": "tsup src/index.ts src/types.ts src/icons/index.ts --format esm,cjs --dts --external react",
     "build:css": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css",
-    "build:watch": "tsup src/index.ts src/types.ts --format esm,cjs --dts --external react --watch",
+    "build:watch": "tsup src/index.ts src/types.ts src/icons/index.ts --format esm,cjs --dts --external react --watch",
     "build:css:watch": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css --watch"
   },
   "exports": {
@@ -57,6 +58,12 @@
       "import": "./dist/types.mjs",
       "require": "./dist/types.js",
       "default": "./dist/types.mjs"
+    },
+    "./icons": {
+      "types": "./dist/icons/index.d.ts",
+      "import": "./dist/icons/index.mjs",
+      "require": "./dist/icons/index.js",
+      "default": "./dist/icons/index.mjs"
     }
   },
   "peerDependencies": {
