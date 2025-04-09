@@ -16,10 +16,43 @@
 - 💎 **Highly extendable** – Easily build upon `shadcn/ui` components
 - 📖 **Well-documented** – Clear and concise usage instructions
 
-## 📦 Installation
+## 🔧 How to use
+
+### Install
 
 ```sh
 yarn add shadcn-plus
 # or
 npm install shadcn-plus
+```
+
+### Import Style
+
+```typescript
+import 'shadcn-plus/dist/style.css'
+```
+
+### Use it in your projects
+
+Import Components:
+
+```typescript
+import { Button } from 'shadcn-plus'
+
+export default function App() {
+  return (
+    <Button>Button</Button>
+  )
+}
+```
+
+Import [Lucide icons](https://lucide.dev/icons): 
+
+```typescript
+import { Store } from'shadcn-plus/icons'
+export default function App() {
+  return (
+    <Store />
+  )
+}
 ```
