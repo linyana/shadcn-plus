@@ -1,6 +1,6 @@
 {
   "name": "shadcn-plus",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A configurable wrapper for shadcn/ui that simplifies integration with easy-to-use options.",
   "keywords": [
     "react",
@@ -68,8 +68,7 @@
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0",
-    "react-is": "^18.0.0 || ^19.0.0"
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.2",
@@ -81,6 +80,7 @@
   },
   "devDependencies": {
     "@shadcn-plus/tsconfig": "*",
+    "react-is": "19.0.0",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
     "@tailwindcss/cli": "^4.0.17",

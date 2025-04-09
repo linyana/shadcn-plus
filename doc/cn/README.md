@@ -16,10 +16,43 @@
 - 💎 **更易扩展**：可基于 `shadcn/ui` 组件轻松扩展
 - 📖 **良好文档**：简单易懂的使用方式
 
-## 📦 安装
+## 🔧 How to use
+
+### 安装
 
 ```sh
 yarn add shadcn-plus
 # 或者
 npm install shadcn-plus
+```
+
+### 导入样式
+
+```typescript
+import 'shadcn-plus/dist/style.css'
+```
+
+### 开始使用
+
+导入组件:
+
+```typescript
+import { Button } from 'shadcn-plus'
+
+export default function App() {
+  return (
+    <Button>Button</Button>
+  )
+}
+```
+
+导入 [Lucide icons](https://lucide.dev/icons): 
+
+```typescript
+import { Store } from'shadcn-plus/icons'
+export default function App() {
+  return (
+    <Store />
+  )
+}
 ```
