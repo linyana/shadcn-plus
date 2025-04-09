@@ -1,4 +1,4 @@
-import { Button, Flex, Input } from 'shadcn-plus';
+import { Button, Flex, Input, Collapsible, Popover } from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
 
@@ -11,13 +11,21 @@ const App = () => {
             width: '400px',
           }}
         >
-          <Flex gap="16px" flexDirection="column">
+          <Popover content={(
             <Input
-              label="User Name"
+            label="User Name"
             />
-            <Button>Submit</Button>
-          </Flex>
+          )}>
+            <Button>Click me</Button>
+          </Popover>
         </div>
+        <Popover content={(
+            <Input
+            label="User Name"
+            />
+          )}>
+            <Button>Click me</Button>
+          </Popover>
       </div>
     </>
   );

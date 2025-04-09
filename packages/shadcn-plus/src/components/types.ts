@@ -4,7 +4,10 @@ export * from './Button/types';
 // Layout
 export * from './Flex/types';
 
-// Data Display
+// Data Entry
 export * from './Popover/types';
 export * from './Input/types';
 export * from './Select/types';
+
+// Data Display
+export * from './Collapsible/types';
