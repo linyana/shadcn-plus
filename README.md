@@ -46,6 +46,8 @@ export default function App() {
 }
 ```
 
+<img src="https://s2.loli.net/2025/04/12/9gcGdjsmy7Xnf3C.png" width="300px" />
+
 Import [Lucide icons](https://lucide.dev/icons): 
 
 ```typescript
@@ -56,3 +58,5 @@ export default function App() {
   )
 }
 ```
+
+<img src="https://s2.loli.net/2025/04/12/5WOqrgunhH7TKo2.png" width="300px" />

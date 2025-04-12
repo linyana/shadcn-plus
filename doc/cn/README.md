@@ -46,7 +46,9 @@ export default function App() {
 }
 ```
 
-导入 [Lucide icons](https://lucide.dev/icons): 
+<img src="https://s2.loli.net/2025/04/12/9gcGdjsmy7Xnf3C.png" width="300px" />
+
+导入 [Lucide 图标](https://lucide.dev/icons): 
 
 ```typescript
 import { Store } from'shadcn-plus/icons'
@@ -56,3 +58,5 @@ export default function App() {
   )
 }
 ```
+
+<img src="https://s2.loli.net/2025/04/12/5WOqrgunhH7TKo2.png" width="300px" />
