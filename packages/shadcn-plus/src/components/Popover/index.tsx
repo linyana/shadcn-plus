@@ -13,8 +13,8 @@ export const Popover = ({
 }: IPopoverPropsType) => {
   return (
     <ShadcnPopover {...props}>
-      <PopoverTrigger asChild>
-        <div>{children}</div>
+      <PopoverTrigger>
+        {children}
       </PopoverTrigger>
       <PopoverContent {...contentProps}>
         {content}
