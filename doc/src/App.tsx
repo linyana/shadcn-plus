@@ -1,37 +1,111 @@
-import { Button, Collapsible } from 'shadcn-plus';
+import {
+  Button,
+  DropdownMenu,
+} from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
-import { ChevronsUpDown } from 'shadcn-plus/icons';
+import { Cloud, CreditCard, Github, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from 'shadcn-plus/icons';
 
 const App = () => {
   return (
     <>
-      <div
-        style={{
-          width: '400px',
-          marginLeft: '400px',
-          marginTop: '200px',
-        }}
-      >
-        <Collapsible
-          content={
-            <>
-              <div className="rounded-md border px-4 py-3 font-mono text-sm">
-                @radix-ui/colors
-              </div>
-              <div className="rounded-md border px-4 py-3 font-mono text-sm">
-                @stitches/react
-              </div>
-            </>
-          }
+      <div className="center">
+        <DropdownMenu
+          items={[
+            {
+              label: 'My Account',
+              type: 'label',
+            },
+            {
+              type: 'separator',
+            },
+            {
+              type: 'group',
+              items: [
+                {
+                  icon: User,
+                  label: 'Profile',
+                  shortcut: '⇧⌘P',
+                },
+                {
+                  icon: CreditCard,
+                  label: 'Billing',
+                  shortcut: '⌘B',
+                },
+                {
+                  icon: Settings,
+                  label: 'Settings',
+                  shortcut: '⌘S',
+                },
+                {
+                  icon: Keyboard,
+                  label: 'Keyboard shortcuts',
+                  shortcut: '⌘K',
+                },
+              ],
+            },
+            {
+              type: 'separator',
+            },
+            {
+              type: 'group',
+              items: [
+                {
+                  icon: Users,
+                  label: 'Team',
+                },
+                {
+                  icon: UserPlus,
+                  label: 'Invite users',
+                  children: [
+                    {
+                      icon: Mail,
+                      label: 'Email',
+                    },
+                    {
+                      icon: MessageSquare,
+                      label: 'Message',
+                    },
+                    {
+                      type: 'separator',
+                    },
+                    {
+                      icon: PlusCircle,
+                      label: 'More...',
+                    },
+                  ],
+                },
+                {
+                  icon: Plus,
+                  label: 'New Team',
+                  shortcut: '⌘+T',
+                },
+              ],
+            },
+            {
+              type: 'separator',
+            },
+            {
+              icon: LifeBuoy,
+              label: 'Support',
+            },
+            {
+              icon: Cloud,
+              label: 'API',
+              disabled: true,
+            },
+            {
+              type: 'separator',
+            },
+            {
+              icon: LogOut,
+              label: 'Log out',
+              shortcut: '⇧⌘Q',
+            },
+          ]}
         >
-          <Button variant="ghost">
-            <h4 className="text-sm font-semibold">
-              @peduarte starred 3 repositories
-            </h4>
-            <ChevronsUpDown className="h-4 w-4" />
-          </Button>
-        </Collapsible>
+          <Button variant="outline">Click</Button>
+        </DropdownMenu>
       </div>
     </>
   );

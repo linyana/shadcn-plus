@@ -3,6 +3,7 @@ export * from './Button/types';
 
 // Layout
 export * from './Flex/types';
+export * from './DropdownMenu/types';
 
 // Data Entry
 export * from './Popover/types';
