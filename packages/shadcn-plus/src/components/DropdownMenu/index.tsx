@@ -11,6 +11,9 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuCheckboxItem,
 } from '@/components/ui/dropdown-menu';
 import {
   IDropdownMenuPropsType,
@@ -58,6 +61,36 @@ export const Menu = ({
           </DropdownMenuGroup>
         );
       }
+      else if (item.type === 'checkbox') {
+        return (
+          <DropdownMenuCheckboxItem
+            key={`checkbox-${index}`}
+            checked={item.checked}
+            onCheckedChange={item.onCheckedChange}
+            disabled={item.disabled}
+          >
+            {item.label}
+          </DropdownMenuCheckboxItem>
+        );
+      } else if (item.type === 'radioGroup') {
+        return (
+          <DropdownMenuRadioGroup
+            key={`radiogroup-${index}`}
+            value={item.value}
+            onValueChange={item.onValueChange}
+          >
+            {item.items.map((radioItem, i) => (
+              <DropdownMenuRadioItem
+                key={`radio-${i}`}
+                value={radioItem.value}
+                disabled={radioItem.disabled}
+              >
+                {radioItem.label}
+              </DropdownMenuRadioItem>
+            ))}
+          </DropdownMenuRadioGroup>
+        );
+      }
     }
 
     if ('children' in item) {
@@ -100,6 +133,7 @@ export const Menu = ({
 export const DropdownMenu = ({
   children,
   items,
+  contentProps,
   ...props
 }: IDropdownMenuPropsType) => {
   return (
@@ -107,7 +141,7 @@ export const DropdownMenu = ({
       <DropdownMenuTrigger asChild>
         {children}
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent {...contentProps}>
         <Menu items={items} />
       </DropdownMenuContent>
     </ShadcnDropdownMenu>

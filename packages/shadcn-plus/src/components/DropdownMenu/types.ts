@@ -4,15 +4,11 @@ import {
 } from '@radix-ui/react-dropdown-menu';
 import { LucideIcon } from 'lucide-react';
 
-type IDropdownContentPropsType = Omit<
-  DropdownMenuContentProps,
-  'content'
->;
-
 export type IDropdownMenuPropsType =
   DropdownMenuProps & {
     children: React.ReactNode;
     items: IMenuItemType[];
+    contentProps?: DropdownMenuContentProps
   };
 
 export type IMenuItemType =
@@ -31,6 +27,23 @@ export type IMenuItemType =
     type: 'custom';
     content: React.ReactNode
   }
+  | {
+    type: 'checkbox';
+    label: string;
+    checked: boolean;
+    onCheckedChange: (checked: boolean) => void;
+    disabled?: boolean;
+  }
+  | {
+      type: 'radioGroup';
+      value: string;
+      onValueChange: (value: string) => void;
+      items: {
+        label: string;
+        value: string;
+        disabled?: boolean;
+      }[];
+    }
   | {
       label: string;
       icon?:

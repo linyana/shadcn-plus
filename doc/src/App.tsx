@@ -5,104 +5,39 @@ import {
 import 'shadcn-plus/style.css';
 import './App.css';
 import { Cloud, CreditCard, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from 'shadcn-plus/icons';
+import { IMenuItemType } from 'shadcn-plus/types';
+import { useState } from 'react';
 
 const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [theme, setTheme] = useState('system');
+
+  const menuItems: IMenuItemType[] = [
+    { type: 'label', label: 'Display' },
+    {
+      type: 'checkbox',
+      label: 'Dark Mode',
+      checked: darkMode,
+      onCheckedChange: setDarkMode,
+    },
+    { type: 'separator' },
+    {
+      type: 'radioGroup',
+      value: theme,
+      onValueChange: setTheme,
+      items: [
+        { label: 'System', value: 'system' },
+        { label: 'Light', value: 'light' },
+        { label: 'Dark', value: 'dark' },
+      ],
+    },
+  ];
+  
   return (
     <>
       <div className="center">
         <DropdownMenu
-          items={[
-            {
-              label: 'My Account',
-              type: 'label',
-            },
-            {
-              type: 'separator',
-            },
-            {
-              type: 'group',
-              items: [
-                {
-                  icon: User,
-                  label: 'Profile',
-                  shortcut: '⇧⌘P',
-                },
-                {
-                  icon: CreditCard,
-                  label: 'Billing',
-                  shortcut: '⌘B',
-                },
-                {
-                  icon: Settings,
-                  label: 'Settings',
-                  shortcut: '⌘S',
-                },
-                {
-                  icon: Keyboard,
-                  label: 'Keyboard shortcuts',
-                  shortcut: '⌘K',
-                },
-              ],
-            },
-            {
-              type: 'separator',
-            },
-            {
-              type: 'group',
-              items: [
-                {
-                  icon: Users,
-                  label: 'Team',
-                },
-                {
-                  icon: UserPlus,
-                  label: 'Invite users',
-                  children: [
-                    {
-                      icon: Mail,
-                      label: 'Email',
-                    },
-                    {
-                      icon: MessageSquare,
-                      label: 'Message',
-                    },
-                    {
-                      type: 'separator',
-                    },
-                    {
-                      icon: PlusCircle,
-                      label: 'More...',
-                    },
-                  ],
-                },
-                {
-                  icon: Plus,
-                  label: 'New Team',
-                  shortcut: '⌘+T',
-                },
-              ],
-            },
-            {
-              type: 'separator',
-            },
-            {
-              icon: LifeBuoy,
-              label: 'Support',
-            },
-            {
-              icon: Cloud,
-              label: 'API',
-              disabled: true,
-            },
-            {
-              type: 'separator',
-            },
-            {
-              icon: LogOut,
-              label: 'Log out',
-              shortcut: '⇧⌘Q',
-            },
-          ]}
+          items={menuItems}
         >
           <Button variant="outline">Click</Button>
         </DropdownMenu>
