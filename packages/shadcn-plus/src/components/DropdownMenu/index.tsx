@@ -33,16 +33,14 @@ export const Menu = ({
           </DropdownMenuLabel>
         );
       }
-
-      if (item.type === 'separator') {
+      else if (item.type === 'separator') {
         return (
           <DropdownMenuSeparator
             key={`sep-${index}`}
           />
         );
       }
-
-      if (item.type === 'group') {
+      else if (item.type === 'group') {
         return (
           <DropdownMenuGroup
             key={`group-${index}`}
@@ -56,7 +54,7 @@ export const Menu = ({
     if ('children' in item) {
       return (
         <DropdownMenuSub key={`submenu-${index}`}>
-          <DropdownMenuSubTrigger>
+          <DropdownMenuSubTrigger className="gap-2">
             {item.icon && (
               <item.icon className="mr-2 h-4 w-4" />
             )}

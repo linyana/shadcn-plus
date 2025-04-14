@@ -4,7 +4,7 @@ import {
 } from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
-import { Cloud, CreditCard, Github, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from 'shadcn-plus/icons';
+import { Cloud, CreditCard, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from 'shadcn-plus/icons';
 
 const App = () => {
   return (

@@ -126,6 +126,10 @@
 }
 
 @layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    border: 0 solid #e5e7eb;
+  }  
+
   body {
     @apply bg-background text-foreground;
   }
