@@ -1,6 +1,7 @@
 import {
   Button,
   DropdownMenu,
+  Tooltip,
 } from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
@@ -32,16 +33,12 @@ const App = () => {
       ],
     },
   ];
-  
+
   return (
     <>
-      <div className="center">
-        <DropdownMenu
-          items={menuItems}
-        >
-          <Button variant="outline">Click</Button>
-        </DropdownMenu>
-      </div>
+      <Tooltip content="Fullname">
+        <div>Name</div>
+      </Tooltip>
     </>
   );
 };
