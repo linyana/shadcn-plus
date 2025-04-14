@@ -1,5 +1,5 @@
 import { Input as ShadcnInput } from '@/components/ui/input';
-import { IFromControlStatusType, IFormControlValidateRuleType } from '@/types';
+import { IFormControlValidateRuleType, IFromControlStatusType } from '../Form/types';
 
 export type IInputPropsType =
   React.ComponentProps<typeof ShadcnInput> & {

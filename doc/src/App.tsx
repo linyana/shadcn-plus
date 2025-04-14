@@ -1,13 +1,10 @@
 import {
-  Button,
-  DropdownMenu,
   Tooltip,
 } from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
-import { Cloud, CreditCard, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, User, UserPlus, Users } from 'shadcn-plus/icons';
-import { IMenuItemType } from 'shadcn-plus/types';
 import { useState } from 'react';
+import { IMenuItemType } from 'shadcn-plus/types';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -35,11 +32,11 @@ const App = () => {
   ];
 
   return (
-    <>
+    <div className="center">
       <Tooltip content="Fullname">
         <div>Name</div>
       </Tooltip>
-    </>
+    </div>
   );
 };
 
