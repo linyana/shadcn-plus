@@ -49,6 +49,15 @@ export const Menu = ({
           </DropdownMenuGroup>
         );
       }
+      else if (item.type === 'custom') {
+        return (
+          <DropdownMenuGroup
+            key={`group-${index}`}
+          >
+            {item.content}
+          </DropdownMenuGroup>
+        );
+      }
     }
 
     if ('children' in item) {
@@ -95,7 +104,7 @@ export const DropdownMenu = ({
 }: IDropdownMenuPropsType) => {
   return (
     <ShadcnDropdownMenu {...props}>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>
         {children}
       </DropdownMenuTrigger>
       <DropdownMenuContent>

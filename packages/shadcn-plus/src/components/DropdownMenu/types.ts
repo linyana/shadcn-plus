@@ -26,7 +26,11 @@ export type IMenuItemType =
   | {
       type: 'group';
       items: IMenuItemType[];
-    }
+  }
+  | {
+    type: 'custom';
+    content: React.ReactNode
+  }
   | {
       label: string;
       icon?:
