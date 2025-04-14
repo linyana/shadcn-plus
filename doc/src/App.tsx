@@ -1,39 +1,42 @@
-import { Button, Collapsible } from 'shadcn-plus';
+import {
+  Tooltip,
+} from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
-import { ChevronsUpDown } from 'shadcn-plus/icons';
+import { useState } from 'react';
+import { IMenuItemType } from 'shadcn-plus/types';
 
 const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [theme, setTheme] = useState('system');
+
+  const menuItems: IMenuItemType[] = [
+    { type: 'label', label: 'Display' },
+    {
+      type: 'checkbox',
+      label: 'Dark Mode',
+      checked: darkMode,
+      onCheckedChange: setDarkMode,
+    },
+    { type: 'separator' },
+    {
+      type: 'radioGroup',
+      value: theme,
+      onValueChange: setTheme,
+      items: [
+        { label: 'System', value: 'system' },
+        { label: 'Light', value: 'light' },
+        { label: 'Dark', value: 'dark' },
+      ],
+    },
+  ];
+
   return (
-    <>
-      <div
-        style={{
-          width: '400px',
-          marginLeft: '400px',
-          marginTop: '200px',
-        }}
-      >
-        <Collapsible
-          content={
-            <>
-              <div className="rounded-md border px-4 py-3 font-mono text-sm">
-                @radix-ui/colors
-              </div>
-              <div className="rounded-md border px-4 py-3 font-mono text-sm">
-                @stitches/react
-              </div>
-            </>
-          }
-        >
-          <Button variant="ghost">
-            <h4 className="text-sm font-semibold">
-              @peduarte starred 3 repositories
-            </h4>
-            <ChevronsUpDown className="h-4 w-4" />
-          </Button>
-        </Collapsible>
-      </div>
-    </>
+    <div className="center">
+      <Tooltip content="Fullname">
+        <div>Name</div>
+      </Tooltip>
+    </div>
   );
 };
 
