@@ -1,16 +1,9 @@
 import {
   CollapsibleProps,
-  CollapsibleContentProps,
 } from '@radix-ui/react-collapsible';
 
-type CollapsiblePropsType = Omit<
-  CollapsibleProps,
-  'content'
->;
-
 export type ICollapsiblePropsType =
-  CollapsiblePropsType & {
+  CollapsibleProps & {
     children: React.ReactNode;
-    content: React.ReactNode;
-    contentProps?: CollapsibleContentProps;
+    trigger: React.ReactNode;
   };

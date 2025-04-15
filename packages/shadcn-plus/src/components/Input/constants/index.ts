@@ -1,4 +1,4 @@
-import { IFromControlStatusType } from "@/types";
+import { IFromControlStatusType } from "@/components/Form/types";
 
 export const INPUT_CLASS_MAP: { [key in IFromControlStatusType]: {
   input: string,

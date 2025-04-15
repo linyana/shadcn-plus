@@ -10,28 +10,31 @@ import {
 
 export const Sheet = ({
   children,
-  content,
-  contentProps,
+  trigger,
   title,
   description,
   side = 'right',
+  contentProps,
   ...props
 }: ISheetPropsType) => {
   return (
-    <ShadcnSheet {...props}>
+    <ShadcnSheet
+      {...props}
+    >
       <SheetTrigger>
-        {children}
+        {trigger}
       </SheetTrigger>
-      <SheetContent side={side}>
+      <SheetContent
+        side={side}
+        {...contentProps}
+      >
         <SheetHeader>
           <SheetTitle>{title}</SheetTitle>
           <SheetDescription>
             {description}
           </SheetDescription>
         </SheetHeader>
-        <div {...contentProps}>
-          {content}
-        </div>
+        {children}
       </SheetContent>
     </ShadcnSheet>
   );

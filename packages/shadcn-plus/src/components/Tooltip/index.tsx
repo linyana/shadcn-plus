@@ -8,7 +8,7 @@ import {
 
 export const Tooltip = ({
   children,
-  content,
+  trigger,
   contentProps,
   ...props
 }: ITooltipPropsType) => {
@@ -16,10 +16,10 @@ export const Tooltip = ({
     <TooltipProvider>
       <ShadcnTooltip {...props}>
         <TooltipTrigger>
-          {children}
+          {trigger}
         </TooltipTrigger>
         <TooltipContent {...contentProps}>
-          {content}
+          {children}
         </TooltipContent>
       </ShadcnTooltip>
     </TooltipProvider>

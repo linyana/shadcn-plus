@@ -7,17 +7,19 @@ import {
 
 export const Popover = ({
   children,
-  content,
+  trigger,
   contentProps,
   ...props
 }: IPopoverPropsType) => {
   return (
-    <ShadcnPopover {...props}>
+    <ShadcnPopover
+      {...props}
+    >
       <PopoverTrigger>
-        {children}
+        {trigger}
       </PopoverTrigger>
       <PopoverContent {...contentProps}>
-        {content}
+        {children}
       </PopoverContent>
     </ShadcnPopover>
   );
