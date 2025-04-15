@@ -7,15 +7,14 @@ import { ICollapsiblePropsType } from "./types"
 
 export const Collapsible = ({
   children,
-  content,
-  contentProps,
+  trigger,
   ...props
 }: ICollapsiblePropsType) => { 
   return (
     <ShadcnCollapsible {...props}>
-      <CollapsibleTrigger>{children}</CollapsibleTrigger>
-      <CollapsibleContent {...contentProps}>
-        {content}
+      <CollapsibleTrigger>{trigger}</CollapsibleTrigger>
+      <CollapsibleContent>
+        {children}
       </CollapsibleContent>
     </ShadcnCollapsible>
   )

@@ -13,22 +13,17 @@ const App = () => {
       <Sheet
         title="Edit"
         description="Edit your name and email"
-        contentProps={{
-          style: {
-            padding: '20px 0',
-          }
-        }}
-        content={(
-          <Flex flexDirection='column' gap="16px">
-            <Input label='Name' />
-            <Input label='Email' />
-            <Flex justifyContent='flex-end'>
-              <Button>Save</Button>
-            </Flex>
-          </Flex>
+        trigger={(
+          <Button>Edit</Button>
         )}
       >
-        <Button>Edit</Button>
+        <Flex flexDirection='column' gap="16px" padding='20px 0'>
+          <Input label='Name' />
+          <Input label='Email' />
+          <Flex justifyContent='flex-end'>
+            <Button>Save</Button>
+          </Flex>
+        </Flex>
       </Sheet>
     </div>
   );

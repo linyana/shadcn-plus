@@ -10,6 +10,6 @@ type ITooltipContentPropsType = Omit<
 
 export type ITooltipPropsType = TooltipProps & {
   children: React.ReactNode;
-  content: React.ReactNode;
+  trigger: React.ReactNode;
   contentProps?: ITooltipContentPropsType;
 };

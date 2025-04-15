@@ -3,13 +3,10 @@ import {
   PopoverProps,
 } from '@radix-ui/react-popover';
 
-type IPopoverContentPropsType = Omit<
-  PopoverContentProps,
-  'content'
->;
+type IPopoverContentPropsType = PopoverContentProps
 
 export type IPopoverPropsType = PopoverProps & {
   children: React.ReactNode;
-  content: React.ReactNode;
+  trigger: React.ReactNode;
   contentProps?: IPopoverContentPropsType;
 };
