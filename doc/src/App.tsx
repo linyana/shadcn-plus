@@ -1,41 +1,35 @@
 import {
-  Tooltip,
+  Button,
+  Flex,
+  Input,
+  Sheet,
 } from 'shadcn-plus';
 import 'shadcn-plus/style.css';
 import './App.css';
-import { useState } from 'react';
-import { IMenuItemType } from 'shadcn-plus/types';
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [theme, setTheme] = useState('system');
-
-  const menuItems: IMenuItemType[] = [
-    { type: 'label', label: 'Display' },
-    {
-      type: 'checkbox',
-      label: 'Dark Mode',
-      checked: darkMode,
-      onCheckedChange: setDarkMode,
-    },
-    { type: 'separator' },
-    {
-      type: 'radioGroup',
-      value: theme,
-      onValueChange: setTheme,
-      items: [
-        { label: 'System', value: 'system' },
-        { label: 'Light', value: 'light' },
-        { label: 'Dark', value: 'dark' },
-      ],
-    },
-  ];
-
   return (
     <div className="center">
-      <Tooltip content="Fullname">
-        <div>Name</div>
-      </Tooltip>
+      <Sheet
+        title="Edit"
+        description="Edit your name and email"
+        contentProps={{
+          style: {
+            padding: '20px 0',
+          }
+        }}
+        content={(
+          <Flex flexDirection='column' gap="16px">
+            <Input label='Name' />
+            <Input label='Email' />
+            <Flex justifyContent='flex-end'>
+              <Button>Save</Button>
+            </Flex>
+          </Flex>
+        )}
+      >
+        <Button>Edit</Button>
+      </Sheet>
     </div>
   );
 };

@@ -13,3 +13,4 @@ export * from './Select/types';
 export * from './Popover/types';
 export * from './Tooltip/types';
 export * from './Collapsible/types';
+export * from './Sheet/types'
