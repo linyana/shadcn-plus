@@ -14,3 +14,6 @@ export * from './Popover/types';
 export * from './Tooltip/types';
 export * from './Collapsible/types';
 export * from './Sheet/types'
+
+// Feedback
+export * from './Skeleton/types'
