@@ -14,6 +14,7 @@ export * from './Popover';
 export * from './Tooltip'
 export * from './Collapsible';
 export * from './Sheet';
+export * from './Separator'
 
 // Feedback
 export * from './Skeleton'
