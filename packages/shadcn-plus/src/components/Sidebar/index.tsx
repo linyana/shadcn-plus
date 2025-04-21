@@ -10,8 +10,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
 } from '@/components/ui/sidebar';
 import {
   ISidebarItemType,
@@ -25,7 +23,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '../ui/collapsible';
-import { ChevronRight } from '@/icons';
+import { ChevronRight } from 'lucide-react';
+import { Separator } from '../Separator';
 
 export const SidebarProvider = (
   props: ISidebarProviderType,
@@ -46,7 +45,7 @@ const MenuItem = ({
         </SidebarGroupLabel>
       );
     } else if (item.type === 'separator') {
-      return <SidebarMenuItem />;
+      return <Separator />;
     } else if (item.type === 'group') {
       return (
         <SidebarMenuItem>
@@ -72,41 +71,25 @@ const MenuItem = ({
       <>
         <Collapsible
           key={item.label}
-          asChild
           // defaultOpen={item.isActive}
           className="group/collapsible"
         >
-          <SidebarMenuItem>
-            <CollapsibleTrigger asChild>
-              <SidebarMenuButton
-                tooltip={item.label}
-              >
-                {item.icon && <item.icon />}
-                <span>{item.label}</span>
-                <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-              </SidebarMenuButton>
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              <SidebarMenuSub>
-                {item.children?.map((subItem) => (
-                  <>
-                    <SidebarMenuSubItem
-                      key={subItem.key}
-                    >
-                      <SidebarMenuSubButton
-                        asChild
-                      >
-                        {item.icon && (
-                          <item.icon />
-                        )}
-                        <span>{item.label}</span>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  </>
-                ))}
-              </SidebarMenuSub>
-            </CollapsibleContent>
-          </SidebarMenuItem>
+          <CollapsibleTrigger asChild>
+            <SidebarMenuButton
+              tooltip={item.label}
+            >
+              {item.icon && <item.icon />}
+              <span>{item.label}</span>
+              <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+            </SidebarMenuButton>
+          </CollapsibleTrigger>
+          <CollapsibleContent>
+            <SidebarMenuSub>
+              {item.children?.map((subItem) => (
+                <MenuItem item={subItem} />
+              ))}
+            </SidebarMenuSub>
+          </CollapsibleContent>
         </Collapsible>
       </>
     );

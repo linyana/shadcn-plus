@@ -1,5 +1,4 @@
-import { Button, Sidebar, SidebarTrigger } from "shadcn-plus"
-import { useSidebar } from "shadcn-plus/hooks";
+import { Sidebar, SidebarTrigger } from "shadcn-plus"
 import {
   User,
   CreditCard,
@@ -18,14 +17,10 @@ import {
 } from "lucide-react";
 import { ISidebarItemType } from "shadcn-plus/types";
 
-
 const items: ISidebarItemType[] = [
   {
     label: "My Account",
     type: "label",
-  },
-  {
-    type: "separator",
   },
   {
     type: "group",
@@ -75,23 +70,12 @@ const items: ISidebarItemType[] = [
             label: "Message",
           },
           {
-            type: "separator",
-          },
-          {
             icon: PlusCircle,
             label: "More...",
           },
         ],
       },
-      {
-        icon: Plus,
-        label: "New Team",
-        shortcut: "⌘+T",
-      },
     ],
-  },
-  {
-    type: "separator",
   },
   {
     icon: Github,
@@ -117,16 +101,6 @@ const items: ISidebarItemType[] = [
 ];
 
 export const Dashboard = () => { 
-  const {
-    state,
-    open,
-    setOpen,
-    openMobile,
-    setOpenMobile,
-    isMobile,
-    toggleSidebar,
-  } = useSidebar();
-
   return (
     <>
       <Sidebar collapsible="icon" items={items} />
