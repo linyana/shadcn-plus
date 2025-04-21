@@ -5,23 +5,34 @@ import {
 import {
   ICheckboxItemType,
   ICustomItemType,
-  IDefaultItemType,
   ILabelItemType,
   IRadioIGroupItemTypeType,
-  ISeparatorItemType
+  ISeparatorItemType,
 } from '../types';
 
 export type IDropdownMenuPropsType =
   DropdownMenuProps & {
     children: React.ReactNode;
     items: IMenuItemType[];
-    contentProps?: DropdownMenuContentProps
+    contentProps?: DropdownMenuContentProps;
   };
 
-type IGroupItemType = { type: 'group'; items: IMenuItemType[] };
+type IGroupItemType = {
+  type: 'group';
+  items: IMenuItemType[];
+};
+
+type IDefaultItemType = {
+  label: string;
+  icon?: React.ElementType;
+  shortcut?: string;
+  disabled?: boolean;
+  children?: IMenuItemType[];
+  key?: string | number;
+};
 
 export type IMenuItemType =
-  ILabelItemType
+  | ILabelItemType
   | ISeparatorItemType
   | ICustomItemType
   | ICheckboxItemType

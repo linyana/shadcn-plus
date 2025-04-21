@@ -27,91 +27,90 @@ const items: ISidebarItemType[] = [
   {
     type: "separator",
   },
-  // {
-  //   type: "group",
-  //   items: [
-  //     {
-  //       icon: User,
-  //       label: "Profile",
-  //       shortcut: "⇧⌘P",
-  //     },
-  //     {
-  //       icon: CreditCard,
-  //       label: "Billing",
-  //       shortcut: "⌘B",
-  //     },
-  //     {
-  //       icon: Settings,
-  //       label: "Settings",
-  //       shortcut: "⌘S",
-  //     },
-  //     {
-  //       icon: Keyboard,
-  //       label: "Keyboard shortcuts",
-  //       shortcut: "⌘K",
-  //     },
-  //   ],
-  // },
-  // {
-  //   type: "separator",
-  // },
-  // {
-  //   type: "group",
-  //   items: [
-  //     {
-  //       icon: Users,
-  //       label: "Team",
-  //     },
-  //     {
-  //       icon: UserPlus,
-  //       label: "Invite users",
-  //       children: [
-  //         {
-  //           icon: Mail,
-  //           label: "Email",
-  //         },
-  //         {
-  //           icon: MessageSquare,
-  //           label: "Message",
-  //         },
-  //         {
-  //           type: "separator",
-  //         },
-  //         {
-  //           icon: PlusCircle,
-  //           label: "More...",
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       icon: Plus,
-  //       label: "New Team",
-  //       shortcut: "⌘+T",
-  //     },
-  //   ],
-  // },
-  // {
-  //   type: "separator",
-  // },
-  // {
-  //   icon: Github,
-  //   label: "GitHub",
-  // },
-  // {
-  //   icon: LifeBuoy,
-  //   label: "Support",
-  // },
-  // {
-  //   icon: Cloud,
-  //   label: "API",
-  //   disabled: true,
-  // },
-  // {
-  //   type: "separator",
-  // },
+  {
+    type: "group",
+    items: [
+      {
+        icon: User,
+        label: "Profile",
+        shortcut: "⇧⌘P",
+      },
+      {
+        icon: CreditCard,
+        label: "Billing",
+        shortcut: "⌘B",
+      },
+      {
+        icon: Settings,
+        label: "Settings",
+        shortcut: "⌘S",
+      },
+      {
+        icon: Keyboard,
+        label: "Keyboard shortcuts",
+        shortcut: "⌘K",
+      },
+    ],
+  },
+  {
+    type: "separator",
+  },
+  {
+    type: "group",
+    items: [
+      {
+        icon: Users,
+        label: "Team",
+      },
+      {
+        icon: UserPlus,
+        label: "Invite users",
+        children: [
+          {
+            icon: Mail,
+            label: "Email",
+          },
+          {
+            icon: MessageSquare,
+            label: "Message",
+          },
+          {
+            type: "separator",
+          },
+          {
+            icon: PlusCircle,
+            label: "More...",
+          },
+        ],
+      },
+      {
+        icon: Plus,
+        label: "New Team",
+        shortcut: "⌘+T",
+      },
+    ],
+  },
+  {
+    type: "separator",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+  },
+  {
+    icon: LifeBuoy,
+    label: "Support",
+  },
+  {
+    icon: Cloud,
+    label: "API",
+    disabled: true,
+  },
+  {
+    type: "separator",
+  },
   {
     icon: LogOut,
-    disabled: true,
     label: "Log out",
     shortcut: "⇧⌘Q",
   },

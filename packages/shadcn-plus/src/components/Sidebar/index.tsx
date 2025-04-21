@@ -9,88 +9,126 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
 } from '@/components/ui/sidebar';
-import { ISidebarItemType, ISidebarProviderType, ISidebarTriggerType, ISidebarType } from './types';
+import {
+  ISidebarItemType,
+  ISidebarProviderType,
+  ISidebarTriggerType,
+  ISidebarType,
+} from './types';
 import { nanoid } from 'nanoid';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '../ui/collapsible';
+import { ChevronRight } from '@/icons';
 
-export const SidebarProvider = (props: ISidebarProviderType) => {
-  return (
-    <ShadcnSidebarProvider {...props} />
-  );
+export const SidebarProvider = (
+  props: ISidebarProviderType,
+) => {
+  return <ShadcnSidebarProvider {...props} />;
 };
 
 const MenuItem = ({
   item,
 }: {
-  item: ISidebarItemType
+  item: ISidebarItemType;
 }) => {
-    if ('type' in item) {
-      if (item.type === 'label') {
-        return (
-          <SidebarGroupLabel key={`sep-${index}`}>
-            {item.label}
-          </SidebarGroupLabel>
-        );
-      }
-      else if (item.type === 'separator') {
-        return (
-          <SidebarMenuItem
-            key={`sep-${index}`}
-          />
-        );
-      }
-      else if (item.type === 'group') {
-        return (
-          <SidebarMenuItem
-            key={`group-${index}`}
-          >
-            <MenuItem items={item.items} />
-          </SidebarMenuItem>
-        );
-      }
-      else if (item.type === 'custom') {
-        return (
-          <SidebarMenuItem
-            key={`group-${index}`}
-          >
-            {item.content}
-          </SidebarMenuItem>
-        );
-      }
-    }
-
-    if ('children' in item) {
+  if ('type' in item) {
+    if (item.type === 'label') {
       return (
-        <>
-          <SidebarMenuButton asChild>
-            {item.icon && (
-              <item.icon className="mr-2 h-4 w-4" />
-            )}
-            <span>{item.label}</span>
-          </SidebarMenuButton>
-        </>
+        <SidebarGroupLabel>
+          {item.label}
+        </SidebarGroupLabel>
+      );
+    } else if (item.type === 'separator') {
+      return <SidebarMenuItem />;
+    } else if (item.type === 'group') {
+      return (
+        <SidebarMenuItem>
+          {item.items.map((item) => {
+            const key = nanoid() || item.key;
+            return (
+              <MenuItem item={item} key={key} />
+            );
+          })}
+        </SidebarMenuItem>
+      );
+    } else if (item.type === 'custom') {
+      return (
+        <SidebarMenuItem>
+          {item.content}
+        </SidebarMenuItem>
       );
     }
+  }
 
+  if ('children' in item) {
     return (
       <>
-        <SidebarMenuButton disabled={item.disabled}>
-          {item.icon && (
-            <item.icon />
-          )}
-          <span>{item.label}</span>
-        </SidebarMenuButton>
+        <Collapsible
+          key={item.label}
+          asChild
+          // defaultOpen={item.isActive}
+          className="group/collapsible"
+        >
+          <SidebarMenuItem>
+            <CollapsibleTrigger asChild>
+              <SidebarMenuButton
+                tooltip={item.label}
+              >
+                {item.icon && <item.icon />}
+                <span>{item.label}</span>
+                <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+              </SidebarMenuButton>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <SidebarMenuSub>
+                {item.children?.map((subItem) => (
+                  <>
+                    <SidebarMenuSubItem
+                      key={subItem.key}
+                    >
+                      <SidebarMenuSubButton
+                        asChild
+                      >
+                        {item.icon && (
+                          <item.icon />
+                        )}
+                        <span>{item.label}</span>
+                      </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>
+                  </>
+                ))}
+              </SidebarMenuSub>
+            </CollapsibleContent>
+          </SidebarMenuItem>
+        </Collapsible>
       </>
     );
+  }
+
+  return (
+    <>
+      <SidebarMenuButton disabled={item.disabled}>
+        {item.icon && <item.icon />}
+        <span>{item.label}</span>
+      </SidebarMenuButton>
+    </>
+  );
 };
 
-export const SidebarTrigger = (props: ISidebarTriggerType) => { 
-  return (
-    <ShadcnSidebarTrigger {...props} />
-  )
-}
+export const SidebarTrigger = (
+  props: ISidebarTriggerType,
+) => {
+  return <ShadcnSidebarTrigger {...props} />;
+};
 
-export const Sidebar = ({ 
+export const Sidebar = ({
   items,
   ...props
 }: ISidebarType) => {
@@ -100,12 +138,15 @@ export const Sidebar = ({
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              { 
-                items.map((item, index) => {
-                  const key = nanoid() || item.key;
-                  return <MenuItem item={item} key={key}></MenuItem>
-                })
-              }
+              {items.map((item) => {
+                const key = nanoid() || item.key;
+                return (
+                  <MenuItem
+                    item={item}
+                    key={key}
+                  />
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
