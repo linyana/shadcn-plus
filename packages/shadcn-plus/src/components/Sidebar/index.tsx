@@ -1,13 +1,7 @@
 import {
-  Calendar,
-  Home,
-  Inbox,
-  Search,
-  Settings,
-} from 'lucide-react';
-
-import {
   Sidebar as ShadcnSidebar,
+  SidebarProvider as ShadcnSidebarProvider,
+  SidebarTrigger as ShadcnSidebarTrigger,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
@@ -15,92 +9,107 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarProvider,
-  SidebarTrigger,
-  useSidebar,
 } from '@/components/ui/sidebar';
-import { ISidebarType } from './types';
-import { Button } from '../Button';
+import { ISidebarItemType, ISidebarProviderType, ISidebarTriggerType, ISidebarType } from './types';
+import { nanoid } from 'nanoid';
 
-const items = [
-  {
-    title: 'Home',
-    url: '#',
-    icon: Home,
-  },
-  {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox,
-  },
-  {
-    title: 'Calendar',
-    url: '#',
-    icon: Calendar,
-  },
-  {
-    title: 'Search',
-    url: '#',
-    icon: Search,
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings,
-  },
-];
-
-export const A = () => {
-  const {
-    state,
-    open,
-    setOpen,
-    openMobile,
-    setOpenMobile,
-    isMobile,
-    toggleSidebar,
-  } = useSidebar();
-
+export const SidebarProvider = (props: ISidebarProviderType) => {
   return (
-    <Button onClick={toggleSidebar}>1</Button>
+    <ShadcnSidebarProvider {...props} />
   );
 };
 
-export const Sidebar = (props: ISidebarType) => {
+const MenuItem = ({
+  item,
+}: {
+  item: ISidebarItemType
+}) => {
+    if ('type' in item) {
+      if (item.type === 'label') {
+        return (
+          <SidebarGroupLabel key={`sep-${index}`}>
+            {item.label}
+          </SidebarGroupLabel>
+        );
+      }
+      else if (item.type === 'separator') {
+        return (
+          <SidebarMenuItem
+            key={`sep-${index}`}
+          />
+        );
+      }
+      else if (item.type === 'group') {
+        return (
+          <SidebarMenuItem
+            key={`group-${index}`}
+          >
+            <MenuItem items={item.items} />
+          </SidebarMenuItem>
+        );
+      }
+      else if (item.type === 'custom') {
+        return (
+          <SidebarMenuItem
+            key={`group-${index}`}
+          >
+            {item.content}
+          </SidebarMenuItem>
+        );
+      }
+    }
+
+    if ('children' in item) {
+      return (
+        <>
+          <SidebarMenuButton asChild>
+            {item.icon && (
+              <item.icon className="mr-2 h-4 w-4" />
+            )}
+            <span>{item.label}</span>
+          </SidebarMenuButton>
+        </>
+      );
+    }
+
+    return (
+      <>
+        <SidebarMenuButton disabled={item.disabled}>
+          {item.icon && (
+            <item.icon />
+          )}
+          <span>{item.label}</span>
+        </SidebarMenuButton>
+      </>
+    );
+};
+
+export const SidebarTrigger = (props: ISidebarTriggerType) => { 
   return (
-    <SidebarProvider>
-      <div
-        style={{
-          marginLeft: 200,
-        }}
-      >
-        <A></A>
-      </div>
-      <ShadcnSidebar {...props} className="group/collapsible">
-        <SidebarContent>
-          <SidebarGroup>
-            <SidebarGroupLabel>
-              Application
-            </SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {items.map((item) => (
-                  <SidebarMenuItem
-                    key={item.title}
-                  >
-                    <SidebarMenuButton asChild>
-                      <a href={item.url}>
-                        <item.icon />
-                        <span>{item.title}</span>
-                      </a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        </SidebarContent>
-      </ShadcnSidebar>
-    </SidebarProvider>
+    <ShadcnSidebarTrigger {...props} />
+  )
+}
+
+export const Sidebar = ({ 
+  items,
+  ...props
+}: ISidebarType) => {
+  return (
+    <ShadcnSidebar {...props}>
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              { 
+                items.map((item, index) => {
+                  const key = nanoid() || item.key;
+                  return <MenuItem item={item} key={key}></MenuItem>
+                })
+              }
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+    </ShadcnSidebar>
   );
 };
