@@ -1,8 +1,7 @@
 import { Separator } from "@/components";
-import { CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { SidebarGroupLabel, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub } from "@/components/ui/sidebar";
 import { ISidebarItemType } from "@/types";
-import { Collapsible } from "@radix-ui/react-collapsible";
+import { Collapsible } from "@/components";
 import { ChevronRight } from "lucide-react";
 
 export const MenuItem = ({
@@ -52,14 +51,12 @@ export const MenuItem = ({
     return (
       <>
         <Collapsible
-          key={item.label}
-          className="group/collapsible"
+          key={item.key}
           open={activeKeys.includes(item.key as string)}
-          onOpenChange={(open) => { 
+          onOpenChange={(open) => {
             setActiveKeys?.([item.key as string], !open);
           }}
-        >
-          <CollapsibleTrigger asChild>
+          trigger={(
             <SidebarMenuButton
               tooltip={item.label}
             >
@@ -67,8 +64,8 @@ export const MenuItem = ({
               <span>{item.label}</span>
               <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
             </SidebarMenuButton>
-          </CollapsibleTrigger>
-          <CollapsibleContent>
+          )}
+        >
             <SidebarMenuSub>
               {item.children?.map((subItem) => (
                 <MenuItem
@@ -80,7 +77,6 @@ export const MenuItem = ({
                 />
               ))}
             </SidebarMenuSub>
-          </CollapsibleContent>
         </Collapsible>
       </>
     );

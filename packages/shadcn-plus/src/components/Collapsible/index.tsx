@@ -12,7 +12,7 @@ export const Collapsible = ({
 }: ICollapsiblePropsType) => { 
   return (
     <ShadcnCollapsible {...props}>
-      <CollapsibleTrigger>{trigger}</CollapsibleTrigger>
+      <CollapsibleTrigger asChild>{trigger}</CollapsibleTrigger>
       <CollapsibleContent>
         {children}
       </CollapsibleContent>
