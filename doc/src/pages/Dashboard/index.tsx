@@ -24,6 +24,7 @@ const items: ISidebarItemType[] = [
   },
   {
     type: "group",
+    key: '2',
     items: [
       {
         icon: User,
@@ -58,21 +59,25 @@ const items: ISidebarItemType[] = [
         label: "Team",
       },
       {
+        key: '1',
         icon: UserPlus,
         label: "Invite users",
         children: [
           {
-            icon: Mail,
-            label: "Email",
-          },
-          {
-            icon: MessageSquare,
-            label: "Message",
-          },
-          {
-            icon: PlusCircle,
-            label: "More...",
-          },
+            type: 'group',
+            items: [{
+              icon: Mail,
+              label: "Email",
+            },
+            {
+              icon: MessageSquare,
+              label: "Message",
+            },
+            {
+              icon: PlusCircle,
+              label: "More...",
+            },]
+          }
         ],
       },
     ],
@@ -103,7 +108,7 @@ const items: ISidebarItemType[] = [
 export const Dashboard = () => { 
   return (
     <>
-      <Sidebar collapsible="icon" items={items} />
+      <Sidebar collapsible="icon" items={items} defaultActiveKeys={['1','2']} />
       <SidebarTrigger />
     </>
   )

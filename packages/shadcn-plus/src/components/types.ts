@@ -5,7 +5,6 @@ export * from './Button/types';
 export * from './Flex/types';
 export * from './DropdownMenu/types';
 export * from './Sidebar/types';
-export * from './Menu/types';
 
 // Data Entry
 export * from './Input/types';

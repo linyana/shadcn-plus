@@ -19,115 +19,117 @@ import {
   IDropdownMenuPropsType,
   IMenuItemType,
 } from './types';
+import { nanoid } from 'nanoid';
 
 export const MenuItem = ({
-  items,
+  item,
 }: {
-  items: IMenuItemType[];
+  item: IMenuItemType;
 }) => {
-  return items.map((item, index) => {
-    if ('type' in item) {
-      if (item.type === 'label') {
-        return (
-          <DropdownMenuLabel
-            key={`label-${index}`}
-          >
-            {item.label}
-          </DropdownMenuLabel>
-        );
-      }
-      else if (item.type === 'separator') {
-        return (
-          <DropdownMenuSeparator
-            key={`sep-${index}`}
-          />
-        );
-      }
-      else if (item.type === 'group') {
-        return (
-          <DropdownMenuGroup
-            key={`group-${index}`}
-          >
-            <MenuItem items={item.items} />
-          </DropdownMenuGroup>
-        );
-      }
-      else if (item.type === 'custom') {
-        return (
-          <DropdownMenuGroup
-            key={`group-${index}`}
-          >
-            {item.content}
-          </DropdownMenuGroup>
-        );
-      }
-      else if (item.type === 'checkbox') {
-        return (
-          <DropdownMenuICheckboxItemType
-            key={`checkbox-${index}`}
-            checked={item.checked}
-            onCheckedChange={item.onCheckedChange}
-            disabled={item.disabled}
-          >
-            {item.label}
-          </DropdownMenuICheckboxItemType>
-        );
-      } else if (item.type === 'radioGroup') {
-        return (
-          <DropdownMenuRadioGroup
-            key={`radiogroup-${index}`}
-            value={item.value}
-            onValueChange={item.onValueChange}
-          >
-            {item.items.map((radioItem, i) => (
-              <DropdownMenuRadioItem
-                key={`radio-${i}`}
-                value={radioItem.value}
-                disabled={radioItem.disabled}
-              >
-                {radioItem.label}
-              </DropdownMenuRadioItem>
-            ))}
-          </DropdownMenuRadioGroup>
-        );
-      }
-    }
-
-    if ('children' in item) {
+  if ('type' in item) {
+    if (item.type === 'label') {
       return (
-        <DropdownMenuSub key={`submenu-${index}`}>
-          <DropdownMenuSubTrigger className="gap-2">
-            {item.icon && (
-              <item.icon className="mr-2 h-4 w-4" />
-            )}
-            <span>{item.label}</span>
-          </DropdownMenuSubTrigger>
-          <DropdownMenuPortal>
-            <DropdownMenuSubContent>
-              <MenuItem items={item.children || []} />
-            </DropdownMenuSubContent>
-          </DropdownMenuPortal>
-        </DropdownMenuSub>
+        <DropdownMenuLabel>
+          {item.label}
+        </DropdownMenuLabel>
       );
     }
+    else if (item.type === 'separator') {
+      return (
+        <DropdownMenuSeparator />
+      );
+    }
+    else if (item.type === 'group') {
+      return (
+        <DropdownMenuGroup>
+          { 
+            (item.items || []).map((item) => { 
+              const key = item.key || nanoid()
+              return (
+                <MenuItem key={key} item={item} />
+              )
+            })
+          }
+        </DropdownMenuGroup>
+      );
+    }
+    else if (item.type === 'custom') {
+      return (
+        <DropdownMenuGroup>
+          {item.content}
+        </DropdownMenuGroup>
+      );
+    }
+    else if (item.type === 'checkbox') {
+      return (
+        <DropdownMenuICheckboxItemType
+          checked={item.checked}
+          onCheckedChange={item.onCheckedChange}
+          disabled={item.disabled}
+        >
+          {item.label}
+        </DropdownMenuICheckboxItemType>
+      );
+    } else if (item.type === 'radioGroup') {
+      return (
+        <DropdownMenuRadioGroup
+          value={item.value}
+          onValueChange={item.onValueChange}
+        >
+          {item.items.map((radioItem, i) => (
+            <DropdownMenuRadioItem
+              key={`radio-${i}`}
+              value={radioItem.value}
+              disabled={radioItem.disabled}
+            >
+              {radioItem.label}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      );
+    }
+  }
 
+  if ('children' in item) {
     return (
-      <DropdownMenuItem
-        key={`item-${index}`}
-        disabled={item.disabled}
-      >
-        {item.icon && (
-          <item.icon className="mr-2 h-4 w-4" />
-        )}
-        <span>{item.label}</span>
-        {item.shortcut && (
-          <DropdownMenuShortcut>
-            {item.shortcut}
-          </DropdownMenuShortcut>
-        )}
-      </DropdownMenuItem>
+      <DropdownMenuSub>
+        <DropdownMenuSubTrigger className="gap-2">
+          {item.icon && (
+            <item.icon className="mr-2 h-4 w-4" />
+          )}
+          <span>{item.label}</span>
+        </DropdownMenuSubTrigger>
+        <DropdownMenuPortal>
+          <DropdownMenuSubContent>
+          { 
+            (item.children || []).map((item) => { 
+              const key = item.key || nanoid()
+              return (
+                <MenuItem key={key} item={item} />
+              )
+            })
+          }
+          </DropdownMenuSubContent>
+        </DropdownMenuPortal>
+      </DropdownMenuSub>
     );
-  });
+  }
+
+  return (
+    <DropdownMenuItem
+      disabled={item.disabled}
+    >
+      {item.icon && (
+        <item.icon className="mr-2 h-4 w-4" />
+      )}
+      <span>{item.label}</span>
+      {item.shortcut && (
+        <DropdownMenuShortcut>
+          {item.shortcut}
+        </DropdownMenuShortcut>
+      )}
+    </DropdownMenuItem>
+  );
 };
 
 export const DropdownMenu = ({
@@ -142,7 +144,14 @@ export const DropdownMenu = ({
         {children}
       </DropdownMenuTrigger>
       <DropdownMenuContent {...contentProps}>
-        <MenuItem items={items} />
+        { 
+          items.map((item) => { 
+            const key = item.key || nanoid()
+            return (
+              <MenuItem key={key} item={item} />
+            )
+          })
+        }
       </DropdownMenuContent>
     </ShadcnDropdownMenu>
   );

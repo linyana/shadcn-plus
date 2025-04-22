@@ -1,32 +1,37 @@
-import { IMenuItemType } from '../types';
+import { IMenuItemType } from ".";
 
 export type ILabelItemType = {
   type: 'label';
   label: string;
-  key?: string | number;
+  key?: string;
 };
+
 export type ISeparatorItemType = {
   type: 'separator';
-  key?: string | number;
+  key?: string;
 };
-export type IGroupItemType<T> = {
+
+export type IGroupItemType = {
   type: 'group';
-  items: T[];
-  key?: string | number;
+  items: IMenuItemType[];
+  key?: string;
 };
+
 export type ICustomItemType = {
   type: 'custom';
   content: React.ReactNode;
-  key?: string | number;
+  key?: string;
 };
+
 export type ICheckboxItemType = {
   type: 'checkbox';
   label: string;
   checked: boolean;
   onCheckedChange: (checked: boolean) => void;
   disabled?: boolean;
-  key?: string | number;
+  key?: string;
 };
+
 export type IRadioIGroupItemTypeType = {
   type: 'radioGroup';
   value: string;
@@ -36,5 +41,6 @@ export type IRadioIGroupItemTypeType = {
     value: string;
     disabled?: boolean;
   }[];
-  key?: string | number;
+  key?: string;
 };
+

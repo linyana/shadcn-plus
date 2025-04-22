@@ -66,13 +66,13 @@ const MenuItem = ({
     }
   }
 
-  if ('children' in item) {
+  if (item.children) {
     return (
       <>
         <Collapsible
           key={item.label}
-          // defaultOpen={item.isActive}
           className="group/collapsible"
+          defaultOpen={item.active}
         >
           <CollapsibleTrigger asChild>
             <SidebarMenuButton
@@ -97,7 +97,7 @@ const MenuItem = ({
 
   return (
     <>
-      <SidebarMenuButton disabled={item.disabled}>
+      <SidebarMenuButton disabled={item.disabled} isActive={item.active}>
         {item.icon && <item.icon />}
         <span>{item.label}</span>
       </SidebarMenuButton>
@@ -113,6 +113,8 @@ export const SidebarTrigger = (
 
 export const Sidebar = ({
   items,
+  defaultActiveKeys = [],
+  activeKeys = [],
   ...props
 }: ISidebarType) => {
   return (
@@ -121,7 +123,7 @@ export const Sidebar = ({
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => {
+              {items.map((item: any) => {
                 const key = nanoid() || item.key;
                 return (
                   <MenuItem
