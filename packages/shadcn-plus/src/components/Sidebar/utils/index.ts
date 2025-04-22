@@ -22,3 +22,16 @@ export const initializeKeys = (items: ISidebarItemType[]): ISidebarItemType[] =>
     return base;
   });
 }
+
+export const findParentKeys = (items: ISidebarItemType[]): string[] => {
+  let keys: string[] = []
+  for (const item of items) {
+    if ('children' in item && item.children) {
+      keys = [...keys, item.key as string, ...findParentKeys(item.children)]
+    }
+    if ('type' in item && item.type === 'group' && item.items) { 
+      keys = [...keys, ...findParentKeys(item.items)]
+    }
+  }
+  return keys;
+}

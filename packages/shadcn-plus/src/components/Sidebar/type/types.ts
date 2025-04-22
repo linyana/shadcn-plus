@@ -30,6 +30,5 @@ export type IDefaultItemType = {
   disabled?: boolean;
   children?: ISidebarItemType[];
   key?: string;
-  active?: boolean;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent) => void;
 };

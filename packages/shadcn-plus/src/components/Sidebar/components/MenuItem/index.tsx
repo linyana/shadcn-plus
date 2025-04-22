@@ -13,7 +13,7 @@ export const MenuItem = ({
 }: {
   item: ISidebarItemType;
   activeKeys?: string[]
-  setActiveKeys?: (args: string[]) => void
+  setActiveKeys?: (args: string[], close?: boolean) => void
   expandedKeys?: string[]
   }) => {
   if ('type' in item) {
@@ -56,7 +56,7 @@ export const MenuItem = ({
           className="group/collapsible"
           open={activeKeys.includes(item.key as string)}
           onOpenChange={(open) => { 
-            setActiveKeys?.(open ? [item.key as string] : []);
+            setActiveKeys?.([item.key as string], !open);
           }}
         >
           <CollapsibleTrigger asChild>
@@ -91,7 +91,8 @@ export const MenuItem = ({
       <SidebarMenuButton
         disabled={item.disabled}
         isActive={activeKeys.includes(item.key as string)}
-        onClick={() => { 
+        onClick={(event) => {
+          item.onClick?.(event);
           setActiveKeys?.([...expandedKeys, item.key as string]);
         }}
       >

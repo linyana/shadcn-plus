@@ -22,6 +22,7 @@ export type ISidebarType =
     items: ISidebarItemType[];
     activeKeys?: string[];
     defaultActiveKeys?: string[];
+    exclusiveExpand?: boolean; // Default: false
   };
 
 export type ISidebarItemType =

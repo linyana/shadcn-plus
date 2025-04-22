@@ -12,9 +12,9 @@ import {
   ISidebarTriggerType,
   ISidebarType,
 } from './types';
-import { useMemo, useState } from 'react';
+import { SetStateAction, useMemo, useState } from 'react';
 import { MenuItem } from './components';
-import { initializeKeys } from './utils';
+import { findParentKeys, initializeKeys } from './utils';
 
 export const SidebarProvider = (
   props: ISidebarProviderType,
@@ -30,17 +30,31 @@ export const SidebarTrigger = (
 
 export const Sidebar = ({
   items,
+  exclusiveExpand,
   defaultActiveKeys = [],
   activeKeys: externalActiveKeys,
   ...props
 }: ISidebarType) => {
+
   const [internalActiveKeys, setInternalActiveKeys] = useState(defaultActiveKeys);
   const activeKeys = externalActiveKeys || internalActiveKeys;
-  const setActiveKeys = externalActiveKeys ? undefined : setInternalActiveKeys;
 
   const initializedItems = useMemo(() => {
     return initializeKeys(items);
   }, [items]);
+
+  const parentKeys = useMemo(() => { 
+    return findParentKeys(initializedItems)
+  }, [initializeKeys])
+
+  const setActiveKeys = externalActiveKeys ? undefined : (values: string[], chouldClose?: boolean) => {
+    const preserved = exclusiveExpand ? [] : activeKeys.filter(
+      (key) => parentKeys.includes(key) && !(chouldClose && values.includes(key))
+    );
+
+    const next = chouldClose ? preserved : [...preserved, ...values];
+    setInternalActiveKeys(next);
+  };
 
   return (
     <ShadcnSidebar {...props}>
