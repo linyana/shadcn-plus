@@ -1,11 +1,19 @@
 import 'shadcn-plus/style.css';
 import './App.css';
-import { Separator } from 'shadcn-plus';
+import {
+  Flex,
+  SidebarProvider,
+} from 'shadcn-plus';
+import { Dashboard } from './pages';
 
 const App = () => {
   return (
-    <div className="center">
-      <Separator className="my-4" />
+    <div>
+      <Flex>
+        <SidebarProvider>
+          <Dashboard />
+        </SidebarProvider>
+      </Flex>
     </div>
   );
 };

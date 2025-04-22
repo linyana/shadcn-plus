@@ -80,7 +80,7 @@ function DropdownMenuItem({
   )
 }
 
-function DropdownMenuCheckboxItem({
+function DropdownMenuICheckboxItemType({
   className,
   children,
   checked,
@@ -244,7 +244,7 @@ export {
   DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuItem,
-  DropdownMenuCheckboxItem,
+  DropdownMenuICheckboxItemType,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
