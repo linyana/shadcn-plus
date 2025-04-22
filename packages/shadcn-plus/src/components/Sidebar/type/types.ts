@@ -31,4 +31,5 @@ export type IDefaultItemType = {
   children?: ISidebarItemType[];
   key?: string;
   active?: boolean;
+  onClick?: () => void;
 };
