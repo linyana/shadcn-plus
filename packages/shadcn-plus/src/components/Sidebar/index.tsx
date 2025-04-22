@@ -12,7 +12,7 @@ import {
   ISidebarTriggerType,
   ISidebarType,
 } from './types';
-import { SetStateAction, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { MenuItem } from './components';
 import { findParentKeys, initializeKeys } from './utils';
 

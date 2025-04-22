@@ -1,8 +1,14 @@
-import { Separator } from "@/components";
-import { SidebarGroupLabel, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub } from "@/components/ui/sidebar";
-import { ISidebarItemType } from "@/types";
-import { Collapsible } from "@/components";
-import { ChevronRight } from "lucide-react";
+import { Separator } from '@/components';
+import {
+  SidebarGroupLabel,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSub,
+} from '@/components/ui/sidebar';
+import { ISidebarItemType } from '@/types';
+import { Collapsible } from '@/components';
+import { ChevronRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export const MenuItem = ({
   item,
@@ -11,10 +17,16 @@ export const MenuItem = ({
   expandedKeys = [],
 }: {
   item: ISidebarItemType;
-  activeKeys?: string[]
-  setActiveKeys?: (args: string[], close?: boolean) => void
-  expandedKeys?: string[]
+  activeKeys?: string[];
+  setActiveKeys?: (
+    args: string[],
+    close?: boolean,
+  ) => void;
+  expandedKeys?: string[];
 }) => {
+  const isActive = activeKeys.includes(
+    item.key as string,
+  );
   if ('type' in item) {
     if (item.type === 'label') {
       return (
@@ -33,7 +45,10 @@ export const MenuItem = ({
               key={item.key}
               setActiveKeys={setActiveKeys}
               activeKeys={activeKeys}
-              expandedKeys={[...expandedKeys, item.key as string]}
+              expandedKeys={[
+                ...expandedKeys,
+                item.key as string,
+              ]}
             />
           ))}
         </SidebarMenuItem>
@@ -52,31 +67,44 @@ export const MenuItem = ({
       <>
         <Collapsible
           key={item.key}
-          open={activeKeys.includes(item.key as string)}
+          open={activeKeys.includes(
+            item.key as string,
+          )}
           onOpenChange={(open) => {
-            setActiveKeys?.([item.key as string], !open);
+            setActiveKeys?.(
+              [item.key as string],
+              !open,
+            );
           }}
-          trigger={(
+          trigger={
             <SidebarMenuButton
               tooltip={item.label}
             >
               {item.icon && <item.icon />}
               <span>{item.label}</span>
-              <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+              <ChevronRight
+                className={cn(
+                  'ml-auto transition-transform duration-200',
+                  isActive && 'rotate-90',
+                )}
+              />
             </SidebarMenuButton>
-          )}
+          }
         >
-            <SidebarMenuSub>
-              {item.children?.map((subItem) => (
-                <MenuItem
-                  item={subItem}
-                  key={subItem.key}
-                  setActiveKeys={setActiveKeys}
-                  activeKeys={activeKeys}
-                  expandedKeys={[...expandedKeys, subItem.key as string]}
-                />
-              ))}
-            </SidebarMenuSub>
+          <SidebarMenuSub>
+            {item.children?.map((subItem) => (
+              <MenuItem
+                item={subItem}
+                key={subItem.key}
+                setActiveKeys={setActiveKeys}
+                activeKeys={activeKeys}
+                expandedKeys={[
+                  ...expandedKeys,
+                  subItem.key as string,
+                ]}
+              />
+            ))}
+          </SidebarMenuSub>
         </Collapsible>
       </>
     );
@@ -86,10 +114,15 @@ export const MenuItem = ({
     <>
       <SidebarMenuButton
         disabled={item.disabled}
-        isActive={activeKeys.includes(item.key as string)}
+        isActive={activeKeys.includes(
+          item.key as string,
+        )}
         onClick={(event) => {
           item.onClick?.(event);
-          setActiveKeys?.([...expandedKeys, item.key as string]);
+          setActiveKeys?.([
+            ...expandedKeys,
+            item.key as string,
+          ]);
         }}
       >
         {item.icon && <item.icon />}
