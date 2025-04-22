@@ -14,7 +14,7 @@ export const MenuItem = ({
   activeKeys?: string[]
   setActiveKeys?: (args: string[], close?: boolean) => void
   expandedKeys?: string[]
-  }) => {
+}) => {
   if ('type' in item) {
     if (item.type === 'label') {
       return (
