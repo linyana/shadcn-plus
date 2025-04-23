@@ -1,19 +1,27 @@
 import 'shadcn-plus/style.css';
 import './App.css';
 import {
-  Flex,
-  SidebarProvider,
+  Button,
+  Card,
 } from 'shadcn-plus';
-import { Dashboard } from './pages';
+import { Check } from 'shadcn-plus/icons';
 
 const App = () => {
   return (
     <div>
-      <Flex>
-        <SidebarProvider>
-          <Dashboard />
-        </SidebarProvider>
-      </Flex>
+      <Card
+        style={{
+          width: '300px'
+        }}
+        title="Notifications"
+        description="You have 3 unread messages."
+        footer={(
+         <Button className="w-full">
+          <Check /> Mark all as read
+        </Button>
+      )}>
+        Content
+      </Card>
     </div>
   );
 };

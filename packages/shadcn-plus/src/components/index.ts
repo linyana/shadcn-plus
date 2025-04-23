@@ -16,6 +16,7 @@ export * from './Tooltip';
 export * from './Collapsible';
 export * from './Sheet';
 export * from './Separator';
+export * from './Card'
 
 // Feedback
 export * from './Skeleton';

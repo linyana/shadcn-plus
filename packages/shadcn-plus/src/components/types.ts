@@ -16,6 +16,7 @@ export * from './Tooltip/types';
 export * from './Collapsible/types';
 export * from './Sheet/types';
 export * from './Separator/types';
+export * from './Card/types';
 
 // Feedback
 export * from './Skeleton/types';
