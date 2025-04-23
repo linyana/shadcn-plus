@@ -3,25 +3,21 @@ import './App.css';
 import {
   Button,
   Card,
+  HoverCard,
 } from 'shadcn-plus';
-import { Check } from 'shadcn-plus/icons';
 
 const App = () => {
   return (
     <div>
-      <Card
-        style={{
-          width: '300px'
-        }}
-        title="Notifications"
-        description="You have 3 unread messages."
-        footer={(
-         <Button className="w-full">
-          <Check /> Mark all as read
-        </Button>
-      )}>
-        Content
-      </Card>
+      <HoverCard trigger={<><Button>Button</Button></>}>
+        <Card style={{
+          marginTop: 12,
+        }}>
+          <p className="text-sm">
+            The React Framework - created and maintained by @vercel.
+          </p>
+        </Card>
+      </HoverCard>
     </div>
   );
 };
