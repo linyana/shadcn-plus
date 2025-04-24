@@ -5,6 +5,7 @@ import { IInputPropsType } from './types';
 import { Input as ShadcnInput } from '@/components/ui/input';
 import { checkValidate } from './utils';
 import { INPUT_CLASS_MAP } from './constants';
+import { Show } from '../Show';
 
 export const Input = ({
   status: externalStatus,
@@ -52,14 +53,14 @@ export const Input = ({
 
   return (
     <Flex flexDirection="column" gap="8px">
-      {label && (
+      <Show rule={label}>
         <label
           htmlFor={inputId}
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
           {label}
         </label>
-      )}
+      </Show>
       <ShadcnInput
         id={inputId}
         value={value}
@@ -68,9 +69,9 @@ export const Input = ({
         className={[className, status ? INPUT_CLASS_MAP[status].input : ''].join(' ')}
         {...props}
       />
-      {message && (
+      <Show rule={message}>
         <p className={['text-sm font-medium', status ? INPUT_CLASS_MAP[status].message : ''].join(' ')}>{message}</p>
-      )}
+      </Show>
     </Flex>
   );
 };
