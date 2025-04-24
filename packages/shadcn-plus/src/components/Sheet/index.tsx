@@ -1,3 +1,4 @@
+import { Show } from '../Show';
 import { ISheetPropsType } from './types';
 import {
   SheetContent,
@@ -28,12 +29,18 @@ export const Sheet = ({
         side={side}
         {...contentProps}
       >
-        <SheetHeader>
-          <SheetTitle>{title}</SheetTitle>
-          <SheetDescription>
-            {description}
-          </SheetDescription>
-        </SheetHeader>
+        <Show rule={title || description}>
+          <SheetHeader>
+            <Show rule={title}>
+              <SheetTitle>{title}</SheetTitle>
+            </Show>
+            <Show rule={description}>
+              <SheetDescription>
+                {description}
+              </SheetDescription>
+            </Show>
+          </SheetHeader>
+        </Show>
         {children}
       </SheetContent>
     </ShadcnSheet>
