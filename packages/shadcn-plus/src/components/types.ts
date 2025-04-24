@@ -22,3 +22,4 @@ export * from './Accordion/types'
 
 // Feedback
 export * from './Skeleton/types';
+export * from './Alert/types';
