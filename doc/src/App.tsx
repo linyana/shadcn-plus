@@ -1,22 +1,29 @@
 import 'shadcn-plus/style.css';
 import './App.css';
 import {
-  Card,
+  Accordion,
 } from 'shadcn-plus';
 
 const App = () => {
   return (
-    <div>
-      <Card
-        footer="1"
-        style={{
-          marginTop: 12,
-        }}
-      >
-        <p className="text-sm">
-          The React Framework - created and maintained by @vercel.
-        </p>
-      </Card>
+    <div className='center'>
+      <Accordion
+        style={{width: '300px'}}
+        type="single"
+        items={[
+        {
+          trigger: "Is it accessible?",
+          content: "Yes. It adheres to the WAI-ARIA design pattern.",
+        },
+        {
+          trigger: "Is it accessible?",
+          content: "Yes. It adheres to the WAI-ARIA design pattern.",
+        },
+        {
+          trigger: "Is it accessible?",
+          content: "Yes. It adheres to the WAI-ARIA design pattern.",
+        },
+      ]} />
     </div>
   );
 };

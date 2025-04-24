@@ -18,6 +18,7 @@ export * from './Sheet/types';
 export * from './Separator/types';
 export * from './Card/types';
 export * from './HoverCard/types'
+export * from './Accordion/types'
 
 // Feedback
 export * from './Skeleton/types';

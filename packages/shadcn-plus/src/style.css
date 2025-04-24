@@ -131,6 +131,7 @@
 @layer base {
   *, ::after, ::before, ::backdrop, ::file-selector-button {
     border: 0 solid #e5e7eb;
+    @apply border-border outline-ring/50;
   }  
 
   body {
@@ -142,11 +143,28 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+@keyframes accordion-down {
+  from {
+    height: 0;
   }
-  body {
-    @apply bg-background text-foreground;
+  to {
+    height: var(--radix-accordion-content-height);
   }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
 }

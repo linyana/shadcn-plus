@@ -79,6 +79,7 @@
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.8",
     "@radix-ui/react-collapsible": "^1.1.4",
     "@radix-ui/react-dialog": "^1.1.7",
     "@radix-ui/react-dropdown-menu": "^2.1.7",
