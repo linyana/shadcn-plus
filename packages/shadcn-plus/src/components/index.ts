@@ -22,3 +22,4 @@ export * from './Accordion'
 
 // Feedback
 export * from './Skeleton';
+export * from './Alert';
