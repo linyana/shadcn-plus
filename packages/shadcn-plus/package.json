@@ -1,6 +1,6 @@
 {
   "name": "shadcn-plus",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A configurable wrapper for shadcn/ui that simplifies integration with easy-to-use options.",
   "keywords": [
     "react",
