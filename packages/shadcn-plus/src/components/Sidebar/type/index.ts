@@ -3,8 +3,6 @@ import {
   ICustomItemType,
   IDefaultItemType,
   IGroupItemType,
-  ILabelItemType,
-  ISeparatorItemType,
 } from './types';
 
 export type ISidebarProviderType = {
@@ -26,8 +24,6 @@ export type ISidebarType =
   };
 
 export type ISidebarItemType =
-  | ILabelItemType
-  | ISeparatorItemType
   | IGroupItemType
   | ICustomItemType
   | IDefaultItemType;

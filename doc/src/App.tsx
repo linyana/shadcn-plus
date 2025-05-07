@@ -1,19 +1,23 @@
 import 'shadcn-plus/style.css';
 import './App.css';
-import {
-  Accordion,
-  Alert,
-} from 'shadcn-plus';
+import { Route, Routes } from 'react-router-dom';
+import { routes } from './routes';
+import { LayoutProvider } from './provider';
+
 
 const App = () => {
   return (
-    <div className='center'>
-      <div style={{
-        width: '600px'
-      }}>
-        <Alert title="Heads up!" description="You can add components to your app using the cli." />
-      </div>
-    </div>
+    <LayoutProvider>
+      <Routes>
+        {routes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            element={route.element}
+          />
+        ))}
+      </Routes>
+    </LayoutProvider>
   );
 };
 

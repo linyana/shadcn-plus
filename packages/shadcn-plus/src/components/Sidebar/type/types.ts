@@ -1,15 +1,4 @@
-import { ISidebarItemType } from ".";
-
-export type ILabelItemType = {
-  type: 'label';
-  label: string;
-  key?: string;
-};
-
-export type ISeparatorItemType = {
-  type: 'separator';
-  key?: string;
-};
+import { ISidebarItemType } from '.';
 
 export type ICustomItemType = {
   type: 'custom';
@@ -19,7 +8,9 @@ export type ICustomItemType = {
 
 export type IGroupItemType = {
   type: 'group';
-  items: ISidebarItemType[];
+  label?: string;
+  separator?: boolean;
+  children: ISidebarItemType[];
   key?: string;
 };
 

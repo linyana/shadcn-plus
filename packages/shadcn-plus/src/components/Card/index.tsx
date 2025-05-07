@@ -5,37 +5,43 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { ICardType } from "./types"
-import { Show } from "../Show"
+} from '@/components/ui/card';
+import { ICardType } from './types';
+import { Show } from '../Show';
 
-export const Card = ({ 
+export const Card = ({
   footer,
   description,
   title,
   children,
   ...props
-}: ICardType) => { 
+}: ICardType) => {
   return (
     <ShadcnCard {...props}>
-      <Show rule={title || description}>
+      <Show
+        hideWhen={null}
+        condition={title || description}
+      >
         <CardHeader>
-          <Show rule={title}>
+          <Show hideWhen={null} condition={title}>
             <CardTitle>{title}</CardTitle>
           </Show>
-          <Show rule={description}>
-          <CardDescription>{description}</CardDescription>
+          <Show
+            hideWhen={null}
+            condition={description}
+          >
+            <CardDescription>
+              {description}
+            </CardDescription>
           </Show>
         </CardHeader>
-      </Show>  
-      <CardContent>
-        {children}
-      </CardContent>
-      <Show rule={footer}>
-        <CardFooter>
-          {footer}
-        </CardFooter>
+      </Show>
+      
+      <CardContent>{children}</CardContent>
+
+      <Show hideWhen={null} condition={footer}>
+        <CardFooter>{footer}</CardFooter>
       </Show>
     </ShadcnCard>
-  )
-}
+  );
+};
