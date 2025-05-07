@@ -22,29 +22,45 @@ export const Input = ({
   ...props
 }: IInputPropsType) => {
   const inputId = id || nanoid();
-  const [internalMessage, setInternalMessage] = useState<string | null>(null);
-  const [internalStatus, setInternalStatus] = useState<'error' | 'warning' | null>(null);
+  const [internalMessage, setInternalMessage] =
+    useState<string | null>(null);
+  const [internalStatus, setInternalStatus] =
+    useState<'error' | 'warning' | null>(null);
   const status = externalStatus || internalStatus;
-  const message = externalMessage || internalMessage;
+  const message =
+    externalMessage || internalMessage;
 
   const triggerValidate = (value: string) => {
     if (rules) {
-      const validateMessage = checkValidate({ rules, value, type: 'string' });
+      const validateMessage = checkValidate({
+        rules,
+        value,
+        type: 'string',
+      });
       setInternalMessage(validateMessage || null);
-      setInternalStatus(validateMessage ? 'error': null);
+      setInternalStatus(
+        validateMessage ? 'error' : null,
+      );
       return !validateMessage;
     }
     return true;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     onChange?.(e);
-    if (validateTrigger === 'onChange' || status) {
+    if (
+      validateTrigger === 'onChange' ||
+      status
+    ) {
       triggerValidate(e.target.value);
     }
   };
 
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement>,
+  ) => {
     onBlur?.(e);
     if (validateTrigger === 'onBlur') {
       triggerValidate(e.target.value);
@@ -53,7 +69,7 @@ export const Input = ({
 
   return (
     <Flex flexDirection="column" gap="8px">
-      <Show rule={label}>
+      <Show hideWhen={null} condition={label}>
         <label
           htmlFor={inputId}
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -66,11 +82,25 @@ export const Input = ({
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={[className, status ? INPUT_CLASS_MAP[status].input : ''].join(' ')}
+        className={[
+          className,
+          status
+            ? INPUT_CLASS_MAP[status].input
+            : '',
+        ].join(' ')}
         {...props}
       />
-      <Show rule={message}>
-        <p className={['text-sm font-medium', status ? INPUT_CLASS_MAP[status].message : ''].join(' ')}>{message}</p>
+      <Show hideWhen={null} condition={message}>
+        <p
+          className={[
+            'text-sm font-medium',
+            status
+              ? INPUT_CLASS_MAP[status].message
+              : '',
+          ].join(' ')}
+        >
+          {message}
+        </p>
       </Show>
     </Flex>
   );
