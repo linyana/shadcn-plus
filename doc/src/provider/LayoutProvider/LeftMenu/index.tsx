@@ -1,38 +1,41 @@
-import { routes } from '@/routes';
+import { leftMenu } from '@/routes/leftMenu';
 import { useMemo } from 'react';
 import {
   useLocation,
   useNavigate,
 } from 'react-router-dom';
 import { Sidebar } from 'shadcn-plus';
-import { ISidebarItemType } from 'shadcn-plus/types';
 
 export const LeftMenu = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-  const items: ISidebarItemType[] =
-    useMemo(() => {
-      return routes
-        .filter(
-          (route) =>
-            route.leftMenu && route.sidebar,
-        )
-        .map(
-          (route) =>
-            ({
-              onClick: route.path
-                ? () => {
-                    navigate(
-                      route.path as string,
-                    );
-                  }
-                : null,
-              key: route.id,
-              ...route.sidebar,
-            } as ISidebarItemType),
-        );
-    }, [routes]);
+  const items = useMemo(() => {
+    const addOnClick = (items: any[]): any[] => {
+      return items.map((item) => {
+        if (
+          item.type === 'group' ||
+          item.type === 'custom'
+        ) {
+          return {
+            ...item,
+            children: item.children
+              ? addOnClick(item.children)
+              : [],
+          };
+        }
+
+        return {
+          ...item,
+          onClick: () => {
+            navigate(item.key);
+          },
+        };
+      });
+    };
+
+    return addOnClick(leftMenu);
+  }, []);
 
   const activeKeys = useMemo(() => {
     const match = items.find((item) =>

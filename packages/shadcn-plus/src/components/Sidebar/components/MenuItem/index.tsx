@@ -9,6 +9,7 @@ import { ISidebarItemType } from '@/types';
 import { Collapsible } from '@/components';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Show } from '@/components/Show';
 
 export const MenuItem = ({
   item,
@@ -28,32 +29,51 @@ export const MenuItem = ({
     item.key as string,
   );
   if ('type' in item) {
-    if (item.type === 'label') {
+    if (item.type === 'group') {
       return (
-        <SidebarGroupLabel>
-          {item.label}
-        </SidebarGroupLabel>
+        <>
+          <Show
+            hideWhen={null}
+            condition={
+              item.label || item.separator
+            }
+          >
+            <SidebarMenuItem>
+              <Show
+                hideWhen={null}
+                condition={item.label}
+              >
+                <SidebarGroupLabel>
+                  {item.label}
+                </SidebarGroupLabel>
+              </Show>
+              <Show
+                hideWhen={null}
+                condition={item.separator}
+              >
+                <Separator />
+              </Show>
+            </SidebarMenuItem>
+          </Show>
+          <SidebarMenuItem>
+            {item.children.map((child) => (
+              <MenuItem
+                item={child}
+                key={child.key}
+                setActiveKeys={setActiveKeys}
+                activeKeys={activeKeys}
+                expandedKeys={[
+                  ...expandedKeys,
+                  child.key as string,
+                ]}
+              />
+            ))}
+          </SidebarMenuItem>
+        </>
       );
-    } else if (item.type === 'separator') {
-      return <Separator />;
-    } else if (item.type === 'group') {
-      return (
-        <SidebarMenuItem>
-          {item.items.map((item) => (
-            <MenuItem
-              item={item}
-              key={item.key}
-              setActiveKeys={setActiveKeys}
-              activeKeys={activeKeys}
-              expandedKeys={[
-                ...expandedKeys,
-                item.key as string,
-              ]}
-            />
-          ))}
-        </SidebarMenuItem>
-      );
-    } else if (item.type === 'custom') {
+    }
+
+    if (item.type === 'custom') {
       return (
         <SidebarMenuItem>
           {item.content}

@@ -1,8 +1,14 @@
-import { IShowType } from "./types";
+import { IShowType } from './types';
 
-export const Show = ({ 
-  rule,
+export const Show = ({
+  hideWhen,
   children,
-}: IShowType) => { 
-  return rule ? children : null
-}
+  condition,
+  strictComparison = false,
+}: IShowType) => {
+  const shouldHide = strictComparison
+    ? condition === hideWhen
+    : condition == hideWhen;
+
+  return shouldHide ? null : children;
+};

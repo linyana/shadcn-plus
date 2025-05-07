@@ -1,19 +1,10 @@
 import { IMenuItemType } from ".";
 
-export type ILabelItemType = {
-  type: 'label';
-  label: string;
-  key?: string;
-};
-
-export type ISeparatorItemType = {
-  type: 'separator';
-  key?: string;
-};
-
 export type IGroupItemType = {
   type: 'group';
   items: IMenuItemType[];
+  label?: string;
+  separator?: boolean
   key?: string;
 };
 

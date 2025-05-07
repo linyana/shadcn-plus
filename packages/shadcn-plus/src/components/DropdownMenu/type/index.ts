@@ -6,9 +6,7 @@ import {
   ICheckboxItemType,
   ICustomItemType,
   IGroupItemType,
-  ILabelItemType,
   IRadioIGroupItemTypeType,
-  ISeparatorItemType,
 } from './types';
 
 export type IDropdownMenuPropsType =
@@ -29,8 +27,6 @@ type IDefaultItemType = {
 };
 
 export type IMenuItemType =
-  | ILabelItemType
-  | ISeparatorItemType
   | ICustomItemType
   | ICheckboxItemType
   | IRadioIGroupItemTypeType

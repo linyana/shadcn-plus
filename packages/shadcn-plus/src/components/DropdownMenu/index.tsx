@@ -20,6 +20,7 @@ import {
   IMenuItemType,
 } from './types';
 import { nanoid } from 'nanoid';
+import { Show } from '../Show';
 
 export const MenuItem = ({
   item,
@@ -27,40 +28,53 @@ export const MenuItem = ({
   item: IMenuItemType;
 }) => {
   if ('type' in item) {
-    if (item.type === 'label') {
+    if (item.type === 'group') {
       return (
-        <DropdownMenuLabel>
-          {item.label}
-        </DropdownMenuLabel>
-      );
-    }
-    else if (item.type === 'separator') {
-      return (
-        <DropdownMenuSeparator />
-      );
-    }
-    else if (item.type === 'group') {
-      return (
-        <DropdownMenuGroup>
-          { 
-            (item.items || []).map((item) => { 
-              const key = item.key || nanoid()
+        <>
+          <Show
+            hideWhen={null}
+            condition={
+              item.label || item.separator
+            }
+          >
+            <DropdownMenuGroup>
+              <Show
+                hideWhen={null}
+                condition={
+                  item.label
+                }
+              >
+                <DropdownMenuLabel>
+                  {item.label}
+                </DropdownMenuLabel>
+              </Show>
+              <Show
+                hideWhen={null}
+                condition={
+                  item.separator
+                }
+              >
+                <DropdownMenuSeparator />
+              </Show>
+            </DropdownMenuGroup>
+          </Show>
+          <DropdownMenuGroup>
+            {(item.items || []).map((item) => {
+              const key = item.key || nanoid();
               return (
                 <MenuItem key={key} item={item} />
-              )
-            })
-          }
-        </DropdownMenuGroup>
+              );
+            })}
+          </DropdownMenuGroup>
+        </>
       );
-    }
-    else if (item.type === 'custom') {
+    } else if (item.type === 'custom') {
       return (
         <DropdownMenuGroup>
           {item.content}
         </DropdownMenuGroup>
       );
-    }
-    else if (item.type === 'checkbox') {
+    } else if (item.type === 'checkbox') {
       return (
         <DropdownMenuICheckboxItemType
           checked={item.checked}
@@ -101,14 +115,12 @@ export const MenuItem = ({
         </DropdownMenuSubTrigger>
         <DropdownMenuPortal>
           <DropdownMenuSubContent>
-          { 
-            (item.children || []).map((item) => { 
-              const key = item.key || nanoid()
+            {(item.children || []).map((item) => {
+              const key = item.key || nanoid();
               return (
                 <MenuItem key={key} item={item} />
-              )
-            })
-          }
+              );
+            })}
           </DropdownMenuSubContent>
         </DropdownMenuPortal>
       </DropdownMenuSub>
@@ -116,9 +128,7 @@ export const MenuItem = ({
   }
 
   return (
-    <DropdownMenuItem
-      disabled={item.disabled}
-    >
+    <DropdownMenuItem disabled={item.disabled}>
       {item.icon && (
         <item.icon className="mr-2 h-4 w-4" />
       )}
@@ -144,14 +154,12 @@ export const DropdownMenu = ({
         {children}
       </DropdownMenuTrigger>
       <DropdownMenuContent {...contentProps}>
-        { 
-          items.map((item) => { 
-            const key = item.key || nanoid()
-            return (
-              <MenuItem key={key} item={item} />
-            )
-          })
-        }
+        {items.map((item) => {
+          const key = item.key || nanoid();
+          return (
+            <MenuItem key={key} item={item} />
+          );
+        })}
       </DropdownMenuContent>
     </ShadcnDropdownMenu>
   );

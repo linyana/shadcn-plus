@@ -19,22 +19,24 @@ export const Sheet = ({
   ...props
 }: ISheetPropsType) => {
   return (
-    <ShadcnSheet
-      {...props}
-    >
-      <SheetTrigger>
-        {trigger}
-      </SheetTrigger>
-      <SheetContent
-        side={side}
-        {...contentProps}
-      >
-        <Show rule={title || description}>
+    <ShadcnSheet {...props}>
+      <SheetTrigger>{trigger}</SheetTrigger>
+      <SheetContent side={side} {...contentProps}>
+        <Show
+          hideWhen={null}
+          condition={title || description}
+        >
           <SheetHeader>
-            <Show rule={title}>
+            <Show
+              hideWhen={null}
+              condition={title}
+            >
               <SheetTitle>{title}</SheetTitle>
             </Show>
-            <Show rule={description}>
+            <Show
+              hideWhen={null}
+              condition={description}
+            >
               <SheetDescription>
                 {description}
               </SheetDescription>

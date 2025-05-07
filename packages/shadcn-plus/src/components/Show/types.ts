@@ -1,4 +1,6 @@
 export type IShowType = {
-  rule: any;
+  hideWhen: any;
   children?: React.ReactNode;
-}
+  condition?: any;
+  strictComparison?: boolean
+};

@@ -11,7 +11,7 @@ export const LayoutProvider = ({
   <>
     <SidebarProvider>
       <LeftMenu />
+      {children}
     </SidebarProvider>
-    {children}
   </>
 );
