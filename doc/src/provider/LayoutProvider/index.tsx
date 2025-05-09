@@ -11,7 +11,12 @@ export const LayoutProvider = ({
   <>
     <SidebarProvider>
       <LeftMenu />
-      {children}
+      <div style={{
+        width: '100%',
+        padding: 32,
+      }}>
+        {children}
+      </div>
     </SidebarProvider>
   </>
 );

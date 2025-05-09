@@ -1,10 +1,14 @@
 // General
 export * from './Button/types';
+export * from './Typography/types'
 
 // Layout
 export * from './Flex/types';
-export * from './DropdownMenu/types';
 export * from './Sidebar/types';
+
+// Navigation
+export * from './Tabs/types';
+export * from './DropdownMenu/types';
 
 // Data Entry
 export * from './Input/types';

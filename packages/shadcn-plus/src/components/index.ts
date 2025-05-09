@@ -1,10 +1,15 @@
 // General
 export * from './Button';
+export * from './Typography'
 
 // Layout
 export * from './Flex';
-export * from './DropdownMenu';
 export * from './Sidebar';
+
+// Navigation
+export * from './Tabs';
+export * from './DropdownMenu';
+
 
 // Data Entry
 export * from './Input';

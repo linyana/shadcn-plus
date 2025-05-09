@@ -1,5 +1,7 @@
+import { ButtonPage } from "@/pages";
+
 export const leftMenuRoutes = {
-  '/components/button': <div>Button Page</div>,
+  '/components/button': <ButtonPage />,
   '/components/flex': <div>Flex Page</div>,
   '/components/dropdown-menu': (
     <div>Dropdown Menu Page</div>
