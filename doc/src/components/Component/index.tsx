@@ -1,10 +1,10 @@
 import { Card, Flex, Tabs } from "shadcn-plus";
 import { useState } from "react";
-import { Transition } from "@/components";
+import { CodeBlock, Transition } from "@/components";
 
 type IPropsType = {
   previewContent: React.ReactNode;
-  codeContent: React.ReactNode;
+  codeContent: string;
 }
 
 export const Component = ({ 
@@ -41,9 +41,7 @@ export const Component = ({
             label: "Code",
             content: (
               <Transition tabKey={activeKey}>
-                <Card>
-                  {codeContent}
-                </Card>
+                <CodeBlock code={codeContent}></CodeBlock>
               </Transition>
             ),
           },

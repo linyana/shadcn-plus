@@ -8,23 +8,26 @@ import {
 } from '@/components/ui/card';
 import { ICardType } from './types';
 import { Show } from '../Show';
+import { cn } from '@/lib/utils';
 
 export const Card = ({
   footer,
   description,
-  title,
+  header,
   children,
+  headerProps,
+  contentProps,
   ...props
 }: ICardType) => {
   return (
     <ShadcnCard {...props}>
       <Show
         hideWhen={null}
-        condition={title || description}
+        condition={header || description}
       >
-        <CardHeader>
-          <Show hideWhen={null} condition={title}>
-            <CardTitle>{title}</CardTitle>
+        <CardHeader {...headerProps}>
+          <Show hideWhen={null} condition={header}>
+            <CardTitle>{header}</CardTitle>
           </Show>
           <Show
             hideWhen={null}
@@ -37,7 +40,14 @@ export const Card = ({
         </CardHeader>
       </Show>
       
-      <CardContent>{children}</CardContent>
+      <CardContent
+        className={cn(
+          !header && !description && 'rounded-t-xl',
+          !footer && 'rounded-b-xl'
+        )}
+        {...contentProps}>
+        {children}
+      </CardContent>
 
       <Show hideWhen={null} condition={footer}>
         <CardFooter>{footer}</CardFooter>

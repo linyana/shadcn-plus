@@ -11,9 +11,12 @@ export const ButtonPage = () => {
         previewContent={(
           <Button>Button</Button>
         )}
-        codeContent={"Code Content"}
-      />
+        codeContent={
+`import { Button } from "shadcn-plus";
 
+<Button>Button</Button>`
+        }
+      />
     </Page>
   )
 }
