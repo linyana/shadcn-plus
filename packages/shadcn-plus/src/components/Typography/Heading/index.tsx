@@ -30,5 +30,5 @@ export const Heading = ({
   const Tag = asChild ? Slot : levelTagMap[level];
   const combinedClassName = clsx(levelClassMap[level], className);
 
-  return <Tag className={combinedClassName} {...props}>{children}</Tag>;
+  return <Tag className={combinedClassName} style={{ marginBottom: 4 * level}} {...props}>{children}</Tag>;
 };

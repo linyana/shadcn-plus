@@ -19,6 +19,9 @@
                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: "GeistMono" ,"Fira Code", Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
+  --transition-duration-default: .3s;
+  --transition-easing-default: cubic-bezier(.4,0,.2,1);
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

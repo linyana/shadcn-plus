@@ -6,11 +6,14 @@ import {
 } from "@/components/ui/tabs";
 import { ITabsProps } from "./types";
 import { nanoid } from "nanoid";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
+import { AnimatedHeightWrapper, TabContentTransition } from "../Custom";
 
 export const Tabs = ({
   items: externalItems,
   defaultValue,
+  onValueChange: externalOnValueChange,
+  value: externalValue,
   ...props
 }: ITabsProps) => {
   const items = useMemo(() => {
@@ -22,20 +25,34 @@ export const Tabs = ({
 
   const initial = defaultValue || items[0]?.key;
 
+  const [internalValue, setInternalValue] = useState(initial);
+  const value = externalValue || internalValue;
+  const onValueChange = externalOnValueChange || setInternalValue;
+
   return (
-    <ShadcnTabs defaultValue={initial} {...props}>
-      <TabsList className="grid w-full grid-cols-2">
+    
+    <AnimatedHeightWrapper activeKey={value}>
+      <ShadcnTabs
+        value={value}
+        onValueChange={onValueChange}
+        {...props}
+      >
+        <TabsList className="grid w-full grid-cols-2">
+          {items.map(item => (
+            <TabsTrigger key={item.key} value={item.key}>
+              {item.label}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+
         {items.map(item => (
-          <TabsTrigger key={item.key} value={item.key}>
-            {item.label}
-          </TabsTrigger>
+          <TabsContent key={item.key} value={item.key}>
+            <TabContentTransition tabKey={item.key}>
+              {item.content}
+            </TabContentTransition>
+          </TabsContent>
         ))}
-      </TabsList>
-      {items.map(item => (
-        <TabsContent key={item.key} value={item.key}>
-          {item.content}
-        </TabsContent>
-      ))}
-    </ShadcnTabs>
+      </ShadcnTabs>
+    </AnimatedHeightWrapper>
   );
 };

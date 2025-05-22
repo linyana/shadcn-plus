@@ -6,7 +6,7 @@ interface TransitionProps {
   tabKey: string;
 }
 
-export const Transition = ({ children, tabKey }: TransitionProps) => {
+export const TabContentTransition = ({ children, tabKey }: TransitionProps) => {
   const [currentKey, setCurrentKey] = useState(tabKey);
 
   if (tabKey !== currentKey) {
@@ -18,12 +18,12 @@ export const Transition = ({ children, tabKey }: TransitionProps) => {
       <motion.div
         key={currentKey}
         layout
-        initial={{ opacity: 0, y: -4 }}
+        initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 0 }}
         transition={{
-          duration: 0.6,
-          ease: "easeInOut",
+          duration: 0.3,
+          ease: [0.4, 0, 0.2, 1],
         }}
         style={{ overflow: "hidden" }}
       >
