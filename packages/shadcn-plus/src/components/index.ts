@@ -24,6 +24,7 @@ export * from './Separator';
 export * from './Card'
 export * from './HoverCard'
 export * from './Accordion'
+export * from './Table';
 
 // Feedback
 export * from './Skeleton';

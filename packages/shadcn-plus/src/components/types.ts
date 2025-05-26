@@ -23,6 +23,7 @@ export * from './Separator/types';
 export * from './Card/types';
 export * from './HoverCard/types'
 export * from './Accordion/types'
+export * from './Table/types';
 
 // Feedback
 export * from './Skeleton/types';

@@ -1,7 +1,12 @@
-import { Component, Page } from "@/components"
-import { Button, Heading } from "shadcn-plus"
+import { Component, Page } from '@/components';
+import {
+  Button,
+  Heading,
+} from 'shadcn-plus';
+import { ButtonProps } from './API';
 
-export const ButtonPage = () => { 
+export const ButtonPage = () => {
+
   return (
     <Page
       title="Button"
@@ -9,18 +14,19 @@ export const ButtonPage = () => {
     >
       <Heading>Examples</Heading>
       <Component
-        previewContent={(
-          <Button>Button</Button>
-        )}
-        codeContent={
-`import { Button } from "shadcn-plus";
+        previewContent={<Button>Button</Button>}
+        codeContent={`import { Button } from "shadcn-plus";
 
-<Button>Button</Button>`
-        }
+<Button>Button</Button>`}
       />
-      <Heading style={{
-        marginTop: 32,
-      }}>Props</Heading>
+      <Heading
+        style={{
+          marginTop: 32,
+        }}
+      >
+        Props
+      </Heading>
+      <ButtonProps />
     </Page>
-  )
-}
+  );
+};
