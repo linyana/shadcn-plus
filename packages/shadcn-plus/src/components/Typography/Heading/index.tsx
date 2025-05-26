@@ -42,7 +42,7 @@ export const Heading = ({
       className={combinedClassName}
       style={{
         ...style,
-        marginBottom: 4 * level,
+        marginBottom: 4 * (7 - level),
       }}
       {...props}
     >

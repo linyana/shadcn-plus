@@ -11,7 +11,9 @@ export const Component = ({
   codeContent,
 }: IPropsType) => {
   return (
-    <div>
+    <div style={{
+      marginBottom: 16,
+    }}>
       <Tabs
         items={[
           {
