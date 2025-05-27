@@ -38,10 +38,25 @@ export const LeftMenu = () => {
   }, []);
 
   const activeKeys = useMemo(() => {
-    const match = items.find((item) =>
-      pathname.startsWith(item.key as string),
-    );
-    return match ? [match.key as string] : [];
+    const findMatch = (
+      items: any[],
+    ): string | null => {
+      for (const item of items) {
+        if (pathname.startsWith(item.key)) {
+          return item.key;
+        }
+        if (item.children) {
+          const childMatch = findMatch(
+            item.children,
+          );
+          if (childMatch) return childMatch;
+        }
+      }
+      return null;
+    };
+
+    const matchKey = findMatch(items);
+    return matchKey ? [matchKey] : [];
   }, [pathname, items]);
 
   return (

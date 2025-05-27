@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Highlight, Language, themes } from "prism-react-renderer";
-import { Button, Card, Flex } from "shadcn-plus";
-import { Copy as CopyIcon, Check as CheckIcon } from "shadcn-plus/icons";
+import React, { useState } from 'react';
+import { Highlight, Language, themes } from 'prism-react-renderer';
+import { Button, Card, Flex } from 'shadcn-plus';
+import { Copy as CopyIcon, Check as CheckIcon } from 'shadcn-plus/icons';
 
 export interface CodeBlockProps {
   code: string;
@@ -14,9 +14,9 @@ export interface CodeBlockProps {
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({
   code,
-  language = "tsx",
+  language = 'tsx',
   className,
-  filename = "code.tsx",
+  filename = 'code.tsx',
   icon,
   showCopyButton = true,
 }) => {
@@ -29,57 +29,74 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   };
 
   return (
-    <Card className={className}
+    <Card
+      className={className}
       style={{
         padding: 0,
       }}
       headerProps={{
         style: {
           padding: 0,
-          backgroundColor: '#F5F5F5'
-        }
+          backgroundColor: '#F5F5F5',
+        },
       }}
       contentProps={{
         style: {
           padding: 0,
-        }
+        },
       }}
-      header={(
-        <Flex justifyContent="space-between" alignItems="center" style={{
-          padding: '8px 16px',
-        }}>
+      header={
+        <Flex
+          justifyContent="space-between"
+          alignItems="center"
+          style={{
+            padding: '8px 16px',
+          }}
+        >
           <div>
             {icon}
             <span>{filename}</span>
           </div>
           {showCopyButton && (
-            <Button
-              size="sm"
-              variant="ghost"
-              onClick={handleCopy}
-            >
+            <Button size="sm" variant="ghost" onClick={handleCopy}>
               {copied ? <CheckIcon size={16} /> : <CopyIcon size={16} />}
             </Button>
           )}
         </Flex>
-        )}
+      }
+    >
+      <div
+        style={{
+          maxHeight: 600,
+          overflowY: 'auto',
+        }}
       >
-      <Highlight theme={themes.github} code={code} language={language}>
-        {({ className: highlightClassName, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={highlightClassName} style={{
-            padding: 16,
-            ...style,
-          }}>
-            {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line })}>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token })} />
-                ))}
-              </div>
-            ))}
-          </pre>
-        )}
-      </Highlight>
+        <Highlight theme={themes.github} code={code} language={language}>
+          {({
+            className: highlightClassName,
+            style,
+            tokens,
+            getLineProps,
+            getTokenProps,
+          }) => (
+            <pre
+              className={highlightClassName}
+              style={{
+                padding: 16,
+                ...style,
+              }}
+            >
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line })}>
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token })} />
+                  ))}
+                </div>
+              ))}
+            </pre>
+          )}
+        </Highlight>
+      </div>
     </Card>
   );
 };

@@ -2,7 +2,7 @@ import { IMenuItemType } from ".";
 
 export type IGroupItemType = {
   type: 'group';
-  items: IMenuItemType[];
+  children: IMenuItemType[];
   label?: string;
   separator?: boolean
   key?: string;

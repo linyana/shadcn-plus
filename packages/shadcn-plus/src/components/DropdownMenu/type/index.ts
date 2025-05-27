@@ -9,13 +9,11 @@ import {
   IRadioIGroupItemTypeType,
 } from './types';
 
-export type IDropdownMenuPropsType =
-  DropdownMenuProps & {
-    children: React.ReactNode;
-    items: IMenuItemType[];
-    contentProps?: DropdownMenuContentProps;
-  };
-
+export type IDropdownMenuPropsType = DropdownMenuProps & {
+  children: React.ReactNode;
+  items: IMenuItemType[];
+  contentProps?: DropdownMenuContentProps;
+};
 
 type IDefaultItemType = {
   label: string;

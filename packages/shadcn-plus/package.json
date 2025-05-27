@@ -117,13 +117,6 @@
     "tw-animate-css": "^1.2.5",
     "typescript": "5.7.2"
   },
-  "prettier": {
-    "printWidth": 50,
-    "jsxBracketSameLine": false,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "semi": true
-  },
   "jest": {
     "preset": "scripts/jest/node"
   }

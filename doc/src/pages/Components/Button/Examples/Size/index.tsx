@@ -1,37 +1,30 @@
 import { Component } from '@/components';
-import {
-  Button,
-  Flex,
-  Heading,
-} from 'shadcn-plus';
+import { Button, Flex, Heading } from 'shadcn-plus';
 import { Menu } from 'shadcn-plus/icons';
+import { SizeButtonComponent } from './component';
 
 export const SizeButtonExample = () => {
   return (
     <>
       <Heading level={5}>Size</Heading>
       <Component
-        previewContent={
-          <Flex gap="8px">
-            <Button size="lg">Button</Button>
-            <Button>Button</Button>
-            <Button size="sm">Button</Button>
-            <Button size="icon">
-              <Menu />
-            </Button>
-          </Flex>
-        }
-        codeContent={`import { Button, Flex } from "shadcn-plus";
+        previewContent={<SizeButtonComponent />}
+        codeContent={`import { Button, Flex } from 'shadcn-plus';
 import { Menu } from 'shadcn-plus/icons';
 
-<Flex gap="8px">
-  <Button size="lg">Button</Button>
-  <Button>Button</Button>
-  <Button size="sm">Button</Button>
-  <Button size="icon">
-    <Menu />
-  </Button>
-</Flex>`}
+export const SizeButtonComponent = () => {
+  return (
+    <Flex gap="8px">
+      <Button size="lg">Button</Button>
+      <Button>Button</Button>
+      <Button size="sm">Button</Button>
+      <Button size="icon">
+        <Menu />
+      </Button>
+    </Flex>
+  );
+};
+`}
       />
     </>
   );

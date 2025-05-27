@@ -1,14 +1,4 @@
-import { Component } from '@/components';
-import { Heading } from 'shadcn-plus';
-import { LoadingButtonComponent } from './component';
-
-export const LoadingButtonExample = () => {
-  return (
-    <>
-      <Heading level={5}>Loading</Heading>
-      <Component
-        previewContent={<LoadingButtonComponent />}
-        codeContent={`import { Button, Flex } from 'shadcn-plus';
+import { Button, Flex } from 'shadcn-plus';
 
 export const LoadingButtonComponent = () => {
   return (
@@ -30,10 +20,5 @@ export const LoadingButtonComponent = () => {
         Button
       </Button>
     </Flex>
-  );
-};
-`}
-      />
-    </>
   );
 };

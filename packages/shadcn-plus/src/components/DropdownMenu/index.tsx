@@ -15,65 +15,35 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuICheckboxItemType,
 } from '@/components/ui/dropdown-menu';
-import {
-  IDropdownMenuPropsType,
-  IMenuItemType,
-} from './types';
+import { IDropdownMenuPropsType, IMenuItemType } from './types';
 import { nanoid } from 'nanoid';
 import { Show } from '../Show';
 
-export const MenuItem = ({
-  item,
-}: {
-  item: IMenuItemType;
-}) => {
+export const MenuItem = ({ item }: { item: IMenuItemType }) => {
   if ('type' in item) {
     if (item.type === 'group') {
       return (
         <>
-          <Show
-            hideWhen={null}
-            condition={
-              item.label || item.separator
-            }
-          >
+          <Show hideWhen={null} condition={item.label || item.separator}>
             <DropdownMenuGroup>
-              <Show
-                hideWhen={null}
-                condition={
-                  item.label
-                }
-              >
-                <DropdownMenuLabel>
-                  {item.label}
-                </DropdownMenuLabel>
+              <Show hideWhen={null} condition={item.label}>
+                <DropdownMenuLabel>{item.label}</DropdownMenuLabel>
               </Show>
-              <Show
-                hideWhen={null}
-                condition={
-                  item.separator
-                }
-              >
+              <Show hideWhen={null} condition={item.separator}>
                 <DropdownMenuSeparator />
               </Show>
             </DropdownMenuGroup>
           </Show>
           <DropdownMenuGroup>
-            {(item.items || []).map((item) => {
+            {(item.children || []).map((item) => {
               const key = item.key || nanoid();
-              return (
-                <MenuItem key={key} item={item} />
-              );
+              return <MenuItem key={key} item={item} />;
             })}
           </DropdownMenuGroup>
         </>
       );
     } else if (item.type === 'custom') {
-      return (
-        <DropdownMenuGroup>
-          {item.content}
-        </DropdownMenuGroup>
-      );
+      return <DropdownMenuGroup>{item.content}</DropdownMenuGroup>;
     } else if (item.type === 'checkbox') {
       return (
         <DropdownMenuICheckboxItemType
@@ -109,7 +79,7 @@ export const MenuItem = ({
       <DropdownMenuSub>
         <DropdownMenuSubTrigger className="gap-2">
           {item.icon && (
-            <item.icon className="mr-2 h-4 w-4" />
+            <item.icon className="mr-2 h-4 w-4 text-muted-foreground" />
           )}
           <span>{item.label}</span>
         </DropdownMenuSubTrigger>
@@ -117,9 +87,7 @@ export const MenuItem = ({
           <DropdownMenuSubContent>
             {(item.children || []).map((item) => {
               const key = item.key || nanoid();
-              return (
-                <MenuItem key={key} item={item} />
-              );
+              return <MenuItem key={key} item={item} />;
             })}
           </DropdownMenuSubContent>
         </DropdownMenuPortal>
@@ -130,13 +98,11 @@ export const MenuItem = ({
   return (
     <DropdownMenuItem disabled={item.disabled}>
       {item.icon && (
-        <item.icon className="mr-2 h-4 w-4" />
+        <item.icon className="mr-2 h-4 w-4 text-muted-foreground" />
       )}
       <span>{item.label}</span>
       {item.shortcut && (
-        <DropdownMenuShortcut>
-          {item.shortcut}
-        </DropdownMenuShortcut>
+        <DropdownMenuShortcut>{item.shortcut}</DropdownMenuShortcut>
       )}
     </DropdownMenuItem>
   );
@@ -150,15 +116,11 @@ export const DropdownMenu = ({
 }: IDropdownMenuPropsType) => {
   return (
     <ShadcnDropdownMenu {...props}>
-      <DropdownMenuTrigger asChild>
-        {children}
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
       <DropdownMenuContent {...contentProps}>
         {items.map((item) => {
           const key = item.key || nanoid();
-          return (
-            <MenuItem key={key} item={item} />
-          );
+          return <MenuItem key={key} item={item} />;
         })}
       </DropdownMenuContent>
     </ShadcnDropdownMenu>
