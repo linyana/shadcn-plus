@@ -1,4 +1,4 @@
-import { Button, DropdownMenu, Separator } from 'shadcn-plus';
+import { Button, DropdownMenu } from 'shadcn-plus';
 import {
   User,
   CreditCard,
@@ -15,10 +15,10 @@ import {
   Cloud,
   LogOut,
 } from 'lucide-react';
-import { IMenuItemType } from 'shadcn-plus/types';
+import { IDropdownMenuItemType } from 'shadcn-plus/types';
 
 export const BasicDropdownMenuComponent = () => {
-  const menuItems: IMenuItemType[] = [
+  const menuItems: IDropdownMenuItemType[] = [
     {
       label: 'My Account',
       separator: true,

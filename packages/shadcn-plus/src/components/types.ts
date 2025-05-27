@@ -1,6 +1,6 @@
 // General
 export * from './Button/types';
-export * from './Typography/types'
+export * from './Typography/types';
 
 // Layout
 export * from './Flex/types';
@@ -21,9 +21,10 @@ export * from './Collapsible/types';
 export * from './Sheet/types';
 export * from './Separator/types';
 export * from './Card/types';
-export * from './HoverCard/types'
-export * from './Accordion/types'
+export * from './HoverCard/types';
+export * from './Accordion/types';
 export * from './Table/types';
+export * from './Badge/types';
 
 // Feedback
 export * from './Skeleton/types';

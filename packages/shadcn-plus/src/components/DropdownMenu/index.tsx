@@ -15,11 +15,11 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuICheckboxItemType,
 } from '@/components/ui/dropdown-menu';
-import { IDropdownMenuPropsType, IMenuItemType } from './types';
+import { IDropdownMenuPropsType, IDropdownMenuItemType } from './types';
 import { nanoid } from 'nanoid';
 import { Show } from '../Show';
 
-export const MenuItem = ({ item }: { item: IMenuItemType }) => {
+export const MenuItem = ({ item }: { item: IDropdownMenuItemType }) => {
   if ('type' in item) {
     if (item.type === 'group') {
       return (
@@ -50,6 +50,7 @@ export const MenuItem = ({ item }: { item: IMenuItemType }) => {
           checked={item.checked}
           onCheckedChange={item.onCheckedChange}
           disabled={item.disabled}
+          onSelect={(e) => e.preventDefault()}
         >
           {item.label}
         </DropdownMenuICheckboxItemType>
@@ -65,6 +66,7 @@ export const MenuItem = ({ item }: { item: IMenuItemType }) => {
               key={`radio-${i}`}
               value={radioItem.value}
               disabled={radioItem.disabled}
+              onSelect={(e) => e.preventDefault()}
             >
               {radioItem.label}
             </DropdownMenuRadioItem>

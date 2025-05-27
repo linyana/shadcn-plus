@@ -11,7 +11,7 @@ import {
 
 export type IDropdownMenuPropsType = DropdownMenuProps & {
   children: React.ReactNode;
-  items: IMenuItemType[];
+  items: IDropdownMenuItemType[];
   contentProps?: DropdownMenuContentProps;
 };
 
@@ -20,11 +20,11 @@ type IDefaultItemType = {
   icon?: React.ElementType;
   shortcut?: string;
   disabled?: boolean;
-  children?: IMenuItemType[];
+  children?: IDropdownMenuItemType[];
   key?: string;
 };
 
-export type IMenuItemType =
+export type IDropdownMenuItemType =
   | ICustomItemType
   | ICheckboxItemType
   | IRadioIGroupItemTypeType

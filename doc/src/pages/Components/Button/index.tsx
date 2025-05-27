@@ -6,6 +6,7 @@ import {
   LoadingButtonExample,
   SizeButtonExample,
 } from './Examples';
+import { PropTable } from '../components';
 
 export const ButtonPage = () => {
   return (
@@ -19,7 +20,7 @@ export const ButtonPage = () => {
       <SizeButtonExample />
       <Heading>API</Heading>
       <Heading level={5}>Props</Heading>
-      <ButtonProps />
+      <PropTable data={ButtonProps} />
     </Page>
   );
 };

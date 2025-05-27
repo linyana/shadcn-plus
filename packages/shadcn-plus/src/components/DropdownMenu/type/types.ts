@@ -1,8 +1,8 @@
-import { IMenuItemType } from ".";
+import { IDropdownMenuItemType } from ".";
 
 export type IGroupItemType = {
   type: 'group';
-  children: IMenuItemType[];
+  children: IDropdownMenuItemType[];
   label?: string;
   separator?: boolean
   key?: string;
