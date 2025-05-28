@@ -1,8 +1,4 @@
-import {
-  Flex,
-  Heading,
-  Paragraph,
-} from 'shadcn-plus';
+import { Flex, Heading, Paragraph } from 'shadcn-plus';
 
 type IPropsType = {
   title?: React.ReactNode;
@@ -10,24 +6,16 @@ type IPropsType = {
   children: React.ReactNode;
 };
 
-export const Page = ({
-  title,
-  description,
-  children,
-}: IPropsType) => {
+export const Page = ({ title, description, children }: IPropsType) => {
   return (
     <Flex>
       <div
         style={{
-          flex: 1,
+          width: 'calc(100% - 255px - 150px)',
         }}
       >
-        {title && (
-          <Heading level={2}>{title}</Heading>
-        )}
-        {description && (
-          <Paragraph>{description}</Paragraph>
-        )}
+        {title && <Heading level={2}>{title}</Heading>}
+        {description && <Paragraph>{description}</Paragraph>}
         <div
           style={{
             marginTop: 32,

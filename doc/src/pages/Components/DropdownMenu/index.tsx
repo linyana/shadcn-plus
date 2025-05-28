@@ -1,12 +1,12 @@
 import { Page } from '@/components';
-import { Heading } from 'shadcn-plus';
+import { Heading, Paragraph } from 'shadcn-plus';
 import {
   BasicDropdownMenuExample,
   CheckboxDropdownMenuExample,
   RadioDropdownMenuExample,
 } from './Examples';
-import { DropdownMenuProps } from './API';
-import { PropTable } from '../components';
+import { DropdownMenuProps, IDropdownMenuItemTypeProps } from './API';
+import { Link, PropTable } from '../components';
 
 export const DropdownMenuPage = () => {
   return (
@@ -19,8 +19,17 @@ export const DropdownMenuPage = () => {
       <CheckboxDropdownMenuExample />
       <RadioDropdownMenuExample />
       <Heading>API</Heading>
-      <Heading level={5}>Props</Heading>
-      <PropTable data={DropdownMenuProps} />
+      <PropTable title="Props" data={DropdownMenuProps} />
+      <Heading level={5}>IDropdownMenuItemType</Heading>
+      <Paragraph>
+        {'IDropdownMenuTtem: '}
+        <Link>IDropdownMenuDefaultItemType</Link> {' | '}
+        <Link>IDropdownMenuCustomItemType</Link> {' | '}
+        <Link>IDropdownMenuCheckboxItemType</Link> {' | '}
+        <Link>IDropdownMenuRadioItemType</Link> {' | '}
+        <Link>IDropdownMenuGroupItemType</Link>
+      </Paragraph>
+      {/* <PropTable title="IMenuItemType" data={IDropdownMenuItemTypeProps} /> */}
     </Page>
   );
 };

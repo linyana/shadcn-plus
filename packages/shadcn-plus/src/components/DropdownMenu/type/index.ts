@@ -3,10 +3,10 @@ import {
   DropdownMenuProps,
 } from '@radix-ui/react-dropdown-menu';
 import {
-  ICheckboxItemType,
-  ICustomItemType,
-  IGroupItemType,
-  IRadioIGroupItemTypeType,
+  IDropdownMenuCheckboxItemType,
+  IDropdownMenuCustomItemType,
+  IDropdownMenuGroupItemType,
+  IDropdownMenuRadioItemType,
 } from './types';
 
 export type IDropdownMenuPropsType = DropdownMenuProps & {
@@ -15,7 +15,7 @@ export type IDropdownMenuPropsType = DropdownMenuProps & {
   contentProps?: DropdownMenuContentProps;
 };
 
-type IDefaultItemType = {
+type IDropdownMenuDefaultItemType = {
   label: string;
   icon?: React.ElementType;
   shortcut?: string;
@@ -25,8 +25,8 @@ type IDefaultItemType = {
 };
 
 export type IDropdownMenuItemType =
-  | ICustomItemType
-  | ICheckboxItemType
-  | IRadioIGroupItemTypeType
-  | IDefaultItemType
-  | IGroupItemType;
+  | IDropdownMenuCustomItemType
+  | IDropdownMenuCheckboxItemType
+  | IDropdownMenuRadioItemType
+  | IDropdownMenuDefaultItemType
+  | IDropdownMenuGroupItemType;

@@ -1,6 +1,6 @@
 import { IDropdownMenuItemType } from ".";
 
-export type IGroupItemType = {
+export type IDropdownMenuGroupItemType = {
   type: 'group';
   children: IDropdownMenuItemType[];
   label?: string;
@@ -8,13 +8,13 @@ export type IGroupItemType = {
   key?: string;
 };
 
-export type ICustomItemType = {
+export type IDropdownMenuCustomItemType = {
   type: 'custom';
   content: React.ReactNode;
   key?: string;
 };
 
-export type ICheckboxItemType = {
+export type IDropdownMenuCheckboxItemType = {
   type: 'checkbox';
   label: string;
   checked: boolean;
@@ -23,7 +23,7 @@ export type ICheckboxItemType = {
   key?: string;
 };
 
-export type IRadioIGroupItemTypeType = {
+export type IDropdownMenuRadioItemType = {
   type: 'radioGroup';
   value: string;
   onValueChange: (value: string) => void;
