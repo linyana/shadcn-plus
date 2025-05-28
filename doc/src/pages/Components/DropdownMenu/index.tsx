@@ -5,7 +5,14 @@ import {
   CheckboxDropdownMenuExample,
   RadioDropdownMenuExample,
 } from './Examples';
-import { DropdownMenuProps, IDropdownMenuItemTypeProps } from './API';
+import {
+  DropdownMenuProps,
+  IDropdownMenuCheckboxItemTypeProps,
+  IDropdownMenuCustomItemTypeProps,
+  IDropdownMenuDefaultItemTypeProps,
+  IDropdownMenuGroupItemTypeProps,
+  IDropdownMenuRadioItemTypeProps,
+} from './API';
 import { Link, PropTable } from '../components';
 
 export const DropdownMenuPage = () => {
@@ -21,7 +28,11 @@ export const DropdownMenuPage = () => {
       <Heading>API</Heading>
       <PropTable title="Props" data={DropdownMenuProps} />
       <Heading level={5}>IDropdownMenuItemType</Heading>
-      <Paragraph>
+      <Paragraph
+        style={{
+          marginBottom: 32,
+        }}
+      >
         {'IDropdownMenuTtem: '}
         <Link>IDropdownMenuDefaultItemType</Link> {' | '}
         <Link>IDropdownMenuCustomItemType</Link> {' | '}
@@ -29,7 +40,26 @@ export const DropdownMenuPage = () => {
         <Link>IDropdownMenuRadioItemType</Link> {' | '}
         <Link>IDropdownMenuGroupItemType</Link>
       </Paragraph>
-      {/* <PropTable title="IMenuItemType" data={IDropdownMenuItemTypeProps} /> */}
+      <PropTable
+        title="IDropdownMenuDefaultItemType"
+        data={IDropdownMenuDefaultItemTypeProps}
+      />
+      <PropTable
+        title="IDropdownMenuGroupItemType"
+        data={IDropdownMenuGroupItemTypeProps}
+      />
+      <PropTable
+        title="IDropdownMenuCustomItemType"
+        data={IDropdownMenuCustomItemTypeProps}
+      />
+      <PropTable
+        title="IDropdownMenuCheckboxItemType"
+        data={IDropdownMenuCheckboxItemTypeProps}
+      />
+      <PropTable
+        title="IDropdownMenuRadioItemType"
+        data={IDropdownMenuRadioItemTypeProps}
+      />
     </Page>
   );
 };

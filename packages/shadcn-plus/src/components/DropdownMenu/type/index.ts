@@ -16,7 +16,7 @@ export type IDropdownMenuPropsType = DropdownMenuProps & {
 };
 
 type IDropdownMenuDefaultItemType = {
-  label: string;
+  label: React.ReactNode;
   icon?: React.ElementType;
   shortcut?: string;
   disabled?: boolean;
