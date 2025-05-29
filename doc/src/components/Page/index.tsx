@@ -11,7 +11,7 @@ export const Page = ({ title, description, children }: IPropsType) => {
     <Flex>
       <div
         style={{
-          width: 'calc(100% - 255px - 150px)',
+          width: 'calc(100% - 150px)',
         }}
       >
         {title && <Heading level={2}>{title}</Heading>}

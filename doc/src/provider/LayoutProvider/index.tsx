@@ -5,16 +5,16 @@ type IPropsType = {
   children: React.ReactNode;
 };
 
-export const LayoutProvider = ({
-  children,
-}: IPropsType) => (
+export const LayoutProvider = ({ children }: IPropsType) => (
   <>
     <SidebarProvider>
       <LeftMenu />
-      <div style={{
-        width: '100%',
-        padding: 32,
-      }}>
+      <div
+        style={{
+          width: 'calc(100% - 256px)',
+          padding: 32,
+        }}
+      >
         {children}
       </div>
     </SidebarProvider>

@@ -1,8 +1,8 @@
-import { ButtonPage, DropdownMenuPage } from '@/pages';
+import { ButtonPage, DropdownMenuPage, FlexPage } from '@/pages';
 
 export const leftMenuRoutes = {
   '/components/button': <ButtonPage />,
-  '/components/flex': <div>Flex Page</div>,
+  '/components/flex': <FlexPage />,
   '/components/dropdown-menu': <DropdownMenuPage />,
   '/components/sidebar': <div>Sidebar Page</div>,
   '/components/input': <div>Input Page</div>,

@@ -1,5 +1,5 @@
 import { Component } from '@/components';
-import { Button, Flex, Heading } from 'shadcn-plus';
+import { Heading } from 'shadcn-plus';
 import { BasicButtonComponent } from './component';
 
 export const BasicButtonExample = () => {
