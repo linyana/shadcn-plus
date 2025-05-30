@@ -30,7 +30,6 @@ export const Tabs = ({
   const onValueChange = externalOnValueChange || setInternalValue;
 
   return (
-    
     <AnimatedHeightWrapper activeKey={value}>
       <ShadcnTabs
         value={value}
