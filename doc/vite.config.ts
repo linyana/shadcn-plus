@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     outDir: path.resolve(
       process.env.INIT_CWD || './',
-      './dist/erp',
+      './dist/doc',
     ),
   },
   resolve: {
