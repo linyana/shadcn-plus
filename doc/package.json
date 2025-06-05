@@ -8,7 +8,9 @@
     "build": ""
   },
   "dependencies": {
+    "motion": "^12.10.4",
     "nanoid": "^5.1.5",
+    "prism-react-renderer": "^2.4.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-router-dom": "^7.5.2",
@@ -22,12 +24,5 @@
     "@vitejs/plugin-react": "4.3.4",
     "typescript": "5.7.2",
     "vite": "6.2.0"
-  },
-  "prettier": {
-    "printWidth": 50,
-    "jsxBracketSameLine": false,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "semi": true
   }
 }

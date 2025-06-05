@@ -13,7 +13,7 @@ export const initializeKeys = (
     if ('type' in item && item.type === 'group') {
       return {
         ...base,
-        items: initializeKeys(item.children),
+        children: initializeKeys(item.children),
       };
     }
 

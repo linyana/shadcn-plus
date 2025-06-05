@@ -16,15 +16,11 @@ import { useMemo, useState } from 'react';
 import { MenuItem } from './components';
 import { findParentKeys, initializeKeys } from './utils';
 
-export const SidebarProvider = (
-  props: ISidebarProviderType,
-) => {
+export const SidebarProvider = (props: ISidebarProviderType) => {
   return <ShadcnSidebarProvider {...props} />;
 };
 
-export const SidebarTrigger = (
-  props: ISidebarTriggerType,
-) => {
+export const SidebarTrigger = (props: ISidebarTriggerType) => {
   return <ShadcnSidebarTrigger {...props} />;
 };
 
@@ -35,26 +31,34 @@ export const Sidebar = ({
   activeKeys: externalActiveKeys,
   ...props
 }: ISidebarType) => {
-
-  const [internalActiveKeys, setInternalActiveKeys] = useState(defaultActiveKeys);
+  const [internalActiveKeys, setInternalActiveKeys] =
+    useState(defaultActiveKeys);
   const activeKeys = externalActiveKeys || internalActiveKeys;
 
   const initializedItems = useMemo(() => {
     return initializeKeys(items);
   }, [items]);
 
-  const parentKeys = useMemo(() => { 
-    return findParentKeys(initializedItems)
-  }, [initializeKeys])
+  const parentKeys = useMemo(() => {
+    return findParentKeys(initializedItems);
+  }, [initializeKeys]);
 
-  const setActiveKeys = externalActiveKeys ? undefined : (values: string[], chouldClose?: boolean) => {
-    const preserved = exclusiveExpand ? [] : activeKeys.filter(
-      (key) => parentKeys.includes(key) && !(chouldClose && values.includes(key))
-    );
+  const setActiveKeys = externalActiveKeys
+    ? undefined
+    : (values: string[], chouldClose?: boolean) => {
+        const preserved = exclusiveExpand
+          ? []
+          : activeKeys.filter(
+              (key) =>
+                parentKeys.includes(key) &&
+                !(chouldClose && values.includes(key)),
+            );
 
-    const next = chouldClose ? preserved : [...preserved, ...values];
-    setInternalActiveKeys(next);
-  };
+        const next = chouldClose
+          ? preserved
+          : Array.from(new Set([...preserved, ...values]));
+        setInternalActiveKeys(next);
+    };
 
   return (
     <ShadcnSidebar {...props}>
@@ -62,16 +66,14 @@ export const Sidebar = ({
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              {
-                initializedItems.map((item) => (
-                  <MenuItem
-                    item={item}
-                    key={item.key}
-                    activeKeys={activeKeys}
-                    setActiveKeys={setActiveKeys}
-                  />
-                ))
-              }
+              {initializedItems.map((item) => (
+                <MenuItem
+                  item={item}
+                  key={item.key}
+                  activeKeys={activeKeys}
+                  setActiveKeys={setActiveKeys}
+                />
+              ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

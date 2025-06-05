@@ -29,7 +29,13 @@ npm install shadcn-plus
 ### Import Style
 
 ```typescript
-import 'shadcn-plus/dist/style.css'
+import 'shadcn-plus/style.css'
+import 'shadcn-plus/tailwind.css'
+```
+
+or use `shadn-plus` extended style and `tailwindcss` in your project:
+```typescript
+import 'shadcn-plus/style.css'
 ```
 
 ### Use it in your projects

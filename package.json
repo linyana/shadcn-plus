@@ -1,20 +1,29 @@
 {
-	"name": "@shacdn-plus/home",
-	"version": "1.0.0",
-	"private": true,
-	"workspaces": [
-		"doc",
-		"packages/*"
-	],
-	"scripts": {
-		"build": "turbo run build",
-		"dev": "turbo run dev --parallel"
-	},
-	"devDependencies": {
-		"turbo": "latest"
-	},
-	"engines": {
-		"node": ">=14.0.0"
-	},
-	"packageManager": "yarn@1.22.17"
+  "name": "@shacdn-plus/home",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "doc",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel"
+  },
+  "devDependencies": {
+    "turbo": "latest",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "prettier": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "jsxBracketSameLine": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "semi": true
+  },
+  "packageManager": "yarn@1.22.17"
 }
