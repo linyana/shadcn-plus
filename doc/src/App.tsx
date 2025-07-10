@@ -1,5 +1,3 @@
-import 'shadcn-plus/style.css';
-import 'shadcn-plus/tailwind.css';
 import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { routes } from './routes';
