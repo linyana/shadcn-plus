@@ -7,7 +7,7 @@ import 'shadcn-plus/tailwind.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/shadcn-plus">
       <App />
     </BrowserRouter>
   </StrictMode>,
