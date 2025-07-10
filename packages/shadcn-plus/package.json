@@ -34,7 +34,9 @@
     "src/assets",
     "src/icons",
     "src/types",
-    "src/hooks/index.ts"
+    "src/hooks/index.ts",
+    "src/style.css",
+    "src/tailwind.css"
   ],
   "scripts": {
     "dev": "concurrently \"yarn build:watch\" \"yarn build:css:watch\" \"yarn build:custom:css:watch\"",
