@@ -17,9 +17,6 @@ jobs:
       - name: Install dependencies
         run: yarn workspace shadcn-plus build
 
-      - name: Install dependencies
-        run: yarn workspace shadcn-plus build:css
-
       - name: Build project
         run: yarn build
 
