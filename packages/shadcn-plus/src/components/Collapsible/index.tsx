@@ -4,9 +4,8 @@ import {
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
 import { ICollapsiblePropsType } from './types';
-import { AnimatedDisplayWrapper, AnimatedHeightWrapper } from '../Custom';
+import { AnimatedDisplayWrapper } from '../Custom';
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
 
 export const Collapsible = ({
   children,

@@ -11,7 +11,7 @@ export const checkValidate = ({
   let length = 0
 
   if (typeof value === 'string') {
-    value = value.toString().trim()
+    value = value.toString()
     length = value.length
   } else if(typeof value ==='number') { 
     length = value

@@ -13,6 +13,7 @@ export * from './DropdownMenu/types';
 // Data Entry
 export * from './Input/types';
 export * from './Select/types';
+export * from './Form/types'
 
 // Data Display
 export * from './Popover/types';

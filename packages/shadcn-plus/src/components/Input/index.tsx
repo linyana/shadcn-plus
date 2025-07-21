@@ -22,13 +22,12 @@ export const Input = ({
   ...props
 }: IInputPropsType) => {
   const inputId = id || nanoid();
-  const [internalMessage, setInternalMessage] =
-    useState<string | null>(null);
-  const [internalStatus, setInternalStatus] =
-    useState<'error' | 'warning' | null>(null);
+  const [internalMessage, setInternalMessage] = useState<string | null>(null);
+  const [internalStatus, setInternalStatus] = useState<
+    'error' | 'warning' | null
+  >(null);
   const status = externalStatus || internalStatus;
-  const message =
-    externalMessage || internalMessage;
+  const message = externalMessage || internalMessage;
 
   const triggerValidate = (value: string) => {
     if (rules) {
@@ -38,29 +37,20 @@ export const Input = ({
         type: 'string',
       });
       setInternalMessage(validateMessage || null);
-      setInternalStatus(
-        validateMessage ? 'error' : null,
-      );
+      setInternalStatus(validateMessage ? 'error' : null);
       return !validateMessage;
     }
     return true;
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e);
-    if (
-      validateTrigger === 'onChange' ||
-      status
-    ) {
+    if (validateTrigger === 'onChange' || status) {
       triggerValidate(e.target.value);
     }
   };
 
-  const handleBlur = (
-    e: React.FocusEvent<HTMLInputElement>,
-  ) => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     onBlur?.(e);
     if (validateTrigger === 'onBlur') {
       triggerValidate(e.target.value);
@@ -86,17 +76,15 @@ export const Input = ({
           className,
           status
             ? INPUT_CLASS_MAP[status].input
-            : '',
+            : 'focus-visible:border-ring focus-visible:ring-ring/50',
         ].join(' ')}
         {...props}
       />
-      <Show hideWhen={null} condition={message}>
+      <Show hideWhen={null} condition={message} animated>
         <p
           className={[
             'text-sm font-medium',
-            status
-              ? INPUT_CLASS_MAP[status].message
-              : '',
+            status ? INPUT_CLASS_MAP[status].message : 'text-muted-foreground',
           ].join(' ')}
         >
           {message}
