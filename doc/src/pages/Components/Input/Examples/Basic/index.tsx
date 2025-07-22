@@ -8,23 +8,29 @@ export const BasicInputExample = () => {
       <Heading level={5}>Basic</Heading>
       <Component
         previewContent={<BasicInputComponent />}
-        codeContent={`<Input
-  placeholder="Email"
-  validateTrigger="onChange"
-  rules={[
-    {
-      required: true,
-      message: 'Email is required',
-    },
-    {
-      validator: (value: string) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(value);
-      },
-      message: 'Invalid email address',
-    },
-  ]}
-/>
+        codeContent={`import { Input } from 'shadcn-plus';
+
+export const BasicInputComponent = () => {
+  return (
+    <Input
+      placeholder="Email"
+      validateTrigger="onChange"
+      rules={[
+        {
+          required: true,
+          message: 'Email is required',
+        },
+        {
+          validator: (value: string) => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(value);
+          },
+          message: 'Invalid email address',
+        },
+      ]}
+    />
+  );
+};
 `}
       />
     </>
