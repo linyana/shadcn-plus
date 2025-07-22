@@ -5,21 +5,21 @@ import { StatusInputComponent } from './components';
 export const StatusInputExample = () => {
   return (
     <>
-      <Heading level={5}>Basic</Heading>
+      <Heading level={5}>Status</Heading>
       <Component
         previewContent={<StatusInputComponent />}
         codeContent={`<Flex flexDirection="column" gap="16px">
   <Flex gap="16px">
-    <Input placeholder="Email" />
-    <Input placeholder="Email" message="normal" />
+    <Input placeholder="Name" />
+    <Input placeholder="Name" message="normal" />
   </Flex>
   <Flex gap="16px">
-    <Input placeholder="Email" status="error" />
-    <Input placeholder="Email" status="error" message="error" />
+    <Input placeholder="Name" status="error" />
+    <Input placeholder="Name" status="error" message="error" />
   </Flex>
   <Flex gap="16px">
-    <Input placeholder="Email" status="warning" />
-    <Input placeholder="Email" status="warning" message="warning" />
+    <Input placeholder="Name" status="warning" />
+    <Input placeholder="Name" status="warning" message="warning" />
   </Flex>
 </Flex>
 `}

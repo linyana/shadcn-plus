@@ -1,0 +1,65 @@
+import { Flex, Input } from 'shadcn-plus';
+
+export const RuleInputComponent = () => {
+  return (
+    <Flex
+      flexDirection="column"
+      gap="16px"
+      style={{
+        paddingBottom: 4,
+      }}
+    >
+      <Input
+        label="Required"
+        placeholder="Name"
+        validateTrigger="onChange"
+        rules={[
+          {
+            required: true,
+            message: 'Name is required',
+          },
+        ]}
+      />
+      <Input
+        label="Min 5"
+        placeholder="Name"
+        validateTrigger="onChange"
+        rules={[
+          {
+            min: 5,
+            message: 'Min 5 characters',
+          },
+        ]}
+      />
+      <Input
+        label="Max 5"
+        placeholder="Name"
+        validateTrigger="onChange"
+        rules={[
+          {
+            max: 5,
+            message: 'Max 5 characters',
+          },
+        ]}
+      />
+      <Input
+        label="Required and email verification"
+        placeholder="Email"
+        validateTrigger="onChange"
+        rules={[
+          {
+            required: true,
+            message: 'Email is required',
+          },
+          {
+            validator: (value: string) => {
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              return emailRegex.test(value);
+            },
+            message: 'Invalid email address',
+          },
+        ]}
+      />
+    </Flex>
+  );
+};
