@@ -15,7 +15,7 @@ export const SelectProps = [
   {
     property: 'placeholder?',
     description: 'Placeholder text displayed when no value is selected.',
-    type: <Badge variant="secondary">string</Badge>,
+    type: 'string',
     default: '-',
   },
   {

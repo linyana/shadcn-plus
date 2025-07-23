@@ -1,1 +1,5 @@
 export * from './Props'
+export * from './ISelectOptionType'
+export * from './ISelectContentPropsType'
+export * from './ISelectTriggerPropsType'
+export * from './ISelectValuePropsType'

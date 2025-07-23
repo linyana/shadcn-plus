@@ -13,19 +13,25 @@ export const PropTable = ({
   title?: React.ReactNode;
 }) => {
   const columns = [
-    { title: 'Property', dataIndex: 'property' },
+    {
+      title: 'Property',
+      dataIndex: 'property',
+      width: '20%',
+    },
     {
       title: 'Description',
       dataIndex: 'description',
+      width: '45%',
     },
     {
       title: 'Type',
       dataIndex: 'type',
-      width: '200px',
+      width: '20%',
     },
     {
       title: 'Default',
       dataIndex: 'default',
+      width: '15%',
     },
   ];
 

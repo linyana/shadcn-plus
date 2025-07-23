@@ -8,23 +8,34 @@ export const BasicSelectExample = () => {
       <Heading level={5}>Basic</Heading>
       <Component
         previewContent={<BasicSelectComponent />}
-        codeContent={`<Input
-  placeholder="Email"
-  validateTrigger="onChange"
-  rules={[
+        codeContent={`import { Select } from 'shadcn-plus';
+
+export const BasicSelectComponent = () => {
+  const options = [
     {
-      required: true,
-      message: 'Email is required',
+      label: 'Apple',
+      value: 'apple',
     },
     {
-      validator: (value: string) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(value);
-      },
-      message: 'Invalid email address',
+      label: 'Banana',
+      value: 'banana',
     },
-  ]}
-/>
+    {
+      label: 'Blueberry',
+      value: 'blueberry',
+    },
+    {
+      label: 'Grapes',
+      value: 'grapes',
+    },
+    {
+      label: 'Pineapple',
+      value: 'pineapple',
+    },
+  ];
+
+  return <Select options={options} placeholder='Select a fruit' />;
+};
 `}
       />
     </>
