@@ -5,3 +5,4 @@ export * from './Sidebar';
 export * from './Input';
 export * from './Select';
 export * from './Popover';
+export * from './Tooltip';
