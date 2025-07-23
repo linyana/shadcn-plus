@@ -7,19 +7,19 @@ import {
 
 export type ISelectPropsType =
   React.ComponentProps<typeof ShadcnSelect> & {
-    contentProps?: IPopoverContentPropsType;
-    triggerProps?: IPopoverTriggerPropsType;
-    valueProps?: IPopoverValuePropsType;
+    contentProps?: ISelectContentPropsType;
+    triggerProps?: ISelectTriggerPropsType;
+    valueProps?: ISelectValuePropsType;
   } & {
     options: ISelectOptionType[];
     placeholder?: string;
   };
 
-type IPopoverContentPropsType =
+type ISelectContentPropsType =
   SelectContentProps;
-type IPopoverTriggerPropsType =
+type ISelectTriggerPropsType =
   SelectTriggerProps;
-type IPopoverValuePropsType = SelectValueProps;
+type ISelectValuePropsType = SelectValueProps;
 
 export type ISelectOptionType = {
   value: string | number;

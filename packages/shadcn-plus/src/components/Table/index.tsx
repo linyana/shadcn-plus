@@ -22,7 +22,14 @@ export const Table = <T extends Record<string, any>>({
       <TableHeader>
         <TableRow>
           {columns.map((col, index) => (
-            <TableHead key={index}>{col.title}</TableHead>
+            <TableHead
+              key={index}
+              style={{
+                width: col.width,
+              }}
+            >
+              {col.title}
+            </TableHead>
           ))}
         </TableRow>
       </TableHeader>
@@ -36,7 +43,14 @@ export const Table = <T extends Record<string, any>>({
                 ? col.render(String(rawValue), record, rowIndex)
                 : rawValue;
               return (
-                <TableCell key={colIndex}>
+                <TableCell
+                  style={{
+                    width: col.width,
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                  }}
+                  key={colIndex}
+                >
                   {rendered}
                 </TableCell>
               );
