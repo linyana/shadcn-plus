@@ -4,3 +4,4 @@ export * from './Flex';
 export * from './Sidebar';
 export * from './Input';
 export * from './Select';
+export * from './Popover';
