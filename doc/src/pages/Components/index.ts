@@ -1,3 +1,4 @@
+export * from './Home';
 export * from './Button';
 export * from './Collapsible';
 export * from './DropdownMenu';
@@ -7,4 +8,4 @@ export * from './Input';
 export * from './Select';
 export * from './Popover';
 export * from './Tooltip';
-export * from './Sheet'
+export * from './Sheet';

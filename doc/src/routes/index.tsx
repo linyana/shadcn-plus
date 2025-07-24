@@ -1,9 +1,10 @@
 import { leftMenuRoutes } from './leftMenu/routes';
 import { IRouteType } from './types';
-import { Dashboard } from '@/pages';
+import { Dashboard, ComponentsPage } from '@/pages';
 
 const defaultRoute = {
   '/': <Dashboard />,
+  '/components': <ComponentsPage />,
 };
 
 export const routes: IRouteType[] =

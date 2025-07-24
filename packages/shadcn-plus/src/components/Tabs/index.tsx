@@ -36,7 +36,10 @@ export const Tabs = ({
         onValueChange={onValueChange}
         {...props}
       >
-        <TabsList className="grid w-full grid-cols-2">
+        <TabsList 
+          className="grid w-full" 
+          style={{ gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))` }}
+        >
           {items.map(item => (
             <TabsTrigger key={item.key} value={item.key}>
               {item.label}
