@@ -246,7 +246,7 @@ export const Dashboard = () => {
                   '#3b82f6')
               }
               onClick={() => {
-                navigate('/components/button');
+                navigate('/components');
               }}
             >
               Get Started
@@ -381,7 +381,7 @@ export const Dashboard = () => {
                         '#3b82f6')
                     }
                     onClick={() => {
-                      navigate('/components/button');
+                      navigate('/components');
                     }}
                   >
                     Get Started
@@ -415,7 +415,7 @@ export const Dashboard = () => {
                         'transparent')
                     }
                     onClick={() => {
-                      navigate('/components/button');
+                      navigate('/components');
                     }}
                   >
                     View Documentation
@@ -882,7 +882,7 @@ export const Dashboard = () => {
                       'white')
                   }
                   onClick={() => {
-                    navigate('/components/button');
+                    navigate('/components');
                   }}
                 >
                   Get Started
@@ -981,19 +981,19 @@ export const Dashboard = () => {
                 style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}
               >
                 <a
-                  href="https://linyana.github.io/shadcn-plus/#/components/button"
+                  href="https://linyana.github.io/shadcn-plus/#/components"
                   style={{ color: '#9ca3af', textDecoration: 'none' }}
                 >
                   Documentation
                 </a>
                 <a
-                  href="https://linyana.github.io/shadcn-plus/#/components/button"
+                  href="https://linyana.github.io/shadcn-plus/#/components"
                   style={{ color: '#9ca3af', textDecoration: 'none' }}
                 >
                   Components
                 </a>
                 <a
-                  href="https://linyana.github.io/shadcn-plus/#/components/button"
+                  href="https://linyana.github.io/shadcn-plus/#/components"
                   style={{ color: '#9ca3af', textDecoration: 'none' }}
                 >
                   Examples
