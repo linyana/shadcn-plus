@@ -1,5 +1,6 @@
 import {
   ButtonPage,
+  CollapsiblePage,
   DropdownMenuPage,
   FlexPage,
   InputPage,
@@ -18,7 +19,7 @@ export const leftMenuRoutes = {
   '/components/select': <SelectPage />,
   '/components/popover': <PopoverPage />,
   '/components/tooltip': <TooltipPage />,
-  '/components/collapsible': <div>Collapsible Page</div>,
+  '/components/collapsible': <CollapsiblePage />,
   '/components/sheet': <div>Sheet Page</div>,
   '/components/separator': <div>Separator Page</div>,
   '/components/card': <div>Card Page</div>,

@@ -1,0 +1,1 @@
+export { CollapsibleProps } from './Props';
