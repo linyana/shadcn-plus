@@ -7,3 +7,4 @@ export * from './Input';
 export * from './Select';
 export * from './Popover';
 export * from './Tooltip';
+export * from './Sheet'

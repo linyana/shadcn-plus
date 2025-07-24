@@ -6,6 +6,7 @@ import {
   InputPage,
   PopoverPage,
   SelectPage,
+  SheetPage,
   SidebarPage,
   TooltipPage,
 } from '@/pages';
@@ -20,7 +21,7 @@ export const leftMenuRoutes = {
   '/components/popover': <PopoverPage />,
   '/components/tooltip': <TooltipPage />,
   '/components/collapsible': <CollapsiblePage />,
-  '/components/sheet': <div>Sheet Page</div>,
+  '/components/sheet': <SheetPage />,
   '/components/separator': <div>Separator Page</div>,
   '/components/card': <div>Card Page</div>,
   '/components/hover-card': <div>Hover Card Page</div>,
