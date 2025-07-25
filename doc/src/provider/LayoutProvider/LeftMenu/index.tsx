@@ -1,9 +1,7 @@
 import { leftMenu } from '@/routes/leftMenu';
+import { div } from 'motion/react-client';
 import { useMemo } from 'react';
-import {
-  useLocation,
-  useNavigate,
-} from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Sidebar } from 'shadcn-plus';
 
 export const LeftMenu = () => {
@@ -13,15 +11,10 @@ export const LeftMenu = () => {
   const items = useMemo(() => {
     const addOnClick = (items: any[]): any[] => {
       return items.map((item) => {
-        if (
-          item.type === 'group' ||
-          item.type === 'custom'
-        ) {
+        if (item.type === 'group' || item.type === 'custom') {
           return {
             ...item,
-            children: item.children
-              ? addOnClick(item.children)
-              : [],
+            children: item.children ? addOnClick(item.children) : [],
           };
         }
 
@@ -38,17 +31,13 @@ export const LeftMenu = () => {
   }, []);
 
   const activeKeys = useMemo(() => {
-    const findMatch = (
-      items: any[],
-    ): string | null => {
+    const findMatch = (items: any[]): string | null => {
       for (const item of items) {
         if (pathname.startsWith(item.key)) {
           return item.key;
         }
         if (item.children) {
-          const childMatch = findMatch(
-            item.children,
-          );
+          const childMatch = findMatch(item.children);
           if (childMatch) return childMatch;
         }
       }
@@ -61,7 +50,52 @@ export const LeftMenu = () => {
 
   return (
     <Sidebar
-      items={items}
+      items={[
+        {
+          type: 'custom',
+          content: (
+            <div
+              style={{
+                height: '60px',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  gap: '8px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  padding: '0 8px',
+                  position: 'fixed',
+                  height: '60px',
+                  backgroundColor: '#FAFAFA',
+                }}
+                onClick={() => navigate('/')}
+              >
+                <div
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '8px',
+                    background:
+                      'linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.7))',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                  }}
+                >
+                  S+
+                </div>
+                <span>shadcn-plus</span>
+              </div>
+            </div>
+          ),
+        },
+        ...items,
+      ]}
       activeKeys={activeKeys}
     />
   );
