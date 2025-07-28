@@ -1,3 +1,4 @@
+export * from './Accordion';
 export * from './Home';
 export * from './Button';
 export * from './Card';
