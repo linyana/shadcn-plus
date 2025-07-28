@@ -1,0 +1,1 @@
+export { HoverCardProps } from './Props';

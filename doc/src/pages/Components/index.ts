@@ -4,6 +4,7 @@ export * from './Card';
 export * from './Collapsible';
 export * from './DropdownMenu';
 export * from './Flex';
+export * from './HoverCard';
 export * from './Sidebar';
 export * from './Input';
 export * from './Select';
