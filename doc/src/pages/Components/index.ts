@@ -1,5 +1,6 @@
 export * from './Home';
 export * from './Button';
+export * from './Card';
 export * from './Collapsible';
 export * from './DropdownMenu';
 export * from './Flex';

@@ -1,0 +1,1 @@
+export { CardProps } from './Props';
