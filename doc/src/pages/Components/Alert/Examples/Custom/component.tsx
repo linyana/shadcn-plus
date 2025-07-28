@@ -4,10 +4,10 @@ import { Lightbulb, Download, Settings } from 'lucide-react';
 export const CustomAlertComponent = () => {
   return (
     <Flex flexDirection="column" gap="16px" style={{ width: '500px' }}>
-      {/* Alert with custom title content */}
+      {/* Alert with custom header content */}
       <Alert
         icon={Lightbulb}
-        title={
+        header={
           <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             Pro Tip
             <span
@@ -23,13 +23,13 @@ export const CustomAlertComponent = () => {
             </span>
           </span>
         }
-        description="You can use custom React components in both title and description props."
+        description="You can use custom React components in both header and description props."
       />
 
       {/* Alert with action buttons in description */}
       <Alert
         icon={Download}
-        title="Update Available"
+        header="Update Available"
         description={
           <div>
             <p style={{ margin: '0 0 12px 0' }}>
@@ -51,7 +51,7 @@ export const CustomAlertComponent = () => {
       {/* Alert with rich content */}
       <Alert
         icon={Settings}
-        title="Configuration Required"
+        header="Configuration Required"
         description={
           <div>
             <p style={{ margin: '0 0 8px 0' }}>
@@ -71,7 +71,7 @@ export const CustomAlertComponent = () => {
 
       {/* Alert without icon */}
       <Alert
-        title="Simple Alert"
+        header="Simple Alert"
         description="This alert doesn't have an icon, showing a clean minimal design."
         style={{ paddingLeft: '16px' }}
         className="[&>svg]:hidden grid-cols-[0_1fr]"
