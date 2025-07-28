@@ -1,0 +1,1 @@
+export { SkeletonProps } from './Props';
