@@ -1,0 +1,1 @@
+export { AccordionProps, AccordionItemDataProps } from './Props';
