@@ -16,35 +16,35 @@ export const BasicAlertComponent = () => {
     <Flex flexDirection="column" gap="16px" style={{ width: '500px' }}>
       {/* Default alert */}
       <Alert
-        title="Heads up!"
+        header="Heads up!"
         description="You can add components to your app using the cli."
       />
       
       {/* Alert with custom icon */}
       <Alert
         icon={AlertCircle}
-        title="Warning"
+        header="Warning"
         description="This action cannot be undone. Please proceed with caution."
       />
       
       {/* Success alert */}
       <Alert
         icon={CheckCircle}
-        title="Success"
+        header="Success"
         description="Your changes have been saved successfully."
       />
       
       {/* Info alert */}
       <Alert
         icon={Info}
-        title="Information"
+        header="Information"
         description="This is some important information you should know."
       />
       
-      {/* Alert with only title */}
+      {/* Alert with only header */}
       <Alert
         icon={Terminal}
-        title="Terminal access required"
+        header="Terminal access required"
       />
     </Flex>
   );

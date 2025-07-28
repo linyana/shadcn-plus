@@ -8,7 +8,7 @@ import { Show } from '../Show';
 import { IAlertType } from './types';
 
 export const Alert = ({
-  title,
+  header,
   description,
   icon: Icon,
 }: IAlertType) => {
@@ -19,7 +19,7 @@ export const Alert = ({
       ) : (
         <Terminal className="h-4 w-4" />
       )}
-      <AlertTitle>{title}</AlertTitle>
+      <AlertTitle>{header}</AlertTitle>
       <Show
         hideWhen={null}
         condition={description}

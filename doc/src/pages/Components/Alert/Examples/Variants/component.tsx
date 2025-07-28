@@ -7,7 +7,7 @@ export const VariantsAlertComponent = () => {
       {/* Default variant */}
       <Alert
         icon={Info}
-        title="Default Alert"
+        header="Default Alert"
         description="This is a default alert with standard styling."
       />
       
@@ -15,7 +15,7 @@ export const VariantsAlertComponent = () => {
       <Alert
         className="border-red-200 bg-red-50 text-red-800 [&>svg]:text-red-600"
         icon={XCircle}
-        title="Error Alert"
+        header="Error Alert"
         description="Something went wrong. Please try again later."
       />
       
@@ -23,7 +23,7 @@ export const VariantsAlertComponent = () => {
       <Alert
         className="border-green-200 bg-green-50 text-green-800 [&>svg]:text-green-600"
         icon={CheckCircle}
-        title="Success Alert"
+        header="Success Alert"
         description="Operation completed successfully!"
       />
       
@@ -31,7 +31,7 @@ export const VariantsAlertComponent = () => {
       <Alert
         className="border-yellow-200 bg-yellow-50 text-yellow-800 [&>svg]:text-yellow-600"
         icon={AlertTriangle}
-        title="Warning Alert"
+        header="Warning Alert"
         description="Please review your settings before proceeding."
       />
       
@@ -39,7 +39,7 @@ export const VariantsAlertComponent = () => {
       <Alert
         className="border-blue-200 bg-blue-50 text-blue-800 [&>svg]:text-blue-600"
         icon={Info}
-        title="Info Alert"
+        header="Info Alert"
         description="Here's some helpful information for you."
       />
     </Flex>
