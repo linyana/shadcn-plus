@@ -1,5 +1,6 @@
 import {
   AccordionPage,
+  AlertPage,
   ButtonPage,
   CardPage,
   CollapsiblePage,
@@ -32,5 +33,5 @@ export const leftMenuRoutes = {
   '/components/hover-card': <HoverCardPage />,
   '/components/accordion': <AccordionPage />,
   '/components/skeleton': <SkeletonPage />,
-  '/components/alert': <div>Alert Page</div>,
+  '/components/alert': <AlertPage />,
 };
