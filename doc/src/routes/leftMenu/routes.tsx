@@ -12,6 +12,7 @@ import {
   SeparatorPage,
   SheetPage,
   SidebarPage,
+  SkeletonPage,
   TooltipPage,
 } from '@/pages';
 
@@ -30,6 +31,6 @@ export const leftMenuRoutes = {
   '/components/card': <CardPage />,
   '/components/hover-card': <HoverCardPage />,
   '/components/accordion': <AccordionPage />,
-  '/components/skeleton': <div>Skeleton Page</div>,
+  '/components/skeleton': <SkeletonPage />,
   '/components/alert': <div>Alert Page</div>,
 };
