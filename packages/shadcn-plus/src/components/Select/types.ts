@@ -24,4 +24,5 @@ type ISelectValuePropsType = SelectValueProps;
 export type ISelectOptionType = {
   value: string | number;
   label: React.ReactNode;
+  disabled?: boolean;
 };
