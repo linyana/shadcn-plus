@@ -1,32 +1,45 @@
+import React from 'react';
+
 export type IFlexPropsType = {
   width?: string;
   height?: string;
   margin?: string;
-  marginBottom?: string;
   marginTop?: string;
+  marginRight?: string;
+  marginBottom?: string;
+  marginLeft?: string;
   padding?: string;
+  paddingTop?: string;
+  paddingRight?: string;
+  paddingBottom?: string;
+  paddingLeft?: string;
   className?: string;
   flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
   justifyContent?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
     | 'space-between'
     | 'space-around'
-    | 'center'
-    | 'normal'
-    | 'flex-start'
-    | 'flex-end';
-  alignItems?:
-    | 'center'
+    | 'space-evenly'
     | 'start'
     | 'end'
-    | 'normal'
+    | 'left'
+    | 'right'
+    | 'normal';
+  alignItems?:
+    | 'flex-start'
+    | 'flex-end'
+    | 'center'
     | 'stretch'
-    | 'flex-start';
-  flexDirection?:
-    | 'row'
-    | 'row-reverse'
-    | 'column'
-    | 'column-reverse';
+    | 'baseline'
+    | 'start'
+    | 'end'
+    | 'normal';
+  flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
   gap?: string;
+  rowGap?: string;
+  columnGap?: string;
   children?: React.ReactNode;
   style?: React.CSSProperties;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
