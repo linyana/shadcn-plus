@@ -1,39 +1,64 @@
 import { Badge } from 'shadcn-plus';
 
 export const FlexProps = [
+  // Layout Direction
   {
-    property: 'justifyContent?',
-    description: 'Aligns items on the main axis.',
+    property: 'flexDirection?',
+    description: 'Sets the direction of the main axis.',
     type: (
       <>
-        <Badge variant="secondary">space-between</Badge> {' | '}
-        <Badge variant="secondary">space-around</Badge> {' | '}
-        <Badge variant="secondary">center</Badge> {' | '}
-        <Badge variant="secondary">normal</Badge> {' | '}
-        <Badge variant="secondary">flex-start</Badge> {' | '}
-        <Badge variant="secondary">flex-end</Badge>
+        <Badge variant="secondary">row</Badge> {' | '}
+        <Badge variant="secondary">row-reverse</Badge> {' | '}
+        <Badge variant="secondary">column</Badge> {' | '}
+        <Badge variant="secondary">column-reverse</Badge>
       </>
     ),
-    default: 'false',
+    default: '-',
+  },
+  
+  // Alignment
+  {
+    property: 'justifyContent?',
+    description: 'Aligns items along the main axis.',
+    type: (
+      <>
+        <Badge variant="secondary">flex-start</Badge> {' | '}
+        <Badge variant="secondary">flex-end</Badge> {' | '}
+        <Badge variant="secondary">center</Badge> {' | '}
+        <Badge variant="secondary">space-between</Badge> {' | '}
+        <Badge variant="secondary">space-around</Badge> {' | '}
+        <Badge variant="secondary">space-evenly</Badge> {' | '}
+        <Badge variant="secondary">start</Badge> {' | '}
+        <Badge variant="secondary">end</Badge> {' | '}
+        <Badge variant="secondary">left</Badge> {' | '}
+        <Badge variant="secondary">right</Badge> {' | '}
+        <Badge variant="secondary">normal</Badge>
+      </>
+    ),
+    default: "'normal'",
   },
   {
     property: 'alignItems?',
-    description: 'Aligns items on the cross axis.',
+    description: 'Aligns items along the cross axis.',
     type: (
       <>
+        <Badge variant="secondary">flex-start</Badge> {' | '}
+        <Badge variant="secondary">flex-end</Badge> {' | '}
         <Badge variant="secondary">center</Badge> {' | '}
+        <Badge variant="secondary">stretch</Badge> {' | '}
+        <Badge variant="secondary">baseline</Badge> {' | '}
         <Badge variant="secondary">start</Badge> {' | '}
         <Badge variant="secondary">end</Badge> {' | '}
-        <Badge variant="secondary">normal</Badge> {' | '}
-        <Badge variant="secondary">stretch</Badge> {' | '}
-        <Badge variant="secondary">flex-start</Badge>
+        <Badge variant="secondary">normal</Badge>
       </>
     ),
-    default: 'false',
+    default: "'normal'",
   },
+  
+  // Wrapping
   {
     property: 'flexWrap?',
-    description: 'Controls item wrapping.',
+    description: 'Controls whether items wrap to new lines.',
     type: (
       <>
         <Badge variant="secondary">wrap</Badge> {' | '}
@@ -41,72 +66,132 @@ export const FlexProps = [
         <Badge variant="secondary">wrap-reverse</Badge>
       </>
     ),
-    default: '-',
+    default: "'nowrap'",
   },
+  
+  // Spacing
   {
     property: 'gap?',
-    description: 'Gap between items.',
+    description: 'Sets the gap between all items (both rows and columns).',
     type: 'string',
     default: '-',
   },
   {
-    property: 'children?',
-    description: 'Flex content.',
-    type: 'ReactNode',
-    default: '-',
-  },
-  {
-    property: 'onClick?',
-    description: 'Click event handler.',
-    type: 'MouseEventHandler<HTMLDivElement>',
-    default: '-',
-  },
-  {
-    property: 'style?',
-    description: 'Inline styles.',
-    type: 'CSSProperties',
-    default: '-',
-  },
-  {
-    property: 'className?',
-    description: 'Custom class name.',
+    property: 'rowGap?',
+    description: 'Sets the gap between rows when items wrap.',
     type: 'string',
     default: '-',
   },
+  {
+    property: 'columnGap?',
+    description: 'Sets the gap between columns.',
+    type: 'string',
+    default: '-',
+  },
+  
+  // Dimensions
   {
     property: 'width?',
-    description: 'Container width.',
+    description: 'Sets the container width.',
     type: 'string',
-    default: '-',
+    default: "'auto'",
   },
   {
     property: 'height?',
-    description: 'Container height.',
+    description: 'Sets the container height.',
     type: 'string',
-    default: '-',
+    default: "'auto'",
   },
-  {
-    property: 'padding?',
-    description: 'Inner spacing.',
-    type: 'string',
-    default: '-',
-  },
+  
+  // Margin
   {
     property: 'margin?',
-    description: 'Outer spacing.',
+    description: 'Sets margin for all sides.',
     type: 'string',
-    default: '-',
+    default: "'none'",
   },
   {
     property: 'marginTop?',
-    description: 'Top margin.',
+    description: 'Sets top margin.',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'marginRight?',
+    description: 'Sets right margin.',
     type: 'string',
     default: '-',
   },
   {
     property: 'marginBottom?',
-    description: 'Bottom margin.',
+    description: 'Sets bottom margin.',
     type: 'string',
     default: '-',
+  },
+  {
+    property: 'marginLeft?',
+    description: 'Sets left margin.',
+    type: 'string',
+    default: '-',
+  },
+  
+  // Padding
+  {
+    property: 'padding?',
+    description: 'Sets padding for all sides.',
+    type: 'string',
+    default: "'none'",
+  },
+  {
+    property: 'paddingTop?',
+    description: 'Sets top padding.',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'paddingRight?',
+    description: 'Sets right padding.',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'paddingBottom?',
+    description: 'Sets bottom padding.',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'paddingLeft?',
+    description: 'Sets left padding.',
+    type: 'string',
+    default: '-',
+  },
+  
+  // Content & Events
+  {
+    property: 'children?',
+    description: 'The content to be rendered inside the flex container.',
+    type: 'ReactNode',
+    default: '-',
+  },
+  {
+    property: 'onClick?',
+    description: 'Click event handler for the container.',
+    type: 'MouseEventHandler<HTMLDivElement>',
+    default: '-',
+  },
+  
+  // Styling
+  {
+    property: 'style?',
+    description: 'Additional inline styles.',
+    type: 'CSSProperties',
+    default: '-',
+  },
+  {
+    property: 'className?',
+    description: 'Additional CSS class names.',
+    type: 'string',
+    default: "''",
   },
 ];

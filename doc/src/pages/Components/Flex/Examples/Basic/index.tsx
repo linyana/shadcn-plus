@@ -2,7 +2,7 @@ import { Component } from '@/components';
 import { Heading } from 'shadcn-plus';
 import { BasicFlexComponent } from './component';
 
-export const BasicButtonExample = () => {
+export const BasicFlexExample = () => {
   return (
     <>
       <Heading level={5}>Basic</Heading>
