@@ -1,5 +1,5 @@
 import { Page } from '@/components';
-import { Heading, Flex } from 'shadcn-plus';
+import { Heading } from 'shadcn-plus';
 import {
   BasicSelectExample,
   GroupedSelectExample,
@@ -28,38 +28,6 @@ export const SelectPage = () => {
       <StatesSelectExample />
       <AdvancedSelectExample />
       <UsageSelectExample />
-      
-      <Heading>Best Practices</Heading>
-      <div style={{ 
-        padding: '20px', 
-        backgroundColor: '#f8f9fa', 
-        borderRadius: '8px', 
-        marginBottom: '32px',
-        fontSize: '14px',
-        lineHeight: '1.6'
-      }}>
-        <Flex gap="12px" flexDirection="column">
-          <div>
-            <strong>✅ Use meaningful placeholders:</strong> Help users understand what to select
-          </div>
-          <div>
-            <strong>✅ Provide clear labels:</strong> Always label your select inputs for accessibility
-          </div>
-          <div>
-            <strong>✅ Handle controlled state:</strong> Use value + onValueChange for form integration
-          </div>
-          <div>
-            <strong>✅ Consider accessibility:</strong> Use required, disabled, and name attributes when appropriate
-          </div>
-          <div>
-            <strong>✅ Limit options:</strong> For long lists, consider search functionality or pagination
-          </div>
-          <div>
-            <strong>✅ Group related options:</strong> Use visual separators or grouping for better organization
-          </div>
-        </Flex>
-      </div>
-      
       <Heading>API</Heading>
       <Heading level={5}>Props</Heading>
       <PropTable data={SelectProps} />

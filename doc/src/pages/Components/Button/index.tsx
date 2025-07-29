@@ -5,6 +5,9 @@ import {
   BasicButtonExample,
   LoadingButtonExample,
   SizeButtonExample,
+  WithIconButtonExample,
+  DisabledButtonExample,
+  UsageButtonExample,
 } from './Examples';
 import { PropTable } from '../components';
 
@@ -12,12 +15,15 @@ export const ButtonPage = () => {
   return (
     <Page
       title="Button"
-      description="Displays a button or a component that looks like a button."
+      description="A versatile button component that supports multiple variants, sizes, loading states, and icon integration. Built on top of Radix UI primitives with full accessibility support."
     >
       <Heading>Examples</Heading>
       <BasicButtonExample />
-      <LoadingButtonExample />
+      <WithIconButtonExample />
       <SizeButtonExample />
+      <LoadingButtonExample />
+      <DisabledButtonExample />
+      <UsageButtonExample />
       <Heading>API</Heading>
       <Heading level={5}>Props</Heading>
       <PropTable data={ButtonProps} />

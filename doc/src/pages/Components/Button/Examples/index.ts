@@ -1,3 +1,6 @@
 export * from './Basic'
 export * from './Loading'
 export * from './Size'
+export * from './WithIcon'
+export * from './Disabled'
+export * from './Usage'
