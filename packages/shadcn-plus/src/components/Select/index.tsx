@@ -32,6 +32,7 @@ export const Select = ({
           <SelectItem
             key={nanoid()}
             value={option.value as string}
+            disabled={option.disabled}
           >
             {option.label}
           </SelectItem>
