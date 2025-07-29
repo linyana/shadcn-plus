@@ -39,22 +39,6 @@ export const WithIconButtonComponent = () => {
           <Github />
         </Button>
       </Flex>
-
-      {/* Different sizes with icons */}
-      <Flex gap="8px">
-        <Button size="sm">
-          <Plus />
-          Small
-        </Button>
-        <Button>
-          <Plus />
-          Default
-        </Button>
-        <Button size="lg">
-          <Plus />
-          Large
-        </Button>
-      </Flex>
     </Flex>
   );
 };
