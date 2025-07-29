@@ -1,23 +1,11 @@
-import { Input } from 'shadcn-plus';
+import { Flex, Input } from 'shadcn-plus';
 
 export const BasicInputComponent = () => {
   return (
-    <Input
-      placeholder="Email"
-      validateTrigger="onChange"
-      rules={[
-        {
-          required: true,
-          message: 'Email is required',
-        },
-        {
-          validator: (value: string) => {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(value);
-          },
-          message: 'Invalid email address',
-        },
-      ]}
-    />
+    <Flex flexDirection="column" gap="16px">
+      <Input placeholder="Enter your name" />
+      <Input placeholder="Enter your email" label="Email" />
+      <Input placeholder="Enter password" type="password" label="Password" />
+    </Flex>
   );
 };
