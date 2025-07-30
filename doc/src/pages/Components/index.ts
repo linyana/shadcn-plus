@@ -11,6 +11,7 @@ export * from './Sidebar';
 export * from './Input';
 export * from './Select';
 export * from './Popover';
+export * from './Tabs';
 export * from './Tooltip';
 export * from './Sheet';
 export * from './Separator';
