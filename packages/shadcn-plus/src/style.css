@@ -1,21 +1,25 @@
 @font-face {
   font-family: 'Geist';
   src: url('../src/assets/fonts/Geist[wght].woff2') format('woff2')
+    url('../src/assets/fonts/Geist-Medium.ttf') format('ttf');
 }
 
 @font-face {
   font-family: 'GeistMono';
-  src: url('../src/assets/fonts/GeistMono-Medium.woff2') format('woff2'),
-  url('../src/assets/fonts/GeistMono-Medium.ttf') format('ttf');
+  src:
+    url('../src/assets/fonts/GeistMono-Medium.woff2') format('woff2'),
+    url('../src/assets/fonts/GeistMono-Medium.ttf') format('ttf');
 }
 
 :root {
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif, 
-               "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: "GeistMono" ,"Fira Code", Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  --transition-duration-default: .3s;
-  --transition-easing-default: cubic-bezier(.4,0,.2,1);
+  --font-sans:
+    'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono:
+    'GeistMono', 'Fira Code', Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  --transition-duration-default: 0.3s;
+  --transition-easing-default: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes accordion-down {
