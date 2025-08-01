@@ -15,7 +15,7 @@ export const Tooltip = ({
   return (
     <TooltipProvider>
       <ShadcnTooltip {...props}>
-        <TooltipTrigger>
+        <TooltipTrigger asChild>
           {trigger}
         </TooltipTrigger>
         <TooltipContent {...contentProps}>

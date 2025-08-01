@@ -20,7 +20,7 @@ export const Sheet = ({
 }: ISheetPropsType) => {
   return (
     <ShadcnSheet {...props}>
-      <SheetTrigger>{trigger}</SheetTrigger>
+      <SheetTrigger asChild>{trigger}</SheetTrigger>
       <SheetContent side={side} {...contentProps}>
         <Show
           hideWhen={null}

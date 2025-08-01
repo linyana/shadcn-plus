@@ -15,7 +15,7 @@ export const Popover = ({
     <ShadcnPopover
       {...props}
     >
-      <PopoverTrigger>
+      <PopoverTrigger asChild>
         {trigger}
       </PopoverTrigger>
       <PopoverContent {...contentProps}>

@@ -24,7 +24,11 @@ export const Accordion = ({
   );
 
   return (
-    <ShadcnAccordion type={type as any} collapsible={collapsible} {...props}>
+    <ShadcnAccordion 
+      type={type as any} 
+      {...(type === 'single' ? { collapsible } : {})} 
+      {...props}
+    >
       {initItems.map((item) => (
         <AccordionItem key={item.key} value={item.key}>
           <AccordionTrigger>{item.trigger}</AccordionTrigger>

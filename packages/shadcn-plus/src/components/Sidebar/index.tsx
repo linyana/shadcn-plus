@@ -58,7 +58,7 @@ export const Sidebar = ({
           ? preserved
           : Array.from(new Set([...preserved, ...values]));
         setInternalActiveKeys(next);
-    };
+      };
 
   return (
     <ShadcnSidebar {...props}>

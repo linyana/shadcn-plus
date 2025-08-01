@@ -1,8 +1,8 @@
 import { leftMenu } from '@/routes/leftMenu';
-import { div } from 'motion/react-client';
 import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Sidebar } from 'shadcn-plus';
+import { ISidebarItemType } from 'shadcn-plus/types';
 
 export const LeftMenu = () => {
   const navigate = useNavigate();
@@ -11,10 +11,10 @@ export const LeftMenu = () => {
   const items = useMemo(() => {
     const addOnClick = (items: any[]): any[] => {
       return items.map((item) => {
-        if (item.type === 'group' || item.type === 'custom') {
+        if (item.children) {
           return {
             ...item,
-            children: item.children ? addOnClick(item.children) : [],
+            children: addOnClick(item.children),
           };
         }
 
@@ -30,73 +30,153 @@ export const LeftMenu = () => {
     return addOnClick(leftMenu);
   }, []);
 
-  const activeKeys = useMemo(() => {
-    const findMatch = (items: any[]): string | null => {
+  const defaultActiveKeys = useMemo(() => {
+    const matches: Set<string> = new Set();
+
+    const findMatches = (items: ISidebarItemType[], parentKey?: string) => {
       for (const item of items) {
-        if (pathname.startsWith(item.key)) {
-          return item.key;
-        }
+        const isMatch =
+          pathname === item.key || pathname.startsWith(item.key + '/');
+
         if (item.children) {
-          const childMatch = findMatch(item.children);
-          if (childMatch) return childMatch;
+          findMatches(item.children, item.key);
+        }
+
+        if (isMatch && item.key) {
+          matches.add(item.key);
+          if (parentKey) {
+            matches.add(parentKey);
+          }
         }
       }
-      return null;
     };
 
-    const matchKey = findMatch(items);
-    return matchKey ? [matchKey] : [];
+    findMatches(items);
+
+    return Array.from(matches);
   }, [pathname, items]);
 
   return (
-    <Sidebar
-      items={[
-        {
-          type: 'custom',
-          content: (
-            <div
-              style={{
-                height: '60px',
-              }}
-            >
+    <div
+      style={{
+        background: 'linear-gradient(180deg, #ffffff 0%, #f9fafb 100%)',
+        borderRight: '1px solid #e5e7eb',
+        height: '100vh',
+        boxShadow: '4px 0 20px rgba(0, 0, 0, 0.08)',
+      }}
+    >
+      <Sidebar
+        style={{
+          background: 'transparent',
+          border: 'none',
+        }}
+        items={[
+          {
+            type: 'custom',
+            content: (
               <div
                 style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: '8px',
-                  fontWeight: 'bold',
-                  cursor: 'pointer',
-                  padding: '0 8px',
-                  position: 'fixed',
-                  height: '60px',
-                  backgroundColor: '#FAFAFA',
+                  height: '80px',
+                  background:
+                    'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+                  borderRadius: '0 0 20px 20px',
+                  margin: '-8px -8px 0 -8px',
+                  position: 'relative',
+                  overflow: 'hidden',
                 }}
-                onClick={() => navigate('/')}
               >
+                {/* Background decoration */}
                 <div
                   style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '8px',
-                    background:
-                      'linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.7))',
+                    position: 'absolute',
+                    top: '-50%',
+                    right: '-20%',
+                    width: '100px',
+                    height: '100px',
+                    background: 'rgba(0, 0, 0, 0.05)',
+                    borderRadius: '50%',
+                    filter: 'blur(20px)',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '-30%',
+                    left: '-10%',
+                    width: '80px',
+                    height: '80px',
+                    background: 'rgba(0, 0, 0, 0.03)',
+                    borderRadius: '50%',
+                    filter: 'blur(15px)',
+                  }}
+                />
+
+                <div
+                  style={{
                     display: 'flex',
-                    alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'white',
+                    alignItems: 'center',
+                    gap: '12px',
+                    fontWeight: '700',
+                    cursor: 'pointer',
+                    padding: '20px 16px',
+                    height: '100%',
+                    color: '#1f2937',
+                    position: 'relative',
+                    zIndex: 1,
+                    transition: 'all 0.3s ease',
+                  }}
+                  onClick={() => navigate('/')}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.02)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
                   }}
                 >
-                  S+
+                  <div
+                    style={{
+                      width: '32px',
+                      height: '32px',
+                      borderRadius: '8px',
+                      background:
+                        'linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.7))',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'white',
+                    }}
+                  >
+                    S+
+                  </div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'flex-start',
+                    }}
+                  >
+                    <span style={{ fontSize: '18px', lineHeight: '1.2' }}>
+                      shadcn-plus
+                    </span>
+                    <span
+                      style={{
+                        fontSize: '12px',
+                        opacity: '0.8',
+                        fontWeight: '400',
+                      }}
+                    >
+                      Component Library
+                    </span>
+                  </div>
                 </div>
-                <span>shadcn-plus</span>
               </div>
-            </div>
-          ),
-        },
-        ...items,
-      ]}
-      activeKeys={activeKeys}
-    />
+            ),
+          },
+          ...items,
+        ]}
+        defaultActiveKeys={defaultActiveKeys}
+      />
+    </div>
   );
 };
