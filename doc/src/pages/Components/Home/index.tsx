@@ -146,7 +146,7 @@ export const ComponentsPage = () => {
               marginBottom: '16px',
             }}
           >
-            Component Library
+            Component Overview
           </h1>
           <p
             style={{

@@ -4,6 +4,7 @@ import {
   ButtonPage,
   CardPage,
   CollapsiblePage,
+  ComponentPropertiesPage,
   DropdownMenuPage,
   FlexPage,
   HoverCardPage,
@@ -19,6 +20,7 @@ import {
 } from '@/pages';
 
 export const leftMenuRoutes = {
+  '/components/library': <ComponentPropertiesPage />,
   '/components/button': <ButtonPage />,
   '/components/flex': <FlexPage />,
   '/components/dropdown-menu': <DropdownMenuPage />,
