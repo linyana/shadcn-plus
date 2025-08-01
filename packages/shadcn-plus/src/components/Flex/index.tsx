@@ -13,6 +13,8 @@ export const Flex = ({
   children,
   gap,
   style,
+  rowGap,
+  columnGap,
   onClick,
 }: IFlexPropsType) => (
   <div
@@ -24,14 +26,13 @@ export const Flex = ({
       justifyContent,
       alignItems,
       flexWrap,
-      gap,
+      rowGap: rowGap ?? gap ?? undefined,
+      columnGap: columnGap ?? gap ?? undefined,
       flexDirection,
       display: 'flex',
       ...style,
     }}
-    onClick={
-      onClick ? (e) => onClick(e) : undefined
-    }
+    onClick={onClick ? (e) => onClick(e) : undefined}
     className={className}
   >
     {children}

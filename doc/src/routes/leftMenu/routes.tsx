@@ -14,6 +14,7 @@ import {
   SheetPage,
   SidebarPage,
   SkeletonPage,
+  TabsPage,
   TooltipPage,
 } from '@/pages';
 
@@ -25,6 +26,7 @@ export const leftMenuRoutes = {
   '/components/input': <InputPage />,
   '/components/select': <SelectPage />,
   '/components/popover': <PopoverPage />,
+  '/components/tabs': <TabsPage />,
   '/components/tooltip': <TooltipPage />,
   '/components/collapsible': <CollapsiblePage />,
   '/components/sheet': <SheetPage />,

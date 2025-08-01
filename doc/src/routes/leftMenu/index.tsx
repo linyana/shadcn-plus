@@ -83,6 +83,10 @@ export const leftMenu: ISidebarItemType[] = [
         key: '/components/accordion',
         label: 'Accordion',
       },
+      {
+        key: '/components/tabs',
+        label: 'Tabs',
+      },
     ],
   },
   {

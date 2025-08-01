@@ -19,8 +19,8 @@ export const UsageSelectComponent = () => {
 
   const languages = [
     { label: 'English', value: 'en' },
-    { label: '中文', value: 'zh' },
-    { label: '日本語', value: 'ja' },
+    { label: 'Chinese', value: 'zh' },
+    { label: 'Japanese', value: 'ja' },
     { label: 'Deutsch', value: 'de' },
     { label: 'Français', value: 'fr' },
   ];
