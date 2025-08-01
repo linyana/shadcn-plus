@@ -56,81 +56,81 @@ export const Dashboard = () => {
 
   const features = [
     {
-      title: "现代化组件",
-      description: "基于最新设计系统构建的高质量React组件，开箱即用。",
+      title: "Modern Components",
+      description: "High-quality React components built on the latest design system, ready to use out of the box.",
       icon: <Code style={{ width: "20px", height: "20px" }} />,
     },
     {
-      title: "完全可定制",
-      description: "灵活的主题系统和样式配置，轻松适配您的品牌设计。",
+      title: "Fully Customizable",
+      description: "Flexible theming system and style configuration to easily adapt to your brand design.",
       icon: <Palette style={{ width: "20px", height: "20px" }} />,
     },
     {
-      title: "TypeScript 支持",
-      description: "完整的TypeScript类型定义，提供更好的开发体验和代码提示。",
+      title: "TypeScript Support",
+      description: "Complete TypeScript type definitions for better development experience and code hints.",
       icon: <Shield style={{ width: "20px", height: "20px" }} />,
     },
     {
-      title: "响应式设计",
-      description: "所有组件都经过精心设计，完美适配各种屏幕尺寸和设备。",
+      title: "Responsive Design",
+      description: "All components are carefully designed to perfectly adapt to various screen sizes and devices.",
       icon: <Smartphone style={{ width: "20px", height: "20px" }} />,
     },
     {
-      title: "丰富的组件库",
-      description: "包含按钮、表单、导航、数据展示等各类常用组件。",
+      title: "Rich Component Library",
+      description: "Includes buttons, forms, navigation, data display and other commonly used components.",
       icon: <Layers style={{ width: "20px", height: "20px" }} />,
     },
     {
-      title: "活跃的社区",
-      description: "持续更新维护，拥有活跃的开发者社区和完善的文档。",
+      title: "Active Community",
+      description: "Continuously updated and maintained with an active developer community and comprehensive documentation.",
       icon: <Users style={{ width: "20px", height: "20px" }} />,
     },
   ]
 
   const testimonials = [
     {
-      name: "张伟",
-      role: "前端开发工程师",
-      company: "科技公司",
-      content: "shadcn-plus 大大提升了我们的开发效率，组件质量很高，文档也很完善。",
+      name: "David Zhang",
+      role: "Frontend Developer",
+      company: "Tech Company",
+      content: "shadcn-plus has greatly improved our development efficiency. The component quality is high and the documentation is comprehensive.",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     },
     {
-      name: "李小明",
-      role: "UI/UX 设计师",
-      company: "设计工作室",
-      content: "这个组件库的设计风格很现代，而且可定制性很强，完全符合我们的需求。",
+      name: "Alex Li",
+      role: "UI/UX Designer",
+      company: "Design Studio",
+      content: "This component library has a very modern design style and strong customizability, which perfectly meets our needs.",
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     },
     {
-      name: "王芳",
-      role: "产品经理",
-      company: "互联网公司",
-      content: "使用 shadcn-plus 后，我们的产品开发周期缩短了30%，团队协作也更加顺畅。",
+      name: "Sarah Wang",
+      role: "Product Manager",
+      company: "Internet Company",
+      content: "After using shadcn-plus, our product development cycle has been shortened by 30%, and team collaboration has become smoother.",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
     },
   ]
 
   const faqs = [
     {
-      question: "shadcn-plus 是免费的吗？",
-      answer: "是的，shadcn-plus 是一个开源项目，完全免费使用。您可以在 GitHub 上查看源代码并贡献代码。",
+      question: "Is shadcn-plus free?",
+      answer: "Yes, shadcn-plus is an open source project and completely free to use. You can view the source code and contribute on GitHub.",
     },
     {
-      question: "如何开始使用 shadcn-plus？",
-      answer: "您可以通过 npm 或 yarn 安装 shadcn-plus，然后按照我们的文档进行配置和使用。我们提供了详细的安装指南和示例代码。",
+      question: "How to get started with shadcn-plus?",
+      answer: "You can install shadcn-plus via npm or yarn, then configure and use it according to our documentation. We provide detailed installation guides and example code.",
     },
     {
-      question: "shadcn-plus 支持哪些框架？",
-      answer: "shadcn-plus 主要为 React 应用程序设计，支持 Next.js、Vite、Create React App 等主流 React 框架。",
+      question: "Which frameworks does shadcn-plus support?",
+      answer: "shadcn-plus is primarily designed for React applications and supports mainstream React frameworks like Next.js, Vite, Create React App, etc.",
     },
     {
-      question: "可以自定义组件样式吗？",
-      answer: "当然可以！shadcn-plus 提供了灵活的主题系统，您可以轻松自定义颜色、字体、间距等样式属性，也可以通过 CSS 变量进行深度定制。",
+      question: "Can I customize component styles?",
+      answer: "Absolutely! shadcn-plus provides a flexible theming system where you can easily customize colors, fonts, spacing and other style properties, or perform deep customization through CSS variables.",
     },
     {
-      question: "如何获得技术支持？",
-      answer: "您可以通过 GitHub Issues 提交问题，或者加入我们的社区讨论群。我们也提供详细的文档和示例代码来帮助您解决常见问题。",
+      question: "How to get technical support?",
+      answer: "You can submit issues through GitHub Issues or join our community discussion groups. We also provide detailed documentation and example code to help you solve common problems.",
     },
   ]
 
@@ -189,7 +189,7 @@ export const Dashboard = () => {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#111827")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#6b7280")}
             >
-              特性
+              Features
             </a>
             <a
               href="#testimonials"
@@ -203,7 +203,7 @@ export const Dashboard = () => {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#111827")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#6b7280")}
             >
-              用户评价
+              Testimonials
             </a>
             <a
               href="#faq"
@@ -217,7 +217,7 @@ export const Dashboard = () => {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#111827")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#6b7280")}
             >
-              常见问题
+              FAQ
             </a>
           </nav>
           <div style={{ display: "none", gap: "16px", alignItems: "center" }} className="md-flex">
@@ -253,7 +253,7 @@ export const Dashboard = () => {
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#2563eb")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#3b82f6")}
             >
-              开始使用
+              Get Started
               <ChevronRight style={{ marginLeft: "4px", width: "16px", height: "16px" }} />
             </button>
           </div>
@@ -317,7 +317,7 @@ export const Dashboard = () => {
                  }}
                  onClick={() => setMobileMenuOpen(false)}
                >
-                 特性
+                 Features
                </a>
               <a
                  href="#testimonials"
@@ -330,7 +330,7 @@ export const Dashboard = () => {
                  }}
                  onClick={() => setMobileMenuOpen(false)}
                >
-                 用户评价
+                 Testimonials
                </a>
               <a
                  href="#faq"
@@ -343,7 +343,7 @@ export const Dashboard = () => {
                  }}
                  onClick={() => setMobileMenuOpen(false)}
                >
-                 常见问题
+                 FAQ
                </a>
               <div
                 style={{
@@ -382,7 +382,7 @@ export const Dashboard = () => {
                     gap: "4px",
                   }}
                 >
-                  开始使用
+                  Get Started
                   <ChevronRight style={{ marginLeft: "4px", width: "16px", height: "16px" }} />
                 </button>
               </div>
@@ -427,7 +427,7 @@ export const Dashboard = () => {
                   display: "inline-block",
                 }}
               >
-                现代化 React 组件库
+Modern React Component Library
               </div>
               <h1
                 style={{
@@ -441,7 +441,7 @@ export const Dashboard = () => {
                   lineHeight: "1.1",
                 }}
               >
-                构建精美的用户界面，从 shadcn-plus 开始
+Build beautiful user interfaces with shadcn-plus
               </h1>
               <p
                 style={{
@@ -453,8 +453,8 @@ export const Dashboard = () => {
                   lineHeight: "1.6",
                 }}
               >
-                基于现代设计系统的高质量 React 组件库，帮助开发者快速构建美观、可访问的用户界面。
-                完全可定制，开箱即用。
+A high-quality React component library based on modern design systems, helping developers quickly build beautiful and accessible user interfaces.
+Fully customizable and ready to use.
               </p>
               <div
                 style={{
@@ -485,7 +485,7 @@ export const Dashboard = () => {
                     onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#2563eb")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#3b82f6")}
                   >
-                    开始使用
+                    Get Started
                     <ArrowRight style={{ marginLeft: "8px", width: "16px", height: "16px" }} />
                   </button>
                   <button
@@ -504,7 +504,7 @@ export const Dashboard = () => {
                     onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#f9fafb")}
                     onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "transparent")}
                   >
-                    查看文档
+                    View Documentation
                   </button>
                 </div>
                 <div
@@ -520,15 +520,15 @@ export const Dashboard = () => {
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                     <Check style={{ width: "16px", height: "16px", color: "#3b82f6" }} />
-                    <span>开源免费</span>
+                    <span>Open Source & Free</span>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                     <Check style={{ width: "16px", height: "16px", color: "#3b82f6" }} />
-                    <span>TypeScript 支持</span>
+                    <span>TypeScript Support</span>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                     <Check style={{ width: "16px", height: "16px", color: "#3b82f6" }} />
-                    <span>完全可定制</span>
+                    <span>Fully Customizable</span>
                   </div>
                 </div>
               </div>
@@ -561,7 +561,7 @@ export const Dashboard = () => {
                     color: "#64748b",
                   }}
                 >
-                  组件库预览图
+                  Component Library Preview
                 </div>
               </div>
             </motion.div>
@@ -586,10 +586,10 @@ export const Dashboard = () => {
                   color: "#111827",
                 }}
               >
-                为什么选择 shadcn-plus？
+                Why Choose shadcn-plus?
               </h2>
               <p style={{ fontSize: "1.125rem", color: "#6b7280", maxWidth: "640px", margin: "0 auto" }}>
-                我们提供现代化、高质量的 React 组件，帮助您快速构建出色的用户界面
+                We provide modern, high-quality React components to help you quickly build excellent user interfaces
               </p>
             </motion.div>
 
@@ -670,9 +670,9 @@ export const Dashboard = () => {
                   color: "#111827",
                 }}
               >
-                用户怎么说
+                What Users Say
               </h2>
-              <p style={{ fontSize: "1.125rem", color: "#6b7280" }}>来自真实用户的反馈</p>
+              <p style={{ fontSize: "1.125rem", color: "#6b7280" }}>Feedback from real users</p>
             </motion.div>
 
             <motion.div
@@ -757,9 +757,9 @@ export const Dashboard = () => {
                   color: "#111827",
                 }}
               >
-                常见问题
+                Frequently Asked Questions
               </h2>
-              <p style={{ fontSize: "1.125rem", color: "#6b7280" }}>关于 shadcn-plus 的常见问题解答</p>
+              <p style={{ fontSize: "1.125rem", color: "#6b7280" }}>Common questions and answers about shadcn-plus</p>
             </motion.div>
 
             <motion.div
@@ -819,10 +819,10 @@ export const Dashboard = () => {
               }}
             >
               <h2 style={{ fontSize: "2.25rem", fontWeight: "bold", marginBottom: "16px" }}>
-                准备开始了吗？
+                Ready to Get Started?
               </h2>
               <p style={{ fontSize: "1.125rem", marginBottom: "32px", opacity: 0.9 }}>
-                立即开始使用 shadcn-plus，构建您的下一个出色项目
+                Start using shadcn-plus today and build your next amazing project
               </p>
               <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
                 <button
@@ -844,7 +844,7 @@ export const Dashboard = () => {
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#f9fafb")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "white")}
                 >
-                  开始使用
+                  Get Started
                   <ArrowRight style={{ marginLeft: "8px", width: "16px", height: "16px" }} />
                 </button>
                 <button
@@ -863,7 +863,7 @@ export const Dashboard = () => {
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "rgba(255, 255, 255, 0.1)")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "transparent")}
                 >
-                  查看 GitHub
+                  View GitHub
                 </button>
               </div>
             </motion.div>
@@ -902,28 +902,28 @@ export const Dashboard = () => {
                 <span style={{ fontWeight: "bold", fontSize: "18px" }}>shadcn-plus</span>
               </div>
               <p style={{ color: "#9ca3af", lineHeight: "1.6" }}>
-                现代化的 React 组件库，帮助开发者构建美观、可访问的用户界面。
+                A modern React component library that helps developers build beautiful and accessible user interfaces.
               </p>
             </div>
             <div>
-              <h3 style={{ fontWeight: "600", marginBottom: "16px" }}>资源</h3>
+              <h3 style={{ fontWeight: "600", marginBottom: "16px" }}>Resources</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                  <a href="#" style={{ color: "#9ca3af", textDecoration: "none" }}>
-                   文档
+                   Documentation
                  </a>
                  <a href="#" style={{ color: "#9ca3af", textDecoration: "none" }}>
-                   组件
+                   Components
                  </a>
                  <a href="#" style={{ color: "#9ca3af", textDecoration: "none" }}>
-                   示例
+                   Examples
                  </a>
                  <a href="#" style={{ color: "#9ca3af", textDecoration: "none" }}>
-                   更新日志
+                   Changelog
                  </a>
                </div>
             </div>
             <div>
-              <h3 style={{ fontWeight: "600", marginBottom: "16px" }}>社区</h3>
+              <h3 style={{ fontWeight: "600", marginBottom: "16px" }}>Community</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                  <a href="#" style={{ color: "#9ca3af", textDecoration: "none" }}>
                    GitHub
@@ -935,7 +935,7 @@ export const Dashboard = () => {
                    Twitter
                  </a>
                  <a href="#" style={{ color: "#9ca3af", textDecoration: "none" }}>
-                   贡献指南
+                   Contributing Guide
                  </a>
                </div>
             </div>
@@ -951,13 +951,13 @@ export const Dashboard = () => {
               gap: "16px",
             }}
           >
-            <p style={{ color: "#9ca3af" }}>© 2024 shadcn-plus. 保留所有权利。</p>
+            <p style={{ color: "#9ca3af" }}>© 2024 shadcn-plus. All rights reserved.</p>
             <div style={{ display: "flex", gap: "24px" }}>
                <a href="#" style={{ color: "#9ca3af", textDecoration: "none", fontSize: "14px" }}>
-                 隐私政策
+                 Privacy Policy
                </a>
                <a href="#" style={{ color: "#9ca3af", textDecoration: "none", fontSize: "14px" }}>
-                 使用条款
+                 Terms of Service
                </a>
              </div>
           </div>
