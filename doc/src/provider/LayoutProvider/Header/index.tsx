@@ -93,7 +93,7 @@ export const Header = () => {
               ((e.currentTarget as HTMLElement).style.color = '#6b7280')
             }
             onClick={() => {
-              navigate('/components');
+              navigate('/components/overview');
             }}
           >
             Components
@@ -122,7 +122,7 @@ export const Header = () => {
                 '#3b82f6')
             }
             onClick={() => {
-              navigate('/components');
+              navigate('/components/overview');
             }}
           >
             Get Started

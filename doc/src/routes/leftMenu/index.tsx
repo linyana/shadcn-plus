@@ -3,6 +3,21 @@ import { ISidebarItemType } from 'shadcn-plus/types';
 export const leftMenu: ISidebarItemType[] = [
   {
     type: 'group',
+    label: 'Overview',
+    separator: true,
+    children: [
+      {
+        key: '/components/overview',
+        label: 'Overview',
+      },
+      {
+        key: '/components/library',
+        label: 'Library',
+      },
+    ],
+  },
+  {
+    type: 'group',
     label: 'General',
     separator: true,
     children: [

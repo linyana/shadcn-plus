@@ -255,7 +255,7 @@ export const Dashboard = () => {
                         '#3b82f6')
                     }
                     onClick={() => {
-                      navigate('/components');
+                      navigate('/components/overview');
                     }}
                   >
                     Get Started
@@ -289,7 +289,7 @@ export const Dashboard = () => {
                         'transparent')
                     }
                     onClick={() => {
-                      navigate('/components');
+                      navigate('/components/overview');
                     }}
                   >
                     View Documentation
@@ -756,7 +756,7 @@ export const Dashboard = () => {
                       'white')
                   }
                   onClick={() => {
-                    navigate('/components');
+                    navigate('/components/overview');
                   }}
                 >
                   Get Started
