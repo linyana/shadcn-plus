@@ -4,6 +4,7 @@ export type ICustomItemType = {
   type: 'custom';
   content: React.ReactNode;
   key?: string;
+  children: undefined;
 };
 
 export type IGroupItemType = {

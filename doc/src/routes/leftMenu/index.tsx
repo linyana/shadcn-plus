@@ -1,25 +1,42 @@
 import { ISidebarItemType } from 'shadcn-plus/types';
+import { 
+  Home, 
+  Package, 
+  Layers, 
+  Database, 
+  Eye, 
+  MessageSquare,
+  MousePointer,
+  Layout,
+  Menu,
+  Type,
+  ChevronDown,
+  Square,
+  Zap,
+  Bell,
+  Folder,
+  Sheet as SheetIcon,
+  HelpCircle,
+  MoreHorizontal,
+  Loader
+} from 'lucide-react';
 
 export const leftMenu: ISidebarItemType[] = [
   {
-    type: 'group',
+    key: '/components/overview',
     label: 'Overview',
+    icon: Home,
     separator: true,
-    children: [
-      {
-        key: '/components/overview',
-        label: 'Overview',
-      },
-      {
-        key: '/components/library',
-        label: 'Library',
-      },
-    ],
   },
   {
-    type: 'group',
+    key: '/components/library',
+    label: 'Library',
+    icon: Package,
+  },
+  {
+    key: '/components/general',
     label: 'General',
-    separator: true,
+    icon: MousePointer,
     children: [
       {
         key: '/components/button',
@@ -28,9 +45,9 @@ export const leftMenu: ISidebarItemType[] = [
     ],
   },
   {
-    type: 'group',
+    key: '/components/layout',
     label: 'Layout',
-    separator: true,
+    icon: Layout,
     children: [
       {
         key: '/components/flex',
@@ -47,9 +64,9 @@ export const leftMenu: ISidebarItemType[] = [
     ],
   },
   {
-    type: 'group',
+    key: '/components/data-entity',
     label: 'Data Entity',
-    separator: true,
+    icon: Database,
     children: [
       {
         key: '/components/input',
@@ -62,9 +79,9 @@ export const leftMenu: ISidebarItemType[] = [
     ],
   },
   {
-    type: 'group',
+    key: '/components/data-display',
     label: 'Data Display',
-    separator: true,
+    icon: Eye,
     children: [
       {
         key: '/components/popover',
@@ -105,9 +122,9 @@ export const leftMenu: ISidebarItemType[] = [
     ],
   },
   {
-    type: 'group',
+    key: '/components/feedback',
     label: 'Feedback',
-    separator: true,
+    icon: MessageSquare,
     children: [
       {
         key: '/components/skeleton',

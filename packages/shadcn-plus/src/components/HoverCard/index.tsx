@@ -9,7 +9,7 @@ export const HoverCard = ({
 }: IHoverCardType) => { 
   return (
     <ShadcnHoverCard {...props}>
-      <HoverCardTrigger>{trigger}</HoverCardTrigger>
+      <HoverCardTrigger asChild>{trigger}</HoverCardTrigger>
       <HoverCardContent>
         {children}
       </HoverCardContent>
