@@ -2,23 +2,11 @@ import { ISidebarItemType } from 'shadcn-plus/types';
 import { 
   Home, 
   Package, 
-  Layers, 
   Database, 
   Eye, 
   MessageSquare,
   MousePointer,
   Layout,
-  Menu,
-  Type,
-  ChevronDown,
-  Square,
-  Zap,
-  Bell,
-  Folder,
-  Sheet as SheetIcon,
-  HelpCircle,
-  MoreHorizontal,
-  Loader
 } from 'lucide-react';
 
 export const leftMenu: ISidebarItemType[] = [

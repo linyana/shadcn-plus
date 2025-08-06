@@ -6,7 +6,7 @@ import {
   SidebarMenuSub,
 } from '@/components/ui/sidebar';
 import { ISidebarItemType } from '@/types';
-import { Collapsible } from '@/components';
+import { Collapsible } from '@/components/Collapsible';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Show } from '@/components/Show';
@@ -19,38 +19,20 @@ export const MenuItem = ({
 }: {
   item: ISidebarItemType;
   activeKeys?: string[];
-  setActiveKeys?: (
-    args: string[],
-    close?: boolean,
-  ) => void;
+  setActiveKeys?: (args: string[], close?: boolean) => void;
   expandedKeys?: string[];
 }) => {
-  const isActive = activeKeys.includes(
-    item.key as string,
-  );
+  const isActive = activeKeys.includes(item.key as string);
   if ('type' in item) {
     if (item.type === 'group') {
       return (
         <>
-          <Show
-            hideWhen={null}
-            condition={
-              item.label || item.separator
-            }
-          >
+          <Show hideWhen={null} condition={item.label || item.separator}>
             <SidebarMenuItem>
-              <Show
-                hideWhen={null}
-                condition={item.label}
-              >
-                <SidebarGroupLabel>
-                  {item.label}
-                </SidebarGroupLabel>
+              <Show hideWhen={null} condition={item.label}>
+                <SidebarGroupLabel>{item.label}</SidebarGroupLabel>
               </Show>
-              <Show
-                hideWhen={null}
-                condition={item.separator}
-              >
+              <Show hideWhen={null} condition={item.separator}>
                 <Separator />
               </Show>
             </SidebarMenuItem>
@@ -62,10 +44,7 @@ export const MenuItem = ({
                 key={child.key}
                 setActiveKeys={setActiveKeys}
                 activeKeys={activeKeys}
-                expandedKeys={[
-                  ...expandedKeys,
-                  child.key as string,
-                ]}
+                expandedKeys={[...expandedKeys, child.key as string]}
               />
             ))}
           </SidebarMenuItem>
@@ -74,11 +53,7 @@ export const MenuItem = ({
     }
 
     if (item.type === 'custom') {
-      return (
-        <SidebarMenuItem>
-          {item.content}
-        </SidebarMenuItem>
-      );
+      return <SidebarMenuItem>{item.content}</SidebarMenuItem>;
     }
   }
 
@@ -87,19 +62,12 @@ export const MenuItem = ({
       <>
         <Collapsible
           key={item.key}
-          open={activeKeys.includes(
-            item.key as string,
-          )}
+          open={activeKeys.includes(item.key as string)}
           onOpenChange={(open) => {
-            setActiveKeys?.(
-              [item.key as string],
-              !open,
-            );
+            setActiveKeys?.([item.key as string], !open);
           }}
           trigger={
-            <SidebarMenuButton
-              tooltip={item.label}
-            >
+            <SidebarMenuButton tooltip={item.label}>
               {item.icon && <item.icon />}
               <span>{item.label}</span>
               <ChevronRight
@@ -118,10 +86,7 @@ export const MenuItem = ({
                 key={subItem.key}
                 setActiveKeys={setActiveKeys}
                 activeKeys={activeKeys}
-                expandedKeys={[
-                  ...expandedKeys,
-                  subItem.key as string,
-                ]}
+                expandedKeys={[...expandedKeys, subItem.key as string]}
               />
             ))}
           </SidebarMenuSub>
@@ -134,15 +99,10 @@ export const MenuItem = ({
     <>
       <SidebarMenuButton
         disabled={item.disabled}
-        isActive={activeKeys.includes(
-          item.key as string,
-        )}
+        isActive={activeKeys.includes(item.key as string)}
         onClick={(event) => {
           item.onClick?.(event);
-          setActiveKeys?.([
-            ...expandedKeys,
-            item.key as string,
-          ]);
+          setActiveKeys?.([...expandedKeys, item.key as string]);
         }}
       >
         {item.icon && <item.icon />}

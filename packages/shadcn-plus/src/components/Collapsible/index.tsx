@@ -22,7 +22,7 @@ export const Collapsible = ({
     <ShadcnCollapsible open={open} onOpenChange={setOpen} {...props}>
       <CollapsibleTrigger asChild>{trigger}</CollapsibleTrigger>
       <AnimatedDisplayWrapper activeKey={open}>
-        <ShadcnCollapsibleContent asChild forceMount>
+        <ShadcnCollapsibleContent asChild>
           {children}
         </ShadcnCollapsibleContent>
       </AnimatedDisplayWrapper>
