@@ -1,5 +1,7 @@
 # shadcn-plus ⚡️
 
+🌐 **Documentation**: 👉 [Shadcn Plus Document](https://linyana.github.io/shadcn-plus)
+
 🚀 Extension library based on [shadcn/ui](https://ui.shadcn.com/). Made to help you develop faster by removing the setup hassle, letting you focus on building features.
 
 ✨ Includes practical extended props and reusable components for everyday development needs.
