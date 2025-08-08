@@ -7,30 +7,45 @@ export const AnimatedHeightWrapper = ({
   children: React.ReactNode;
   activeKey: string;
 }) => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState<number | undefined>(undefined);
+
+  const [height, setHeight] = useState<number | 'auto'>('auto');
+  const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
-    const el = innerRef.current;
-    if (!el) return;
+    const wrapperEl = wrapperRef.current;
+    const innerEl = innerRef.current;
+    if (!wrapperEl || !innerEl) return;
 
-    const updateHeight = () => setHeight(el.scrollHeight);
+    const currentHeight = wrapperEl.getBoundingClientRect().height;
+    setHeight(currentHeight);
+    setShouldAnimate(true);
 
-    updateHeight();
+    requestAnimationFrame(() => {
+      if (!innerEl) return;
 
-    const resizeObserver = new ResizeObserver(updateHeight);
-    resizeObserver.observe(el);
+      const newHeight = innerEl.scrollHeight;
+      setHeight(newHeight);
 
-    return () => resizeObserver.disconnect();
+      const timeout = setTimeout(() => {
+        setHeight('auto');
+        setShouldAnimate(false);
+      }, 300);
+
+      return () => clearTimeout(timeout);
+    });
   }, [activeKey]);
 
   return (
     <div
+      ref={wrapperRef}
       style={{
-        height: height ? `${height}px` : 'auto',
+        height: typeof height === 'number' ? `${height}px` : height,
         overflow: 'hidden',
-        transition:
-          'height var(--transition-duration-default) var(--transition-easing-default)',
+        transition: shouldAnimate
+          ? 'height var(--transition-duration-default) var(--transition-easing-default)'
+          : 'none',
       }}
     >
       <div ref={innerRef}>{children}</div>

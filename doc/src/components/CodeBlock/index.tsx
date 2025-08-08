@@ -69,6 +69,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
         style={{
           maxHeight: 600,
           overflowY: 'auto',
+          backgroundColor: 'rgb(246, 248, 250)'
         }}
       >
         <Highlight theme={themes.github} code={code} language={language}>

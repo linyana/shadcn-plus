@@ -8,40 +8,48 @@ export const AnimatedDisplayWrapper = ({
   activeKey: boolean;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState<number | undefined>(undefined);
-  const [hasMounted, setHasMounted] = useState(false); // ✅ 加这一行
+  const [height, setHeight] = useState<string | number>('0px');
+  const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
-    if (ref.current) {
-      const el = ref.current;
+    const el = ref.current;
+    if (!el) return;
 
+    if (activeKey) {
+      const currentHeight = el.getBoundingClientRect().height;
+      setHeight(currentHeight);
+      setShouldAnimate(true);
 
-      if (activeKey) {
-        requestAnimationFrame(() => {
-          setHeight(el.scrollHeight);
-          setTimeout(() => setHeight(undefined), 300);
-        });
-      } else if (!hasMounted) {
-        requestAnimationFrame(() => {
-          setHeight(0);
-        });
-        setHasMounted(true);
-      } else {
-        setHeight(el.scrollHeight);
-        requestAnimationFrame(() => {
-          setHeight(0);
-        });
-      }
+      requestAnimationFrame(() => {
+        const scrollHeight = el.scrollHeight;
+        setHeight(scrollHeight);
+
+        const timeout = setTimeout(() => {
+          setHeight('auto');
+          setShouldAnimate(false);
+        }, 300);
+
+        return () => clearTimeout(timeout);
+      });
+    } else {
+      const currentHeight = el.getBoundingClientRect().height;
+      setHeight(currentHeight);
+      setShouldAnimate(true);
+
+      requestAnimationFrame(() => {
+        setHeight(0);
+      });
     }
   }, [activeKey]);
 
   return (
     <div
       style={{
-        height: height !== undefined ? `${height}px` : 'auto',
+        height: typeof height === 'number' ? `${height}px` : height,
         overflow: 'hidden',
-        transition:
-          'height var(--transition-duration-default) var(--transition-easing-default)',
+        transition: shouldAnimate
+          ? 'height var(--transition-duration-default) var(--transition-easing-default)'
+          : 'none',
       }}
     >
       <div ref={ref}>{children}</div>
