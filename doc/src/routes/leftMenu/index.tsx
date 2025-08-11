@@ -1,12 +1,13 @@
 import { ISidebarItemType } from 'shadcn-plus/types';
-import { 
-  Home, 
-  Package, 
-  Database, 
-  Eye, 
+import {
+  Home,
+  Package,
+  Database,
+  Eye,
   MessageSquare,
   MousePointer,
   Layout,
+  Palette,
 } from 'lucide-react';
 
 export const leftMenu: ISidebarItemType[] = [
@@ -20,6 +21,17 @@ export const leftMenu: ISidebarItemType[] = [
     key: '/components/library',
     label: 'Library',
     icon: Package,
+  },
+  {
+    key: '/components/theme',
+    label: 'Theme',
+    icon: Palette,
+    children: [
+      {
+        key: '/components/theme-provider',
+        label: 'Theme Provider',
+      },
+    ],
   },
   {
     key: '/components/general',

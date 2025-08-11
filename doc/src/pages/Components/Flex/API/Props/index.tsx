@@ -1,10 +1,10 @@
 import { Badge } from 'shadcn-plus';
 
 export const FlexProps = [
-  // Layout Direction
+  // Layout flexDirection
   {
     property: 'flexDirection?',
-    description: 'Sets the direction of the main axis.',
+    description: 'Sets the flexDirection of the main axis.',
     type: (
       <>
         <Badge variant="secondary">row</Badge> {' | '}
@@ -15,7 +15,7 @@ export const FlexProps = [
     ),
     default: '-',
   },
-  
+
   // Alignment
   {
     property: 'justifyContent?',
@@ -54,10 +54,10 @@ export const FlexProps = [
     ),
     default: "'normal'",
   },
-  
+
   // Wrapping
   {
-    property: 'flexWrap?',
+    property: 'wrap?',
     description: 'Controls whether items wrap to new lines.',
     type: (
       <>
@@ -68,7 +68,7 @@ export const FlexProps = [
     ),
     default: "'nowrap'",
   },
-  
+
   // Spacing
   {
     property: 'gap?',
@@ -88,7 +88,7 @@ export const FlexProps = [
     type: 'string',
     default: '-',
   },
-  
+
   // Dimensions
   {
     property: 'width?',
@@ -102,7 +102,7 @@ export const FlexProps = [
     type: 'string',
     default: "'auto'",
   },
-  
+
   // Margin
   {
     property: 'margin?',
@@ -134,7 +134,7 @@ export const FlexProps = [
     type: 'string',
     default: '-',
   },
-  
+
   // Padding
   {
     property: 'padding?',
@@ -166,7 +166,7 @@ export const FlexProps = [
     type: 'string',
     default: '-',
   },
-  
+
   // Content & Events
   {
     property: 'children?',
@@ -180,7 +180,7 @@ export const FlexProps = [
     type: 'MouseEventHandler<HTMLDivElement>',
     default: '-',
   },
-  
+
   // Styling
   {
     property: 'style?',

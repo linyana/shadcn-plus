@@ -1,3 +1,6 @@
+// Theme
+export * from './ThemeProvider/types';
+
 // General
 export * from './Button/types';
 export * from './Typography/types';

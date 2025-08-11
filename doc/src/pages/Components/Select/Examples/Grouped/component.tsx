@@ -74,22 +74,36 @@ export const GroupedSelectComponent = () => {
   return (
     <Flex gap="16px" flexDirection="column" style={{ width: '300px' }}>
       <div>
-        <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '8px',
+            fontSize: '14px',
+            fontWeight: '500',
+          }}
+        >
           Food Categories
         </label>
-        <Select 
-          options={groupedOptions} 
+        <Select
+          options={groupedOptions}
           placeholder="Select food item"
           triggerProps={{ className: 'w-full' }}
         />
       </div>
-      
+
       <div>
-        <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: '8px',
+            fontSize: '14px',
+            fontWeight: '500',
+          }}
+        >
           Countries by Region
         </label>
-        <Select 
-          options={countryOptions} 
+        <Select
+          options={countryOptions}
           placeholder="Select country"
           triggerProps={{ className: 'w-full' }}
         />

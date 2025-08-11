@@ -25,7 +25,7 @@ export const CustomContentTabsComponent = () => {
         content: (
           <div style={{ padding: '16px 0' }}>
             <h4 style={{ marginBottom: '16px', fontWeight: '600' }}>Personal Information</h4>
-            <Flex direction="column" gap="16px">
+            <Flex flexDirection="column" gap="16px">
               <div>
                 <label style={{ display: 'block', marginBottom: '4px', fontSize: '14px' }}>Name</label>
                 <Input placeholder="Enter your name" />

@@ -1,3 +1,4 @@
-export * from './Dashboard'
-export * from './Components'
-export { default as ComponentPropertiesPage } from './ComponentProperties'
+export * from './Dashboard';
+export * from './Components';
+export * from './Test';
+export * from './ComponentProperties';

@@ -32,23 +32,32 @@ export const UsageSelectComponent = () => {
   ];
 
   const handleChange = (field: string) => (value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
     <Flex gap="24px" flexDirection="column" style={{ maxWidth: '500px' }}>
       {/* Form Example */}
       <Card style={{ padding: '24px' }}>
-        <Text style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>
+        <Text
+          style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}
+        >
           User Preferences Form
         </Text>
-        
+
         <Flex gap="16px" flexDirection="column">
           <div>
-            <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>
+            <label
+              style={{
+                display: 'block',
+                marginBottom: '8px',
+                fontSize: '14px',
+                fontWeight: '500',
+              }}
+            >
               Country *
             </label>
-            <Select 
+            <Select
               options={countries}
               placeholder="Select your country"
               value={formData.country}
@@ -57,12 +66,19 @@ export const UsageSelectComponent = () => {
               triggerProps={{ className: 'w-full' }}
             />
           </div>
-          
+
           <div>
-            <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>
+            <label
+              style={{
+                display: 'block',
+                marginBottom: '8px',
+                fontSize: '14px',
+                fontWeight: '500',
+              }}
+            >
               Preferred Language
             </label>
-            <Select 
+            <Select
               options={languages}
               placeholder="Choose language"
               value={formData.language}
@@ -70,12 +86,19 @@ export const UsageSelectComponent = () => {
               triggerProps={{ className: 'w-full' }}
             />
           </div>
-          
+
           <div>
-            <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '500' }}>
+            <label
+              style={{
+                display: 'block',
+                marginBottom: '8px',
+                fontSize: '14px',
+                fontWeight: '500',
+              }}
+            >
               Theme
             </label>
-            <Select 
+            <Select
               options={themes}
               value={formData.theme}
               onValueChange={handleChange('theme')}
@@ -83,23 +106,23 @@ export const UsageSelectComponent = () => {
             />
           </div>
         </Flex>
-        
+
         {/* Display current values */}
-        <div style={{ 
-          marginTop: '20px', 
-          padding: '12px', 
-          backgroundColor: '#f8f9fa', 
-          borderRadius: '8px',
-          fontSize: '14px'
-        }}>
+        <div
+          style={{
+            marginTop: '20px',
+            padding: '12px',
+            backgroundColor: '#f8f9fa',
+            borderRadius: '8px',
+            fontSize: '14px',
+          }}
+        >
           <strong>Current Values:</strong>
           <pre style={{ margin: '8px 0 0 0', fontFamily: 'monospace' }}>
             {JSON.stringify(formData, null, 2)}
           </pre>
         </div>
       </Card>
-      
-
     </Flex>
   );
 };

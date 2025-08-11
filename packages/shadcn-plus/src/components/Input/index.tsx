@@ -6,6 +6,8 @@ import { Input as ShadcnInput } from '@/components/ui/input';
 import { checkValidate } from './utils';
 import { INPUT_CLASS_MAP } from './constants';
 import { Show } from '../Show';
+import { useComponentTheme } from '@/hooks';
+import { cn, sn } from '@/lib/utils';
 
 export const Input = ({
   status: externalStatus,
@@ -14,7 +16,6 @@ export const Input = ({
   label,
   validateTrigger = 'onBlur',
   // Native
-  className,
   id,
   value,
   onChange,
@@ -28,6 +29,8 @@ export const Input = ({
   >(null);
   const status = externalStatus || internalStatus;
   const message = externalMessage || internalMessage;
+
+  const theme = useComponentTheme('Input');
 
   const triggerValidate = (value: string) => {
     if (rules) {
@@ -72,13 +75,15 @@ export const Input = ({
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={[
-          className,
+        {...props}
+        className={cn(
+          theme.className,
           status
             ? INPUT_CLASS_MAP[status].input
             : 'focus-visible:border-ring focus-visible:ring-ring/50',
-        ].join(' ')}
-        {...props}
+          props.className,
+        )}
+        style={sn(theme.style, props.style)}
       />
       <Show hideWhen={null} condition={message} animated>
         <p

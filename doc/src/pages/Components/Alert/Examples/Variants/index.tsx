@@ -23,7 +23,11 @@ export const VariantsAlertComponent = () => {
       
       {/* Destructive variant */}
       <Alert
-        className="border-red-200 bg-red-50 text-red-800 [&>svg]:text-red-600"
+        style={{
+          borderColor: '#fecaca',
+          backgroundColor: '#fef2f2',
+          color: '#991b1b'
+        }}
         icon={XCircle}
         header="Error Alert"
         description="Something went wrong. Please try again later."
@@ -31,7 +35,11 @@ export const VariantsAlertComponent = () => {
       
       {/* Success variant */}
       <Alert
-        className="border-green-200 bg-green-50 text-green-800 [&>svg]:text-green-600"
+        style={{
+          borderColor: '#bbf7d0',
+          backgroundColor: '#f0fdf4',
+          color: '#166534'
+        }}
         icon={CheckCircle}
         header="Success Alert"
         description="Operation completed successfully!"
@@ -39,7 +47,11 @@ export const VariantsAlertComponent = () => {
       
       {/* Warning variant */}
       <Alert
-        className="border-yellow-200 bg-yellow-50 text-yellow-800 [&>svg]:text-yellow-600"
+        style={{
+          borderColor: '#fde68a',
+          backgroundColor: '#fffbeb',
+          color: '#92400e'
+        }}
         icon={AlertTriangle}
         header="Warning Alert"
         description="Please review your settings before proceeding."
@@ -47,7 +59,11 @@ export const VariantsAlertComponent = () => {
       
       {/* Info variant */}
       <Alert
-        className="border-blue-200 bg-blue-50 text-blue-800 [&>svg]:text-blue-600"
+        style={{
+          borderColor: '#bfdbfe',
+          backgroundColor: '#eff6ff',
+          color: '#1e40af'
+        }}
         icon={Info}
         header="Info Alert"
         description="Here's some helpful information for you."

@@ -12,6 +12,7 @@ export * from './Input';
 export * from './Select';
 export * from './Popover';
 export * from './Tabs';
+export * from './ThemeProvider';
 export * from './Tooltip';
 export * from './Sheet';
 export * from './Separator';
