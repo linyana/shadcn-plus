@@ -3,11 +3,13 @@ import { ArrowLeft, ArrowRight, ArrowUp, ArrowDown } from 'lucide-react';
 
 export const SideSheetComponent = () => {
   return (
-    <Flex gap="16px" flexWrap="wrap">
+    <Flex gap="16px" wrap="wrap">
       <Sheet
         trigger={
           <Button variant="outline">
-            <ArrowLeft style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+            <ArrowLeft
+              style={{ width: '16px', height: '16px', marginRight: '8px' }}
+            />
             Left
           </Button>
         }
@@ -26,7 +28,9 @@ export const SideSheetComponent = () => {
       <Sheet
         trigger={
           <Button variant="outline">
-            <ArrowRight style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+            <ArrowRight
+              style={{ width: '16px', height: '16px', marginRight: '8px' }}
+            />
             Right
           </Button>
         }
@@ -37,7 +41,8 @@ export const SideSheetComponent = () => {
         <Card style={{ padding: '16px', marginTop: '16px' }}>
           <p style={{ fontSize: '14px', color: '#6b7280' }}>
             This is a sheet that slides in from the right side of the screen.
-            This is the default behavior and is commonly used for settings or details.
+            This is the default behavior and is commonly used for settings or
+            details.
           </p>
         </Card>
       </Sheet>
@@ -45,7 +50,9 @@ export const SideSheetComponent = () => {
       <Sheet
         trigger={
           <Button variant="outline">
-            <ArrowUp style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+            <ArrowUp
+              style={{ width: '16px', height: '16px', marginRight: '8px' }}
+            />
             Top
           </Button>
         }
@@ -55,8 +62,8 @@ export const SideSheetComponent = () => {
       >
         <Card style={{ padding: '16px', marginTop: '16px' }}>
           <p style={{ fontSize: '14px', color: '#6b7280' }}>
-            This is a sheet that slides in from the top of the screen.
-            Great for notifications or quick actions.
+            This is a sheet that slides in from the top of the screen. Great for
+            notifications or quick actions.
           </p>
         </Card>
       </Sheet>
@@ -64,7 +71,9 @@ export const SideSheetComponent = () => {
       <Sheet
         trigger={
           <Button variant="outline">
-            <ArrowDown style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+            <ArrowDown
+              style={{ width: '16px', height: '16px', marginRight: '8px' }}
+            />
             Bottom
           </Button>
         }

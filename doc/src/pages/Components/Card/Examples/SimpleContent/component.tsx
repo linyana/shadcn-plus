@@ -3,7 +3,7 @@ import { Heart, MessageCircle, Share } from 'lucide-react';
 
 export const SimpleContentCardComponent = () => {
   return (
-    <Flex gap="16px" flexWrap="wrap">
+    <Flex gap="16px" wrap="wrap">
       <Card style={{ width: 280, padding: '0' }}>
         <img
           src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=200&fit=crop"
@@ -25,7 +25,7 @@ export const SimpleContentCardComponent = () => {
           Discover the breathtaking beauty of mountain landscapes and enjoy the
           serenity of nature.
         </p>
-        <Flex gap="16px" alignItems="center" width='100%'>
+        <Flex gap="16px" alignItems="center" width="100%">
           <Flex gap="4px" alignItems="center" style={{ cursor: 'pointer' }}>
             <Heart style={{ width: '16px', height: '16px' }} />
             <span style={{ fontSize: '14px' }}>24</span>

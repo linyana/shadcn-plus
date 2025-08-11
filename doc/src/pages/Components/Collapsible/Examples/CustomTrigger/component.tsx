@@ -13,16 +13,18 @@ export const CustomTriggerCollapsibleComponent = () => {
         open={settingsOpen}
         onOpenChange={setSettingsOpen}
         trigger={
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '12px',
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s'
-          }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '12px',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              transition: 'background-color 0.2s',
+            }}
+          >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Settings style={{ width: '16px', height: '16px' }} />
               <span style={{ fontWeight: '500' }}>Settings</span>
@@ -38,15 +40,33 @@ export const CustomTriggerCollapsibleComponent = () => {
       >
         <Card style={{ padding: '16px', marginTop: '8px', marginLeft: '24px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
               <span style={{ fontSize: '14px' }}>Dark Mode</span>
               <Badge variant="outline">Enabled</Badge>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
               <span style={{ fontSize: '14px' }}>Notifications</span>
               <Badge variant="outline">On</Badge>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
               <span style={{ fontSize: '14px' }}>Auto-save</span>
               <Badge variant="outline">Off</Badge>
             </div>
@@ -58,16 +78,18 @@ export const CustomTriggerCollapsibleComponent = () => {
         open={profileOpen}
         onOpenChange={setProfileOpen}
         trigger={
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '12px',
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s'
-          }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '12px',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              transition: 'background-color 0.2s',
+            }}
+          >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <User style={{ width: '16px', height: '16px' }} />
               <span style={{ fontWeight: '500' }}>Profile Information</span>
@@ -99,16 +121,18 @@ export const CustomTriggerCollapsibleComponent = () => {
         open={notificationsOpen}
         onOpenChange={setNotificationsOpen}
         trigger={
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '12px',
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s'
-          }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '12px',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              transition: 'background-color 0.2s',
+            }}
+          >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Bell style={{ width: '16px', height: '16px' }} />
               <span style={{ fontWeight: '500' }}>Recent Notifications</span>
@@ -123,21 +147,51 @@ export const CustomTriggerCollapsibleComponent = () => {
         }
       >
         <Card style={{ padding: '16px', marginTop: '8px', marginLeft: '24px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-              <div style={{ width: '8px', height: '8px', backgroundColor: '#3b82f6', borderRadius: '50%', marginTop: '8px' }}></div>
+          <div
+            style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
+          >
+            <div
+              style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}
+            >
+              <div
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  backgroundColor: '#3b82f6',
+                  borderRadius: '50%',
+                  marginTop: '8px',
+                }}
+              ></div>
               <div>
-                <p style={{ fontSize: '14px', fontWeight: '500' }}>System Update Available</p>
-                <p style={{ fontSize: '12px', color: '#6b7280' }}>2 hours ago</p>
+                <p style={{ fontSize: '14px', fontWeight: '500' }}>
+                  System Update Available
+                </p>
+                <p style={{ fontSize: '12px', color: '#6b7280' }}>
+                  2 hours ago
+                </p>
               </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-               <div style={{ width: '8px', height: '8px', backgroundColor: '#10b981', borderRadius: '50%', marginTop: '8px' }}></div>
-               <div>
-                 <p style={{ fontSize: '14px', fontWeight: '500' }}>Backup Completed Successfully</p>
-                 <p style={{ fontSize: '12px', color: '#6b7280' }}>5 hours ago</p>
-               </div>
-             </div>
+            <div
+              style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}
+            >
+              <div
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  backgroundColor: '#10b981',
+                  borderRadius: '50%',
+                  marginTop: '8px',
+                }}
+              ></div>
+              <div>
+                <p style={{ fontSize: '14px', fontWeight: '500' }}>
+                  Backup Completed Successfully
+                </p>
+                <p style={{ fontSize: '12px', color: '#6b7280' }}>
+                  5 hours ago
+                </p>
+              </div>
+            </div>
           </div>
         </Card>
       </Collapsible>

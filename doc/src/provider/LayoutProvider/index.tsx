@@ -11,6 +11,13 @@ export const LayoutProvider = ({ children }: IPropsType) => {
   const { pathname } = useLocation();
 
   const isDashboard = pathname === '/';
+  const isTest = pathname === '/test';
+
+  if(isTest){
+    return (
+      <>{children}</>
+    )
+  }
 
   if (isDashboard) {
     return (

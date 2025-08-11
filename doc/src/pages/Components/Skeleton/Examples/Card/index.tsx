@@ -12,7 +12,7 @@ export const CardSkeletonExample = () => {
 
 export const CardSkeletonComponent = () => {
   return (
-    <Flex gap="16px" flexWrap="wrap">
+    <Flex gap="16px" wrap="wrap">
       {/* Product card skeleton */}
       <Card style={{ padding: '16px', width: '280px' }}>
         <Flex flexDirection="column" gap="12px">

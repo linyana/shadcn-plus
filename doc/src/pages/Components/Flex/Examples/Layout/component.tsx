@@ -6,8 +6,20 @@ export const LayoutFlexComponent = () => {
     <Flex flexDirection="column" gap="16px">
       {/* Header Layout */}
       <Card style={{ padding: '16px' }}>
-        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Header Layout</h4>
-        <Flex justifyContent="space-between" alignItems="center" style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px' }}>
+        <h4
+          style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}
+        >
+          Header Layout
+        </h4>
+        <Flex
+          justifyContent="space-between"
+          alignItems="center"
+          style={{
+            backgroundColor: '#f3f4f6',
+            padding: '12px',
+            borderRadius: '4px',
+          }}
+        >
           <div style={{ fontSize: '18px', fontWeight: '600' }}>Logo</div>
           <Flex gap="12px" alignItems="center">
             <Button variant="ghost" size="sm">
@@ -25,8 +37,20 @@ export const LayoutFlexComponent = () => {
 
       {/* Form Layout */}
       <Card style={{ padding: '16px' }}>
-        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Form Layout</h4>
-        <Flex flexDirection="column" gap="12px" style={{ backgroundColor: '#f3f4f6', padding: '16px', borderRadius: '4px' }}>
+        <h4
+          style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}
+        >
+          Form Layout
+        </h4>
+        <Flex
+          flexDirection="column"
+          gap="12px"
+          style={{
+            backgroundColor: '#f3f4f6',
+            padding: '16px',
+            borderRadius: '4px',
+          }}
+        >
           <Flex gap="12px">
             <Input placeholder="First Name" style={{ flex: 1 }} />
             <Input placeholder="Last Name" style={{ flex: 1 }} />
@@ -41,13 +65,50 @@ export const LayoutFlexComponent = () => {
 
       {/* Card Grid Layout */}
       <Card style={{ padding: '16px' }}>
-        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Card Grid Layout</h4>
-        <Flex flexWrap="wrap" gap="12px" style={{ backgroundColor: '#f3f4f6', padding: '16px', borderRadius: '4px' }}>
+        <h4
+          style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}
+        >
+          Card Grid Layout
+        </h4>
+        <Flex
+          flexWrap="wrap"
+          gap="12px"
+          style={{
+            backgroundColor: '#f3f4f6',
+            padding: '16px',
+            borderRadius: '4px',
+          }}
+        >
           {[1, 2, 3, 4].map((item) => (
-            <Card key={item} style={{ padding: '16px', minWidth: '150px', flex: '1 1 calc(50% - 6px)' }}>
-              <h5 style={{ fontSize: '14px', fontWeight: '600', marginBottom: '8px' }}>Card {item}</h5>
-              <p style={{ fontSize: '12px', color: '#666', marginBottom: '12px' }}>Some description text</p>
-              <Button size="sm" style={{ width: '100%' }}>Action</Button>
+            <Card
+              key={item}
+              style={{
+                padding: '16px',
+                minWidth: '150px',
+                flex: '1 1 calc(50% - 6px)',
+              }}
+            >
+              <h5
+                style={{
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  marginBottom: '8px',
+                }}
+              >
+                Card {item}
+              </h5>
+              <p
+                style={{
+                  fontSize: '12px',
+                  color: '#666',
+                  marginBottom: '12px',
+                }}
+              >
+                Some description text
+              </p>
+              <Button size="sm" style={{ width: '100%' }}>
+                Action
+              </Button>
             </Card>
           ))}
         </Flex>

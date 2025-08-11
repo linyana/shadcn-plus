@@ -39,7 +39,7 @@ import {
   AlertTriangle,
 } from 'lucide-react';
 
-const ComponentPropertiesPage: React.FC = () => {
+export const ComponentPropertiesPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
@@ -780,8 +780,8 @@ const ComponentPropertiesPage: React.FC = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             style={{
               width: '100%',
-              marginBottom: 12
-             }}
+              marginBottom: 12,
+            }}
           />
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span
@@ -924,5 +924,3 @@ const ComponentPropertiesPage: React.FC = () => {
     </div>
   );
 };
-
-export default ComponentPropertiesPage;

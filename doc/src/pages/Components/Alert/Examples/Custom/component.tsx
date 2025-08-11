@@ -73,8 +73,11 @@ export const CustomAlertComponent = () => {
       <Alert
         header="Simple Alert"
         description="This alert doesn't have an icon, showing a clean minimal design."
-        style={{ paddingLeft: '16px' }}
-        className="[&>svg]:hidden grid-cols-[0_1fr]"
+        style={{
+          paddingLeft: '16px',
+          display: 'grid',
+          gridTemplateColumns: '0 1fr',
+        }}
       />
     </Flex>
   );

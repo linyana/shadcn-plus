@@ -1,32 +1,69 @@
 import { Button, Flex, Card } from 'shadcn-plus';
 
-export const DirectionFlexComponent = () => {
+export const FlexDirectionFlexComponent = () => {
   return (
     <Flex flexDirection="column" gap="16px">
-      {/* Row Direction */}
+      {/* Row flexDirection */}
       <Card style={{ padding: '16px' }}>
-        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Row Direction</h4>
-        <Flex gap="8px" style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px' }}>
+        <h4
+          style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}
+        >
+          Row flexDirection
+        </h4>
+        <Flex
+          gap="8px"
+          style={{
+            backgroundColor: '#f3f4f6',
+            padding: '12px',
+            borderRadius: '4px',
+          }}
+        >
           <Button size="sm">Item 1</Button>
           <Button size="sm">Item 2</Button>
           <Button size="sm">Item 3</Button>
         </Flex>
       </Card>
 
-      {/* Column Direction */}
+      {/* Column flexDirection */}
       <Card style={{ padding: '16px' }}>
-        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Column Direction</h4>
-        <Flex flexDirection="column" gap="8px" style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', width: '200px' }}>
+        <h4
+          style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}
+        >
+          Column flexDirection
+        </h4>
+        <Flex
+          flexDirection="column"
+          gap="8px"
+          style={{
+            backgroundColor: '#f3f4f6',
+            padding: '12px',
+            borderRadius: '4px',
+            width: '200px',
+          }}
+        >
           <Button size="sm">Item 1</Button>
           <Button size="sm">Item 2</Button>
           <Button size="sm">Item 3</Button>
         </Flex>
       </Card>
 
-      {/* Wrap */}
+      {/* flexWrap */}
       <Card style={{ padding: '16px' }}>
-        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Flex Wrap</h4>
-        <Flex flexWrap="wrap" gap="8px" style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', width: '300px' }}>
+        <h4
+          style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}
+        >
+          Flex flexWrap
+        </h4>
+        <Flex
+          flexWrap="wrap"
+          gap="8px"
+          style={{
+            backgroundColor: '#f3f4f6',
+            padding: '12px',
+            borderRadius: '4px',
+            width: '300px',
+          }}
+        >
           <Button size="sm">Button 1</Button>
           <Button size="sm">Button 2</Button>
           <Button size="sm">Button 3</Button>

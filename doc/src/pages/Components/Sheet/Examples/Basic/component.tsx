@@ -6,7 +6,9 @@ export const BasicSheetComponent = () => {
     <Sheet
       trigger={
         <Button variant="outline">
-          <Settings style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+          <Settings
+            style={{ width: '16px', height: '16px', marginRight: '8px' }}
+          />
           Open Sheet
         </Button>
       }
@@ -16,19 +18,43 @@ export const BasicSheetComponent = () => {
       <Card style={{ padding: '16px', marginTop: '16px' }}>
         <Flex flexDirection="column" gap="16px">
           <div>
-            <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>Profile</h4>
+            <h4
+              style={{
+                fontSize: '16px',
+                fontWeight: '600',
+                marginBottom: '8px',
+              }}
+            >
+              Profile
+            </h4>
             <p style={{ fontSize: '14px', color: '#6b7280' }}>
               Update your personal information and profile settings.
             </p>
           </div>
           <div>
-            <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>Notifications</h4>
+            <h4
+              style={{
+                fontSize: '16px',
+                fontWeight: '600',
+                marginBottom: '8px',
+              }}
+            >
+              Notifications
+            </h4>
             <p style={{ fontSize: '14px', color: '#6b7280' }}>
               Configure how you receive notifications and alerts.
             </p>
           </div>
           <div>
-            <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>Privacy</h4>
+            <h4
+              style={{
+                fontSize: '16px',
+                fontWeight: '600',
+                marginBottom: '8px',
+              }}
+            >
+              Privacy
+            </h4>
             <p style={{ fontSize: '14px', color: '#6b7280' }}>
               Manage your privacy settings and data preferences.
             </p>

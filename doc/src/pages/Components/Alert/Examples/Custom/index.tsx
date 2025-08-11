@@ -20,20 +20,22 @@ export const CustomAlertComponent = () => {
         header={
           <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             Pro Tip
-            <span style={{ 
-              fontSize: '10px', 
-              backgroundColor: '#3b82f6', 
-              color: 'white', 
-              padding: '2px 6px', 
-              borderRadius: '4px' 
-            }}>
+            <span
+              style={{
+                fontSize: '10px',
+                backgroundColor: '#3b82f6',
+                color: 'white',
+                padding: '2px 6px',
+                borderRadius: '4px',
+              }}
+            >
               NEW
             </span>
           </span>
         }
         description="You can use custom React components in both header and description props."
       />
-      
+
       {/* Alert with action buttons in description */}
       <Alert
         icon={Download}
@@ -41,7 +43,8 @@ export const CustomAlertComponent = () => {
         description={
           <div>
             <p style={{ margin: '0 0 12px 0' }}>
-              A new version of the application is available. Would you like to download it now?
+              A new version of the application is available. Would you like to
+              download it now?
             </p>
             <Flex gap="8px">
               <Button size="sm" variant="outline">
@@ -54,7 +57,7 @@ export const CustomAlertComponent = () => {
           </div>
         }
       />
-      
+
       {/* Alert with rich content */}
       <Alert
         icon={Settings}
@@ -70,20 +73,21 @@ export const CustomAlertComponent = () => {
               <li>Default timeout settings</li>
             </ul>
             <div style={{ marginTop: '12px' }}>
-              <Button size="sm">
-                Open Settings
-              </Button>
+              <Button size="sm">Open Settings</Button>
             </div>
           </div>
         }
       />
-      
+
       {/* Alert without icon */}
       <Alert
         header="Simple Alert"
         description="This alert doesn't have an icon, showing a clean minimal design."
-        style={{ paddingLeft: '16px' }}
-        className="[&>svg]:hidden grid-cols-[0_1fr]"
+        style={{ 
+          paddingLeft: '16px',
+          display: 'grid',
+          gridTemplateColumns: '0 1fr'
+        }}
       />
     </Flex>
   );

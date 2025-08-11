@@ -13,7 +13,7 @@ import { ArrowLeft, ArrowRight, ArrowUp, ArrowDown } from 'lucide-react';
 
 export const SideSheetComponent = () => {
   return (
-    <Flex gap="16px" flexWrap="wrap">
+    <Flex gap="16px" wrap="wrap">
       <Sheet
         trigger={
           <Button variant="outline">

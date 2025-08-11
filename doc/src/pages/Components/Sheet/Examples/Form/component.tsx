@@ -10,7 +10,7 @@ export const FormSheetComponent = () => {
   });
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -23,7 +23,9 @@ export const FormSheetComponent = () => {
     <Sheet
       trigger={
         <Button>
-          <UserPlus style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+          <UserPlus
+            style={{ width: '16px', height: '16px', marginRight: '8px' }}
+          />
           Add User
         </Button>
       }
@@ -34,7 +36,14 @@ export const FormSheetComponent = () => {
         <form onSubmit={handleSubmit}>
           <Flex flexDirection="column" gap="20px">
             <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px' }}>
+              <label
+                style={{
+                  display: 'block',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                  marginBottom: '8px',
+                }}
+              >
                 Full Name
               </label>
               <Input
@@ -43,9 +52,16 @@ export const FormSheetComponent = () => {
                 onChange={(e) => handleInputChange('name', e.target.value)}
               />
             </div>
-            
+
             <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px' }}>
+              <label
+                style={{
+                  display: 'block',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                  marginBottom: '8px',
+                }}
+              >
                 Email Address
               </label>
               <Input
@@ -55,9 +71,16 @@ export const FormSheetComponent = () => {
                 onChange={(e) => handleInputChange('email', e.target.value)}
               />
             </div>
-            
+
             <div>
-              <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', marginBottom: '8px' }}>
+              <label
+                style={{
+                  display: 'block',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                  marginBottom: '8px',
+                }}
+              >
                 Role
               </label>
               <Input
@@ -66,7 +89,7 @@ export const FormSheetComponent = () => {
                 onChange={(e) => handleInputChange('role', e.target.value)}
               />
             </div>
-            
+
             <Flex gap="12px" style={{ marginTop: '8px' }}>
               <Button type="submit" style={{ flex: 1 }}>
                 Add User

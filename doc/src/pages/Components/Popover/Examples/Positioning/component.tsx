@@ -2,7 +2,7 @@ import { Popover, Button, Flex } from 'shadcn-plus';
 
 export const PositioningPopoverComponent = () => {
   return (
-    <Flex gap="8px" flexWrap="wrap">
+    <Flex gap="8px" wrap="wrap">
       <Popover
         trigger={<Button variant="outline">Top</Button>}
         contentProps={{ side: 'top' }}

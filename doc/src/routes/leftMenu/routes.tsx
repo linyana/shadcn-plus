@@ -16,11 +16,13 @@ import {
   SidebarPage,
   SkeletonPage,
   TabsPage,
+  ThemeProviderPage,
   TooltipPage,
 } from '@/pages';
 
 export const leftMenuRoutes = {
   '/components/library': <ComponentPropertiesPage />,
+  '/components/theme-provider': <ThemeProviderPage />,
   '/components/button': <ButtonPage />,
   '/components/flex': <FlexPage />,
   '/components/dropdown-menu': <DropdownMenuPage />,

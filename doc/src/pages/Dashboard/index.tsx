@@ -226,7 +226,7 @@ export const Dashboard = () => {
                   style={{
                     display: 'flex',
                     gap: '16px',
-                    flexWrap: 'wrap',
+                    wrap: 'wrap',
                     justifyContent: 'center',
                   }}
                 >
@@ -728,7 +728,7 @@ export const Dashboard = () => {
                   display: 'flex',
                   gap: '16px',
                   justifyContent: 'center',
-                  flexWrap: 'wrap',
+                  wrap: 'wrap',
                 }}
               >
                 <button
@@ -903,7 +903,7 @@ export const Dashboard = () => {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              flexWrap: 'wrap',
+              wrap: 'wrap',
               gap: '16px',
             }}
           >

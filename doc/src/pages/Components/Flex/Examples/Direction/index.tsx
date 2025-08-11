@@ -1,21 +1,21 @@
 import { Component } from '@/components';
 import { Heading } from 'shadcn-plus';
-import { DirectionFlexComponent } from './component';
+import { FlexDirectionFlexComponent } from './component';
 
-export const DirectionFlexExample = () => {
+export const FlexDirectionFlexExample = () => {
   return (
     <>
-      <Heading level={5}>Direction & Wrap</Heading>
+      <Heading level={5}>flexDirection & flexWrap</Heading>
       <Component
-        previewContent={<DirectionFlexComponent />}
+        previewContent={<FlexDirectionFlexComponent />}
         codeContent={`import { Button, Flex, Card } from 'shadcn-plus';
 
-export const DirectionFlexComponent = () => {
+export const FlexDirectionFlexComponent = () => {
   return (
     <Flex flexDirection="column" gap="16px">
-      {/* Row Direction */}
+      {/* Row flexDirection */}
       <Card style={{ padding: '16px' }}>
-        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Row Direction</h4>
+        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Row flexDirection</h4>
         <Flex gap="8px" style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px' }}>
           <Button size="sm">Item 1</Button>
           <Button size="sm">Item 2</Button>
@@ -23,9 +23,9 @@ export const DirectionFlexComponent = () => {
         </Flex>
       </Card>
 
-      {/* Column Direction */}
+      {/* Column flexDirection */}
       <Card style={{ padding: '16px' }}>
-        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Column Direction</h4>
+        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Column flexDirection</h4>
         <Flex flexDirection="column" gap="8px" style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', width: '200px' }}>
           <Button size="sm">Item 1</Button>
           <Button size="sm">Item 2</Button>
@@ -33,9 +33,9 @@ export const DirectionFlexComponent = () => {
         </Flex>
       </Card>
 
-      {/* Wrap */}
+      {/* flexWrap */}
       <Card style={{ padding: '16px' }}>
-        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Flex Wrap</h4>
+        <h4 style={{ marginBottom: '12px', fontSize: '14px', fontWeight: '600' }}>Flex flexWrap</h4>
         <Flex flexWrap="wrap" gap="8px" style={{ backgroundColor: '#f3f4f6', padding: '12px', borderRadius: '4px', width: '300px' }}>
           <Button size="sm">Button 1</Button>
           <Button size="sm">Button 2</Button>
