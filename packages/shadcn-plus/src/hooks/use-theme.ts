@@ -6,7 +6,7 @@ export const useTheme = (): IThemeContextType => {
   const context = useContext(ThemeContext);
   if (context === undefined) {
     return {
-      theme: {},
+      config: {},
       getComponentTheme: () => undefined,
     };
   }

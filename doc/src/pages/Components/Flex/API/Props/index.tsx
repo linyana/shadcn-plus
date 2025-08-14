@@ -55,18 +55,18 @@ export const FlexProps = [
     default: "'normal'",
   },
 
-  // Wrapping
+  // flexWrapping
   {
-    property: 'wrap?',
-    description: 'Controls whether items wrap to new lines.',
+    property: 'flexWrap?',
+    description: 'Controls whether items flexWrap to new lines.',
     type: (
       <>
-        <Badge variant="secondary">wrap</Badge> {' | '}
-        <Badge variant="secondary">nowrap</Badge> {' | '}
-        <Badge variant="secondary">wrap-reverse</Badge>
+        <Badge variant="secondary">flexWrap</Badge> {' | '}
+        <Badge variant="secondary">noflexWrap</Badge> {' | '}
+        <Badge variant="secondary">flexWrap-reverse</Badge>
       </>
     ),
-    default: "'nowrap'",
+    default: "'noflexWrap'",
   },
 
   // Spacing
@@ -78,7 +78,7 @@ export const FlexProps = [
   },
   {
     property: 'rowGap?',
-    description: 'Sets the gap between rows when items wrap.',
+    description: 'Sets the gap between rows when items flexWrap.',
     type: 'string',
     default: '-',
   },
