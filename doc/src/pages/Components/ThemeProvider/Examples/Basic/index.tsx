@@ -5,39 +5,48 @@ import { Heading } from 'shadcn-plus';
 const codeContent = `import { Button, Input, ThemeProvider, Flex } from 'shadcn-plus';
 
 export const BasicThemeProviderComponent = () => {
-  const theme = {
+  const config = {
     Button: {
       style: { backgroundColor: '#1890ff', borderColor: '#1890ff' },
-      className: 'hover:bg-blue-600'
+      className: 'hover:bg-blue-600',
     },
     Input: {
       style: { borderColor: '#1890ff' },
-      className: 'focus:border-blue-500'
-    }
+      className: 'focus:border-blue-500',
+    },
   };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
       <div>
-        <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>不使用 ThemeProvider</h3>
+        <h3
+          style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}
+        >
+          Without ThemeProvider
+        </h3>
         <Flex gap="16px" flexDirection="column">
-          <Button>默认按钮</Button>
-          <Input placeholder="默认输入框" />
+          <Button>Default Button</Button>
+          <Input placeholder="Default Input" />
         </Flex>
       </div>
-      
+
       <div>
-        <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>使用 ThemeProvider</h3>
-        <ThemeProvider theme={theme}>
+        <h3
+          style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}
+        >
+          With ThemeProvider
+        </h3>
+        <ThemeProvider config={config}>
           <Flex gap="16px" flexDirection="column">
-            <Button>主题按钮</Button>
-            <Input placeholder="主题输入框" />
+            <Button>Themed Button</Button>
+            <Input placeholder="Themed Input" />
           </Flex>
         </ThemeProvider>
       </div>
     </div>
   );
-};`;
+};
+`;
 
 export const BasicThemeProviderExample = () => {
   return (

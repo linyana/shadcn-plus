@@ -13,11 +13,14 @@ export interface IThemeConfigType {
     Footer?: IThemeComponentConfigType;
   };
   Input?: IThemeComponentConfigType;
+  Accordion?: IThemeComponentConfigType & {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   // Select?: IThemeComponentConfigType;
   // Card?: IThemeComponentConfigType;
   // Badge?: IThemeComponentConfigType;
   // Alert?: IThemeComponentConfigType;
-  // Accordion?: IThemeComponentConfigType;
   // Table?: IThemeComponentConfigType;
   // Tabs?: IThemeComponentConfigType;
   // Tooltip?: IThemeComponentConfigType;
@@ -35,11 +38,11 @@ export interface IThemeConfigType {
 
 export interface IThemeProviderPropsType {
   children: React.ReactNode;
-  theme?: IThemeConfigType;
+  config?: IThemeConfigType;
 }
 
 export interface IThemeContextType {
-  theme: IThemeConfigType;
+  config: IThemeConfigType;
   getComponentTheme: (
     componentName: keyof IThemeConfigType,
   ) => IThemeComponentConfigType | undefined;

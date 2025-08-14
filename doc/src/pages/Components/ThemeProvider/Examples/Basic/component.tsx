@@ -1,7 +1,7 @@
 import { Button, Input, ThemeProvider, Flex } from 'shadcn-plus';
 
 export const BasicThemeProviderComponent = () => {
-  const theme = {
+  const config = {
     Button: {
       style: { backgroundColor: '#1890ff', borderColor: '#1890ff' },
       className: 'hover:bg-blue-600',
@@ -32,7 +32,7 @@ export const BasicThemeProviderComponent = () => {
         >
           With ThemeProvider
         </h3>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider config={config}>
           <Flex gap="16px" flexDirection="column">
             <Button>Themed Button</Button>
             <Input placeholder="Themed Input" />

@@ -12,16 +12,16 @@ export const ThemeContext = createContext<IThemeContextType | undefined>(
 
 export const ThemeProvider: React.FC<IThemeProviderPropsType> = ({
   children,
-  theme = {},
+  config = {},
 }) => {
   const getComponentTheme = (
     componentName: keyof IThemeConfigType,
   ): IThemeComponentConfigType | undefined => {
-    return theme[componentName];
+    return config[componentName];
   };
 
   const contextValue: IThemeContextType = {
-    theme,
+    config,
     getComponentTheme,
   };
 

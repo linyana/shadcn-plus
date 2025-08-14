@@ -53,7 +53,7 @@ export const CustomThemeComponent = () => {
         >
           Dark Theme
         </h3>
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider config={darkTheme}>
           <Card style={{ padding: '24px' }}>
             <Flex gap="16px" flexDirection="column">
               <Button>Dark Button</Button>
@@ -70,7 +70,7 @@ export const CustomThemeComponent = () => {
         >
           Colorful Theme
         </h3>
-        <ThemeProvider theme={colorfulTheme}>
+        <ThemeProvider config={colorfulTheme}>
           <Flex gap="16px" flexDirection="column">
             <Button>Gradient Button</Button>
             <Input placeholder="Colorful Border Input" />

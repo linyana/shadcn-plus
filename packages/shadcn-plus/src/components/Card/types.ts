@@ -9,5 +9,5 @@ export type ICardType = React.ComponentProps<"div"> & {
   footer?: React.ReactNode;
   contentProps?: ICardContentPropsType;
   headerProps?: ICardHeaderPropsType;
-  footerProps?: ICardFooterPropsType
+  footerProps?: ICardFooterPropsType;
 }
