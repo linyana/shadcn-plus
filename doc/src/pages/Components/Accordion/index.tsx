@@ -1,9 +1,11 @@
 import { Page } from '@/components';
 import { PropTable } from '../components';
+import { StyledCodeBlock, Comment } from '@/components/StyledCodeBlock';
 import { Heading } from 'shadcn-plus';
 import {
   BasicAccordionExample,
   MultipleAccordionExample,
+  AccordionThemeProviderExample,
 } from './Examples';
 import { AccordionProps, AccordionItemDataProps } from './API';
 
@@ -28,6 +30,46 @@ export const AccordionPage = () => {
         An accordion that allows multiple items to be open simultaneously.
       </p>
       <MultipleAccordionExample />
+      
+      <Heading level={3}>Theme Customization</Heading>
+      <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px' }}>
+        Use ThemeProvider to customize the appearance of Accordion components globally. You can configure styles for the container, triggers, and content areas.
+      </p>
+      <AccordionThemeProviderExample />
+      
+      <Heading level={2}>Theme Configuration</Heading>
+      <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px' }}>
+        The Accordion component supports comprehensive theme customization through ThemeProvider. You can configure:
+      </p>
+      <ul style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px', paddingLeft: '20px' }}>
+        <li><strong>Container styles</strong> - Overall accordion appearance</li>
+        <li><strong>Trigger styles</strong> - Clickable header styling</li>
+        <li><strong>Content styles</strong> - Collapsible content area styling</li>
+      </ul>
+      
+      <StyledCodeBlock>
+        {`import { ThemeProvider, Accordion } from 'shadcn-plus';
+
+const themeConfig = {
+  Accordion: {
+    style: {}, `}<Comment>// React.CSSProperties</Comment>{`
+    className: '', `}<Comment>// string</Comment>{`
+    Trigger: {
+      style: {}, `}<Comment>// React.CSSProperties</Comment>{`
+      className: '', `}<Comment>// string</Comment>{`
+    },
+    Content: {
+      style: {}, `}<Comment>// React.CSSProperties</Comment>{`
+      className: '', `}<Comment>// string</Comment>{`
+    },
+  },
+};
+
+<ThemeProvider config={themeConfig}>
+  <Accordion type="single" collapsible items={items} />
+</ThemeProvider>`}
+      </StyledCodeBlock>
+      
       <Heading level={2}>API</Heading>
       
       <Heading level={3}>Accordion Props</Heading>
