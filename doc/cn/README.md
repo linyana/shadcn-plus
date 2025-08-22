@@ -34,12 +34,11 @@ npm install shadcn-plus
 
 ```typescript
 import 'shadcn-plus/style.css'
-import 'shadcn-plus/tailwind.css'
 ```
 
 或者使用`shadcn-plus`的扩展样式和你项目中的`tailwindcss`:
 ```typescript
-import 'shadcn-plus/style.css'
+import 'shadcn-plus/expand.css'
 ```
 
 ### 开始使用
