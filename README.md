@@ -1,7 +1,7 @@
-# shadcn-plus ⚡️     
+# shadcn-plus ⚡️
 
 🌐 **Documentation**: 👉 [Shadcn Plus Document](https://linyana.github.io/shadcn-plus)
-  
+
 🚀 Extension library based on [shadcn/ui](https://ui.shadcn.com/). Made to help you develop faster by removing the setup hassle, letting you focus on building features.
 
 ✨ Includes practical extended props and reusable components for everyday development needs.
@@ -31,13 +31,13 @@ npm install shadcn-plus
 ### Import Style
 
 ```typescript
-import 'shadcn-plus/style.css'
-import 'shadcn-plus/tailwind.css'
+import 'shadcn-plus/style.css';
 ```
 
 or use `shadn-plus` extended style and `tailwindcss` in your project:
+
 ```typescript
-import 'shadcn-plus/style.css'
+import 'shadcn-plus/expand.css';
 ```
 
 ### Use it in your projects
@@ -56,7 +56,7 @@ export default function App() {
 
 <img src="https://s2.loli.net/2025/04/12/9gcGdjsmy7Xnf3C.png" width="300px" />
 
-Import [Lucide icons](https://lucide.dev/icons): 
+Import [Lucide icons](https://lucide.dev/icons):
 
 ```typescript
 import { Store } from'shadcn-plus/icons'
