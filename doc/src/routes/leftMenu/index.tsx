@@ -84,40 +84,44 @@ export const leftMenu: ISidebarItemType[] = [
     icon: Eye,
     children: [
       {
-        key: '/components/popover',
-        label: 'Popover',
+        key: '/components/accordion',
+        label: 'Accordion',
       },
       {
-        key: '/components/tooltip',
-        label: 'Tooltip',
-      },
-      {
-        key: '/components/collapsible',
-        label: 'Collapsible',
-      },
-      {
-        key: '/components/sheet',
-        label: 'Sheet',
-      },
-      {
-        key: '/components/separator',
-        label: 'Separator',
+        key: '/components/badge',
+        label: 'Badge',
       },
       {
         key: '/components/card',
         label: 'Card',
       },
       {
+        key: '/components/collapsible',
+        label: 'Collapsible',
+      },
+      {
         key: '/components/hover-card',
         label: 'Hover Card',
       },
       {
-        key: '/components/accordion',
-        label: 'Accordion',
+        key: '/components/popover',
+        label: 'Popover',
+      },
+      {
+        key: '/components/separator',
+        label: 'Separator',
+      },
+      {
+        key: '/components/sheet',
+        label: 'Sheet',
       },
       {
         key: '/components/tabs',
         label: 'Tabs',
+      },
+      {
+        key: '/components/tooltip',
+        label: 'Tooltip',
       },
     ],
   },

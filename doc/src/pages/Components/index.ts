@@ -17,3 +17,4 @@ export * from './Tooltip';
 export * from './Sheet';
 export * from './Separator';
 export * from './Skeleton';
+export * from './Badge'
