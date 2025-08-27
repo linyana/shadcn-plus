@@ -1,57 +1,114 @@
-import { Heading, Text } from 'shadcn-plus';
+import { Link } from '@/pages/Components/components';
+import { Badge } from 'shadcn-plus';
 
-export const AlertProps = () => {
-  return (
-    <>
-      <Heading level={4}>Alert Props</Heading>
-      <Text>
-        The Alert component accepts all standard HTML div attributes plus the following props:
-      </Text>
-      
-      <div style={{ marginTop: '16px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
-              <th style={{ textAlign: 'left', padding: '8px', fontWeight: '600' }}>Prop</th>
-              <th style={{ textAlign: 'left', padding: '8px', fontWeight: '600' }}>Type</th>
-              <th style={{ textAlign: 'left', padding: '8px', fontWeight: '600' }}>Default</th>
-              <th style={{ textAlign: 'left', padding: '8px', fontWeight: '600' }}>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
-              <td style={{ padding: '8px', fontFamily: 'monospace', fontSize: '14px' }}>title</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>React.ReactNode</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>-</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>The title content of the alert</td>
-            </tr>
-            <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
-              <td style={{ padding: '8px', fontFamily: 'monospace', fontSize: '14px' }}>description</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>React.ReactNode</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>-</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>The description content of the alert</td>
-            </tr>
-            <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
-              <td style={{ padding: '8px', fontFamily: 'monospace', fontSize: '14px' }}>icon</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>React.ElementType</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>Terminal</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>Icon component to display in the alert</td>
-            </tr>
-            <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
-              <td style={{ padding: '8px', fontFamily: 'monospace', fontSize: '14px' }}>className</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>string</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>-</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>Additional CSS classes to apply to the alert</td>
-            </tr>
-            <tr style={{ borderBottom: '1px solid #f3f4f6' }}>
-              <td style={{ padding: '8px', fontFamily: 'monospace', fontSize: '14px' }}>style</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>React.CSSProperties</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>-</td>
-              <td style={{ padding: '8px', fontSize: '14px' }}>Inline styles to apply to the alert</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </>
-  );
-};
+export const AlertProps = [
+  {
+    property: 'header',
+    description: 'The header content of the alert',
+    type: 'React.ReactNode',
+    default: '-',
+  },
+  {
+    property: 'description',
+    description: 'The description content of the alert',
+    type: 'React.ReactNode',
+    default: '-',
+  },
+  {
+    property: 'icon',
+    description: 'Icon component to display in the alert',
+    type: 'React.ElementType',
+    default: <Badge variant="secondary">Terminal</Badge>,
+  },
+  {
+    property: 'className',
+    description: 'Additional CSS classes to apply to the alert',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'style',
+    description: 'Inline styles to apply to the alert',
+    type: 'React.CSSProperties',
+    default: '-',
+  },
+  {
+    property: 'variant?',
+    description: 'Optional variant type for the alert',
+    type: (
+      <>
+        <Badge variant="secondary">default</Badge> {' | '}
+        <Badge variant="secondary">success</Badge> {' | '}
+        <Badge variant="secondary">warning</Badge> {' | '}
+        <Badge variant="secondary">error</Badge>
+      </>
+    ),
+    default: <Badge variant="secondary">default</Badge>,
+  },
+  {
+    property: 'iconProps?',
+    description:
+      'Props to customize the Icon component.',
+    type: <Link>Icon Props</Link>,
+    default: '-',
+  },
+  {
+    property: 'headerProps?',
+    description:
+      'Props to customize the Header component.',
+    type: <Link>Header Props</Link>,
+    default: '-',
+  },
+  {
+    property: 'descriptionProps?',
+    description:
+      'Props to customize the Description component.',
+    type: <Link>Description Props</Link>,
+    default: '-',
+  },
+];
+
+export const AlertIconProps = [
+  {
+    property: 'className?',
+    description: 'Custom CSS class for the alert icon.',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'style?',
+    description: 'Custom inline style for the alert icon.',
+    type: 'React.CSSProperties',
+    default: '-',
+  },
+];
+
+export const AlertHeaderProps = [
+  {
+    property: 'className?',
+    description: 'Custom CSS class for the alert header.',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'style?',
+    description: 'Custom inline style for the alert header.',
+    type: 'React.CSSProperties',
+    default: '-',
+  },
+];
+
+export const AlertDescriptionProps = [
+  {
+    property: 'className?',
+    description: 'Custom CSS class for the alert description.',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'style?',
+    description: 'Custom inline style for the alert description.',
+    type: 'React.CSSProperties',
+    default: '-',
+  },
+];

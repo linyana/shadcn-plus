@@ -69,9 +69,13 @@ export const BasicAccordionComponent = () => {
 
 export const BasicAccordionExample = () => {
   return (
-    <Component
-      previewContent={<BasicAccordionComponent />}
-      codeContent={codeContent}
-    />
+    <>
+      <Component
+        previewContent={<BasicAccordionComponent />}
+        codeContent={codeContent}
+        title="Basic"
+        description="A simple accordion with single selection mode. Only one item can be open at a time."
+      />
+    </>
   );
 };

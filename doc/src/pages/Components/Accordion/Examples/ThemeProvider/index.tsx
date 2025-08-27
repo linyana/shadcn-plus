@@ -153,9 +153,13 @@ export const AccordionThemeProviderComponent = () => {
 
 export const AccordionThemeProviderExample = () => {
   return (
-    <Component
-      previewContent={<AccordionThemeProviderComponent />}
-      codeContent={codeContent}
-    />
+    <>
+      <Component
+        previewContent={<AccordionThemeProviderComponent />}
+        codeContent={codeContent}
+        title="Theme Customization"
+        description="Use ThemeProvider to customize the appearance of Accordion components globally."
+      />
+    </>
   );
 };

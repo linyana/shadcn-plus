@@ -70,9 +70,13 @@ export const MultipleAccordionComponent = () => {
 
 export const MultipleAccordionExample = () => {
   return (
-    <Component
-      previewContent={<MultipleAccordionComponent />}
-      codeContent={codeContent}
-    />
+    <>
+      <Component
+        previewContent={<MultipleAccordionComponent />}
+        codeContent={codeContent}
+        title="Multiple Selection"
+        description="An accordion that allows multiple items to be open simultaneously."
+      />
+    </>
   );
 };

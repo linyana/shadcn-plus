@@ -1,12 +1,12 @@
 import { Component } from '@/components';
-import { Heading } from 'shadcn-plus';
 import { CustomAlertComponent } from './component';
 
 export const CustomAlertExample = () => {
   return (
     <>
-      <Heading level={5}>Custom Content</Heading>
       <Component
+        title="Custom Content"
+        description="Demonstrates custom alert content, including custom headers, action buttons, rich content, and alerts without icons, showcasing flexible usage of the Alert component."
         previewContent={<CustomAlertComponent />}
         codeContent={`import { Alert, Flex, Button } from 'shadcn-plus';
 import { Lightbulb, Download, Settings } from 'lucide-react';
