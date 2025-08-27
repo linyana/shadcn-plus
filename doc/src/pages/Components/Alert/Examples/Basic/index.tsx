@@ -1,12 +1,12 @@
 import { Component } from '@/components';
-import { Heading } from 'shadcn-plus';
 import { BasicAlertComponent } from './component';
 
 export const BasicAlertExample = () => {
   return (
     <>
-      <Heading level={5}>Basic</Heading>
       <Component
+        title="Basic"
+        description="A set of basic alerts demonstrating different types such as default, warning, success, info, and header-only alerts, each with optional custom icons."
         previewContent={<BasicAlertComponent />}
         codeContent={`import { Alert, Flex } from 'shadcn-plus';
 import { Terminal, AlertCircle, CheckCircle, Info } from 'lucide-react';

@@ -14,7 +14,7 @@ export const Page = ({ title, description, children }: IPropsType) => {
           width: 'calc(100% - 150px)',
         }}
       >
-        {title && <Heading level={2}>{title}</Heading>}
+        {title && <Heading level={1}>{title}</Heading>}
         {description && <Paragraph>{description}</Paragraph>}
         <div
           style={{

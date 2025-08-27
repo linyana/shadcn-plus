@@ -7,32 +7,62 @@ import {
 import { Show } from '../Show';
 import { IAlertType } from './types';
 import { useComponentTheme } from '@/hooks';
-import { cn } from '@/lib/utils';
+import { cn, sn } from '@/lib/utils';
 
-export const Alert = ({ title, description, icon: Icon }: IAlertType) => {
+export const Alert = ({
+  header,
+  description,
+  icon: Icon,
+  ...props
+}: IAlertType) => {
   const theme = useComponentTheme('Alert');
 
   return (
-    <ShadcnAlert className={theme.className} style={theme.style}>
+    <ShadcnAlert
+      {...props}
+      className={cn(theme.className, props.className)}
+      style={sn(theme.style, props.style)}
+    >
       <Show hideWhen={null} condition={Icon}>
         {Icon ? (
-          <Icon className={cn(theme.Icon?.className, 'mr-2 h-4 w-4')} />
+          <Icon
+            {...props.iconProps}
+            className={cn(
+              'mr-2 h-4 w-4',
+              theme.Icon?.className,
+              props.iconProps?.className,
+            )}
+            style={sn(theme.Icon?.style, props.iconProps?.style)}
+          />
         ) : (
-          <Terminal className={cn(theme.Icon?.className, 'h-4 w-4')} />
+          <Terminal
+            {...props.iconProps}
+            className={cn(
+              'h-4 w-4',
+              theme.Icon?.className,
+              props.iconProps?.className,
+            )}
+            style={sn(theme.Icon?.style, props.iconProps?.style)}
+          />
         )}
       </Show>
-      <Show hideWhen={null} condition={title}>
+      <Show hideWhen={null} condition={header}>
         <AlertTitle
-          className={theme.Title?.className}
-          style={theme.Title?.style}
+          {...props.headerProps}
+          className={cn(theme.Header?.className, props.headerProps?.className)}
+          style={sn(theme.Header?.style, props.headerProps?.style)}
         >
-          {title}
+          {header}
         </AlertTitle>
       </Show>
       <Show hideWhen={null} condition={description}>
         <AlertDescription
-          className={theme.Description?.className}
-          style={theme.Description?.style}
+          {...props.descriptionProps}
+          className={cn(
+            theme.Description?.className,
+            props.descriptionProps?.className,
+          )}
+          style={sn(theme.Description?.style, props.descriptionProps?.style)}
         >
           {description}
         </AlertDescription>

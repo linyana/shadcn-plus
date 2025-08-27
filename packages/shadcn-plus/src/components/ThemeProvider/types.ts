@@ -8,7 +8,7 @@ export interface IThemeComponentConfigType {
 export interface IThemeConfigType {
   Alert?: IThemeComponentConfigType & {
     Icon?: IThemeComponentConfigType
-    Title?: IThemeComponentConfigType
+    Header?: IThemeComponentConfigType
     Description?: IThemeComponentConfigType
   };
   Accordion?: IThemeComponentConfigType & {

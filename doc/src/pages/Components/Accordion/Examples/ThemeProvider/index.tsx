@@ -1,6 +1,5 @@
 import { Component } from '@/components';
 import { AccordionThemeProviderComponent } from './component';
-import { Heading } from 'shadcn-plus';
 
 const codeContent = `import { Accordion, ThemeProvider } from 'shadcn-plus';
 
@@ -155,15 +154,11 @@ export const AccordionThemeProviderComponent = () => {
 export const AccordionThemeProviderExample = () => {
   return (
     <>
-      <Heading level={3}>Theme Customization</Heading>
-      <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px' }}>
-        Use ThemeProvider to customize the appearance of Accordion components
-        globally. You can configure styles for the container, triggers, and
-        content areas.
-      </p>
       <Component
         previewContent={<AccordionThemeProviderComponent />}
         codeContent={codeContent}
+        title="Theme Customization"
+        description="Use ThemeProvider to customize the appearance of Accordion components globally."
       />
     </>
   );

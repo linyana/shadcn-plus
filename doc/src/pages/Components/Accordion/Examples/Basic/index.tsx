@@ -1,6 +1,5 @@
 import { Component } from '@/components';
 import { BasicAccordionComponent } from './component';
-import { Heading } from 'shadcn-plus';
 
 const codeContent = `import { Accordion } from 'shadcn-plus';
 
@@ -71,14 +70,11 @@ export const BasicAccordionComponent = () => {
 export const BasicAccordionExample = () => {
   return (
     <>
-      <Heading level={3}>Basic</Heading>
-      <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px' }}>
-        A simple accordion with single selection mode. Only one item can be open
-        at a time.
-      </p>
       <Component
         previewContent={<BasicAccordionComponent />}
         codeContent={codeContent}
+        title="Basic"
+        description="A simple accordion with single selection mode. Only one item can be open at a time."
       />
     </>
   );

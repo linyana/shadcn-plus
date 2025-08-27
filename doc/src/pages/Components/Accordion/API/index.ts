@@ -1,1 +1,1 @@
-export { AccordionProps, AccordionItemDataProps } from './Props';
+export * from './Props';

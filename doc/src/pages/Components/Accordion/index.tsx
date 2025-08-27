@@ -7,7 +7,7 @@ import {
   MultipleAccordionExample,
   AccordionThemeProviderExample,
 } from './Examples';
-import { AccordionProps, AccordionItemDataProps } from './API';
+import { AccordionProps, AccordionItemDataProps, AccordionTriggerProps, AccordionContentProps } from './API';
 import { AccordionTheme } from './Theme';
 
 export const AccordionPage = () => {
@@ -26,11 +26,10 @@ export const AccordionPage = () => {
       <AccordionTheme />
 
       <Heading level={2}>API</Heading>
-
       <PropTable title="Accordion Props" data={AccordionProps} />
-
-      <Heading level={3}>AccordionItemData Props</Heading>
-      <PropTable data={AccordionItemDataProps} />
+      <PropTable title="Item Props" data={AccordionItemDataProps} />
+      <PropTable title="Trigger Props" data={AccordionTriggerProps} />
+      <PropTable title="Content Props" data={AccordionContentProps} />
     </Page>
   );
 };

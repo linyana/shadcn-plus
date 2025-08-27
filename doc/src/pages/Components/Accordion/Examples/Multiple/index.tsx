@@ -1,6 +1,5 @@
 import { Component } from '@/components';
 import { MultipleAccordionComponent } from './component';
-import { Heading } from 'shadcn-plus';
 
 const codeContent = `import { Accordion } from 'shadcn-plus';
 import { Settings, User, Bell, Shield } from 'lucide-react';
@@ -72,13 +71,11 @@ export const MultipleAccordionComponent = () => {
 export const MultipleAccordionExample = () => {
   return (
     <>
-      <Heading level={3}>Multiple Selection</Heading>
-      <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px' }}>
-        An accordion that allows multiple items to be open simultaneously.
-      </p>
       <Component
         previewContent={<MultipleAccordionComponent />}
         codeContent={codeContent}
+        title="Multiple Selection"
+        description="An accordion that allows multiple items to be open simultaneously."
       />
     </>
   );

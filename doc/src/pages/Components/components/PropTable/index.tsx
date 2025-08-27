@@ -42,7 +42,7 @@ export const PropTable = ({
         overflowX: 'auto',
       }}
     >
-      <Heading level={4}>{title}</Heading>
+      <Heading level={3}>{title}</Heading>
       <Table columns={columns} data={data} />
     </div>
   );
