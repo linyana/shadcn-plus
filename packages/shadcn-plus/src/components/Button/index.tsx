@@ -7,8 +7,6 @@ import { useComponentTheme } from '@/hooks';
 export const Button = ({
   children,
   loading,
-  style,
-  className,
   ...props
 }: IButtonPropsType) => {
   const theme = useComponentTheme('Button');
@@ -16,11 +14,11 @@ export const Button = ({
   return (
     <ShadcnButton
       {...props}
-      className={cn(theme.className, className)}
-      style={sn(theme.style, style)}
+      className={cn(theme.className, props.className)}
+      style={sn(theme.style, props.style)}
       disabled={loading}
     >
-      {loading && <Loader2 className="animate-spin" />}
+      {loading && <Loader2 className="animate-spin"/>}
       {children}
     </ShadcnButton>
   );

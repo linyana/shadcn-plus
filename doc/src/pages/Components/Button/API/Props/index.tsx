@@ -3,7 +3,8 @@ import { Badge } from 'shadcn-plus';
 export const ButtonProps = [
   {
     property: 'children?',
-    description: 'The content of the button. Can include text, icons, or other React elements.',
+    description:
+      'The content of the button. Can include text, icons, or other React elements.',
     type: 'ReactNode',
     default: '-',
   },
@@ -37,13 +38,15 @@ export const ButtonProps = [
   },
   {
     property: 'loading?',
-    description: 'Whether the button is in loading state. Shows a spinner and disables the button.',
+    description:
+      'Whether the button is in loading state. Shows a spinner and disables the button.',
     type: 'boolean',
     default: 'false',
   },
   {
     property: 'disabled?',
-    description: 'Whether the button is disabled. Prevents user interaction and applies disabled styling.',
+    description:
+      'Whether the button is disabled. Prevents user interaction and applies disabled styling.',
     type: 'boolean',
     default: 'false',
   },
@@ -67,13 +70,20 @@ export const ButtonProps = [
   },
   {
     property: 'className?',
-    description: 'Additional CSS classes to apply to the button.',
+    description: 'Custom CSS class for the button.',
     type: 'string',
     default: '-',
   },
   {
+    property: 'style?',
+    description: 'Inline styles for the button.',
+    type: 'React.CSSProperties',
+    default: '-',
+  },
+  {
     property: 'asChild?',
-    description: 'When true, the button will be rendered as its child element, passing all props to the child.',
+    description:
+      'When true, the button will be rendered as its child element, passing all props to the child.',
     type: 'boolean',
     default: 'false',
   },
