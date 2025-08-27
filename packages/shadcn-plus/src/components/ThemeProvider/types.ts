@@ -6,6 +6,15 @@ export interface IThemeComponentConfigType {
 }
 
 export interface IThemeConfigType {
+  Alert?: IThemeComponentConfigType & {
+    Icon?: IThemeComponentConfigType
+    Title?: IThemeComponentConfigType
+    Description?: IThemeComponentConfigType
+  };
+  Accordion?: IThemeComponentConfigType & {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   Button?: IThemeComponentConfigType;
   Card?: IThemeComponentConfigType & {
     Header?: IThemeComponentConfigType;
@@ -13,14 +22,9 @@ export interface IThemeConfigType {
     Footer?: IThemeComponentConfigType;
   };
   Input?: IThemeComponentConfigType;
-  Accordion?: IThemeComponentConfigType & {
-    Trigger?: IThemeComponentConfigType;
-    Content?: IThemeComponentConfigType;
-  };
   // Select?: IThemeComponentConfigType;
   // Card?: IThemeComponentConfigType;
   // Badge?: IThemeComponentConfigType;
-  // Alert?: IThemeComponentConfigType;
   // Table?: IThemeComponentConfigType;
   // Tabs?: IThemeComponentConfigType;
   // Tooltip?: IThemeComponentConfigType;

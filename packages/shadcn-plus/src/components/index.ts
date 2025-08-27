@@ -2,7 +2,6 @@
 export * from './Button';
 export * from './Typography';
 export * from './ThemeProvider';
-export * from './ThemeConfig';
 
 // Layout
 export * from './Flex';
