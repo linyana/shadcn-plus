@@ -21,21 +21,46 @@ export const Card = ({
   const theme = useComponentTheme('Card');
 
   return (
-    <ShadcnCard {...props}>
+    <ShadcnCard
+      {...props}
+      style={sn(theme?.style, props.style)}
+      className={cn(theme?.className, props.className)}
+    >
       <Show hideWhen={null} condition={header || description}>
         <CardHeader
           {...props.headerProps}
-          className={cn(
-            theme.Header?.className,
-            props.headerProps?.className,
-          )}
+          className={cn(theme.Header?.className, props.headerProps?.className)}
           style={sn(theme.Header?.style, props.headerProps?.style)}
         >
           <Show hideWhen={null} condition={header}>
-            <CardTitle>{header}</CardTitle>
+            <CardTitle
+              {...props.headerProps?.titleProps}
+              className={cn(
+                theme.Header?.Title?.className,
+                props.headerProps?.titleProps?.className,
+              )}
+              style={sn(
+                theme.Header?.Title?.style,
+                props.headerProps?.titleProps?.style,
+              )}
+            >
+              {header}
+            </CardTitle>
           </Show>
           <Show hideWhen={null} condition={description}>
-            <CardDescription>{description}</CardDescription>
+            <CardDescription
+              {...props.headerProps?.descriptionProps}
+              className={cn(
+                theme.Header?.Description?.className,
+                props.headerProps?.descriptionProps?.className,
+              )}
+              style={sn(
+                theme.Header?.Description?.style,
+                props.headerProps?.descriptionProps?.style,
+              )}
+            >
+              {description}
+            </CardDescription>
           </Show>
         </CardHeader>
       </Show>
@@ -56,10 +81,7 @@ export const Card = ({
       <Show hideWhen={null} condition={footer}>
         <CardFooter
           {...props.footerProps}
-          className={cn(
-            theme.Footer?.className,
-            props.footerProps?.className,
-          )}
+          className={cn(theme.Footer?.className, props.footerProps?.className)}
           style={sn(theme.Footer?.style, props.footerProps?.style)}
         >
           {footer}

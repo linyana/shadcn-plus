@@ -18,7 +18,10 @@ export interface IThemeConfigType {
   Badge?: IThemeComponentConfigType;
   Button?: IThemeComponentConfigType;
   Card?: IThemeComponentConfigType & {
-    Header?: IThemeComponentConfigType;
+    Header?: IThemeComponentConfigType & {
+      Title?: IThemeComponentConfigType
+      Description?: IThemeComponentConfigType
+    };
     Content?: IThemeComponentConfigType;
     Footer?: IThemeComponentConfigType;
   };

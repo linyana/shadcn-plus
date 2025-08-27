@@ -1,4 +1,4 @@
-import { StyledCodeBlock, renderCodeWithComments } from '@/components';
+import { StyledCodeBlock } from '@/components';
 import { Heading } from 'shadcn-plus';
 
 const codeTemplate = `

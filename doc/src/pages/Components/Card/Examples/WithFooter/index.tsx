@@ -75,6 +75,8 @@ export const WithFooterCardComponent = () => {
 export const WithFooterCardExample = () => {
   return (
     <Component
+      title="With Footer"
+      description="A card with footer section containing action buttons."
       previewContent={<WithFooterCardComponent />}
       codeContent={codeContent}
     />

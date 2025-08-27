@@ -3,18 +3,26 @@ import { Heading } from 'shadcn-plus';
 
 const codeTemplate = `
 const themeConfig = {
-  Alert: {
+  Card: {
     style: {}, //COMMENT: React.CSSProperties
     className: '', //COMMENT: string
-    Icon: {
-      style: {}, //COMMENT: React.CSSProperties
-      className: '', //COMMENT: string
-    },
     Header: {
       style: {}, //COMMENT: React.CSSProperties
       className: '', //COMMENT: string
+      Title: {
+        style: {}, //COMMENT: React.CSSProperties
+        className: '', //COMMENT: string
+      },
+      Description: {
+        style: {}, //COMMENT: React.CSSProperties
+        className: '', //COMMENT: string
+      },
     },
-    Description: {
+    Content: {
+      style: {}, //COMMENT: React.CSSProperties
+      className: '', //COMMENT: string
+    },
+    Footer: {
       style: {}, //COMMENT: React.CSSProperties
       className: '', //COMMENT: string
     },
@@ -22,13 +30,13 @@ const themeConfig = {
 };
 `;
 
-export const AlertTheme = () => {
+export const CardTheme = () => {
   return (
     <>
       <Heading level={2}>Theme Configuration</Heading>
       <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px' }}>
-        The Alert component supports comprehensive theme customization
-        through ThemeProvider. You can configure:
+        The Card component supports comprehensive theme customization through
+        ThemeProvider. You can configure:
       </p>
       <ul
         style={{
@@ -39,16 +47,23 @@ export const AlertTheme = () => {
         }}
       >
         <li>
-          <strong>Alert styles</strong> - Overall alert appearance
+          <strong>Card styles</strong> - Overall card appearance
         </li>
         <li>
-          <strong>Icon styles</strong> - Icon styling
+          <strong>Header styles</strong> - Card header section
         </li>
         <li>
-          <strong>Header styles</strong> - Header styling
+          <strong>Header Title styles</strong> - Card header title section
         </li>
         <li>
-          <strong>Description styles</strong> - Cescription area styling
+          <strong>Header Description styles</strong> - Card header description
+          section
+        </li>
+        <li>
+          <strong>Content styles</strong> - Card content section
+        </li>
+        <li>
+          <strong>Footer styles</strong> - Card footer section
         </li>
       </ul>
       <StyledCodeBlock replaceComment>{codeTemplate}</StyledCodeBlock>
