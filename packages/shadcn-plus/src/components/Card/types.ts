@@ -1,5 +1,10 @@
 type ICardContentPropsType = React.ComponentProps<"div">
-type ICardHeaderPropsType = React.ComponentProps<"div">
+type ICardHeaderPropsType = React.ComponentProps<"div"> & {
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  titleProps?: React.ComponentProps<"div">
+  descriptionProps?: React.ComponentProps<"div">
+}
 type ICardFooterPropsType = React.ComponentProps<"div">
 
 export type ICardType = React.ComponentProps<"div"> & {

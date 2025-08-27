@@ -1,6 +1,7 @@
 import {
   AccordionPage,
   AlertPage,
+  BadgePage,
   ButtonPage,
   CardPage,
   CollapsiblePage,
@@ -40,4 +41,5 @@ export const leftMenuRoutes = {
   '/components/accordion': <AccordionPage />,
   '/components/skeleton': <SkeletonPage />,
   '/components/alert': <AlertPage />,
+  '/components/badge': <BadgePage />,
 };

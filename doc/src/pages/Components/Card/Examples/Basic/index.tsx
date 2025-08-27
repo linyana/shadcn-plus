@@ -21,6 +21,8 @@ export const BasicCardComponent = () => {
 export const BasicCardExample = () => {
   return (
     <Component
+      title="Basic"
+      description="A simple card with header, description, and content."
       previewContent={<BasicCardComponent />}
       codeContent={codeContent}
     />
