@@ -34,6 +34,7 @@ export interface IThemeConfigType {
     Content?: IThemeComponentConfigType;
   };
   Input?: IThemeComponentConfigType;
+  Flex?: IThemeComponentConfigType;
   // Select?: IThemeComponentConfigType;
   // Table?: IThemeComponentConfigType;
   // Tabs?: IThemeComponentConfigType;
@@ -42,7 +43,6 @@ export interface IThemeConfigType {
   // Sheet?: IThemeComponentConfigType;
   // HoverCard?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
-  // Flex?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;
   // Separator?: IThemeComponentConfigType;
   // Skeleton?: IThemeComponentConfigType;
