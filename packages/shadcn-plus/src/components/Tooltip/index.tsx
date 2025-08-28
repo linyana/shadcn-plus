@@ -1,3 +1,4 @@
+import { useComponentTheme } from '@/hooks';
 import { ITooltipPropsType } from './types';
 import {
   Tooltip as ShadcnTooltip,
@@ -5,20 +6,37 @@ import {
   TooltipTrigger,
   TooltipProvider,
 } from '@/components/ui/tooltip';
+import { cn, sn } from '@/lib/utils';
 
 export const Tooltip = ({
   children,
   trigger,
-  contentProps,
   ...props
 }: ITooltipPropsType) => {
+  const theme = useComponentTheme('Tooltip');
+
   return (
     <TooltipProvider>
       <ShadcnTooltip {...props}>
-        <TooltipTrigger asChild>
+        <TooltipTrigger
+          asChild
+          {...props.triggerProps}
+          style={sn(theme.Trigger?.style, props.triggerProps?.style)}
+          className={cn(
+            theme.Trigger?.className,
+            props.triggerProps?.className,
+          )}
+        >
           {trigger}
         </TooltipTrigger>
-        <TooltipContent {...contentProps}>
+        <TooltipContent
+          {...props.contentProps}
+          style={sn(theme.Content?.style, props.contentProps?.style)}
+          className={cn(
+            theme.Content?.className,
+            props.contentProps?.className,
+          )}
+        >
           {children}
         </TooltipContent>
       </ShadcnTooltip>

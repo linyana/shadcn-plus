@@ -15,15 +15,15 @@ export const TooltipProps = [
     default: '-',
   },
   {
+    property: 'triggerProps?',
+    description: 'Props to customize the Trigger component.',
+    type: <Link>Trigger Props</Link>,
+    default: '-',
+  },
+  {
     property: 'contentProps?',
-    description: (
-      <>
-        Props for the tooltip content. Extends <Link>TooltipContentProps</Link>{' '}
-        from @radix-ui/react-tooltip. Supports positioning, alignment, delay,
-        and more.
-      </>
-    ),
-    type: <Link>TooltipContentProps</Link>,
+    description: 'Props to customize the Content component.',
+    type: <Link>Content Props</Link>,
     default: '-',
   },
   {
@@ -31,6 +31,36 @@ export const TooltipProps = [
     description:
       'Other props are the same as the base <Tooltip> component from @radix-ui/react-tooltip.',
     type: 'TooltipProps',
+    default: '-',
+  },
+];
+
+export const TooltipTriggerProps = [
+  {
+    property: 'className?',
+    description: 'Custom CSS class for the tooltip trigger.',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'style?',
+    description: 'Custom inline style for the tooltip trigger.',
+    type: 'React.CSSProperties',
+    default: '-',
+  },
+];
+
+export const TooltipContentProps = [
+  {
+    property: 'className?',
+    description: 'Custom CSS class for the tooltip content.',
+    type: 'string',
+    default: '-',
+  },
+  {
+    property: 'style?',
+    description: 'Custom inline style for the tooltip content.',
+    type: 'React.CSSProperties',
     default: '-',
   },
 ];

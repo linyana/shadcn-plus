@@ -64,8 +64,11 @@ export interface IThemeConfigType {
     Trigger?: IThemeComponentConfigType;
     Content?: IThemeComponentConfigType;
   };
+  Tooltip?: {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   // Table?: IThemeComponentConfigType;
-  // Tooltip?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;
 }

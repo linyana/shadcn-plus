@@ -43,6 +43,7 @@ export const Tabs = ({
         className={cn(theme.className, props.className)}
       >
         <TabsList
+          {...props.listProps}
           className={cn(
             'grid w-full',
             theme.List?.className,
@@ -60,6 +61,7 @@ export const Tabs = ({
             <TabsTrigger
               key={item.key}
               value={item.key}
+              {...item.triggerProps}
               style={sn(theme.Trigger?.style, item.triggerProps?.style)}
               className={cn(
                 theme.Trigger?.className,
@@ -75,7 +77,8 @@ export const Tabs = ({
           <TabsContent
             key={item.key}
             value={item.key}
-            style={sn(theme.Trigger?.style, item.triggerProps?.style)}
+            {...item.contentProps}
+            style={sn(theme.Content?.style, item.contentProps?.style)}
             className={cn(
               theme.Content?.className,
               item.contentProps?.className,

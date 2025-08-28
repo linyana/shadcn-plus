@@ -39,16 +39,23 @@ export const Sheet = ({
       >
         <Show hideWhen={null} condition={title || description}>
           <SheetHeader
+            {...props.headerProps}
+            style={sn(theme.Content?.Header?.style, props.headerProps?.style)}
             className={cn(
               theme.Content?.Header?.className,
-              props.contentProps?.className,
+              props.headerProps?.className,
             )}
           >
             <Show hideWhen={null} condition={title}>
               <SheetTitle
+                {...props.titleProps}
+                style={sn(
+                  theme.Content?.Header?.Title?.style,
+                  props.titleProps?.style,
+                )}
                 className={cn(
                   theme.Content?.Header?.Title?.className,
-                  props.contentProps?.className,
+                  props.titleProps?.className,
                 )}
               >
                 {title}
@@ -56,9 +63,14 @@ export const Sheet = ({
             </Show>
             <Show hideWhen={null} condition={description}>
               <SheetDescription
+                {...props.descriptionProps}
+                style={sn(
+                  theme.Content?.Header?.Description?.style,
+                  props.descriptionProps?.style,
+                )}
                 className={cn(
                   theme.Content?.Header?.Description?.className,
-                  props.contentProps?.className,
+                  props.descriptionProps?.className,
                 )}
               >
                 {description}
