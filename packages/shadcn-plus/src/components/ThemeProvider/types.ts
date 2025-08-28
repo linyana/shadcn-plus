@@ -59,8 +59,12 @@ export interface IThemeConfigType {
     };
   };
   Skeleton?: IThemeComponentConfigType;
+  Tabs?: IThemeComponentConfigType & {
+    List?: IThemeComponentConfigType;
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   // Table?: IThemeComponentConfigType;
-  // Tabs?: IThemeComponentConfigType;
   // Tooltip?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;

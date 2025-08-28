@@ -90,13 +90,13 @@ export const SheetProps = [
 export const SheetTriggerProps = [
   {
     property: 'className?',
-    description: 'Custom CSS class for the hover sheet trigger.',
+    description: 'Custom CSS class for the sheet trigger.',
     type: 'string',
     default: '-',
   },
   {
     property: 'style?',
-    description: 'Custom inline style for the hover sheet trigger.',
+    description: 'Custom inline style for the sheet trigger.',
     type: 'React.CSSProperties',
     default: '-',
   },
@@ -105,13 +105,13 @@ export const SheetTriggerProps = [
 export const SheetContentProps = [
   {
     property: 'className?',
-    description: 'Custom CSS class for the hover sheet content.',
+    description: 'Custom CSS class for the sheet content.',
     type: 'string',
     default: '-',
   },
   {
     property: 'style?',
-    description: 'Custom inline style for the hover sheet content.',
+    description: 'Custom inline style for the sheet content.',
     type: 'React.CSSProperties',
     default: '-',
   },
@@ -120,13 +120,13 @@ export const SheetContentProps = [
 export const SheetHeaderProps = [
   {
     property: 'className?',
-    description: 'Custom CSS class for the hover sheet header.',
+    description: 'Custom CSS class for the sheet header.',
     type: 'string',
     default: '-',
   },
   {
     property: 'style?',
-    description: 'Custom inline style for the hover sheet header.',
+    description: 'Custom inline style for the sheet header.',
     type: 'React.CSSProperties',
     default: '-',
   },
@@ -135,13 +135,13 @@ export const SheetHeaderProps = [
 export const SheetTitleProps = [
   {
     property: 'className?',
-    description: 'Custom CSS class for the hover sheet title.',
+    description: 'Custom CSS class for the sheet title.',
     type: 'string',
     default: '-',
   },
   {
     property: 'style?',
-    description: 'Custom inline style for the hover sheet title.',
+    description: 'Custom inline style for the sheet title.',
     type: 'React.CSSProperties',
     default: '-',
   },
@@ -150,13 +150,13 @@ export const SheetTitleProps = [
 export const SheetDescriptionProps = [
   {
     property: 'className?',
-    description: 'Custom CSS class for the hover sheet description.',
+    description: 'Custom CSS class for the sheet description.',
     type: 'string',
     default: '-',
   },
   {
     property: 'style?',
-    description: 'Custom inline style for the hover sheet description.',
+    description: 'Custom inline style for the sheet description.',
     type: 'React.CSSProperties',
     default: '-',
   },

@@ -1,6 +1,6 @@
 import { Page } from '@/components';
 import { Heading } from 'shadcn-plus';
-import { TabsProps } from './API';
+import { TabsContentProps, TabsListProps, TabsProps, TabsTriggerProps } from './API';
 import {
   BasicTabsExample,
   ControlledTabsExample,
@@ -14,13 +14,16 @@ export const TabsPage = () => {
       title="Tabs"
       description="A set of layered sections of content—known as tab panels—that are displayed one at a time. Built with smooth animations and transitions."
     >
-      <Heading>Examples</Heading>
+      <Heading level={2}>Examples</Heading>
       <BasicTabsExample />
       <ControlledTabsExample />
       <CustomContentTabsExample />
-      <Heading>API</Heading>
-      <Heading level={5}>Props</Heading>
-      <PropTable data={TabsProps} />
+
+      <Heading level={2}>API</Heading>
+      <PropTable title="Tabs Props" data={TabsProps} />
+      <PropTable title="TabsTrigger Props" data={TabsTriggerProps} />
+      <PropTable title="TabsContent Props" data={TabsContentProps} />
+      <PropTable title="TabsList Props" data={TabsListProps} />
     </Page>
   );
 };
