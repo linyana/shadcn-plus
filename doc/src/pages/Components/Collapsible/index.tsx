@@ -7,6 +7,7 @@ import {
   CustomTriggerCollapsibleExample,
 } from './Examples';
 import { PropTable } from '../components';
+import { CollapsibleTheme } from './Theme';
 
 export const CollapsiblePage = () => {
   return (
@@ -18,6 +19,7 @@ export const CollapsiblePage = () => {
       <BasicCollapsibleExample />
       <ControlledCollapsibleExample />
       <CustomTriggerCollapsibleExample />
+      <CollapsibleTheme />
       <Heading>API</Heading>
       <Heading level={5}>Props</Heading>
       <PropTable data={CollapsibleProps} />

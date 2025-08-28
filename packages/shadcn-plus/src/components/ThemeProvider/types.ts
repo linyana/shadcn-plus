@@ -19,22 +19,24 @@ export interface IThemeConfigType {
   Button?: IThemeComponentConfigType;
   Card?: IThemeComponentConfigType & {
     Header?: IThemeComponentConfigType & {
-      Title?: IThemeComponentConfigType
-      Description?: IThemeComponentConfigType
+      Title?: IThemeComponentConfigType;
+      Description?: IThemeComponentConfigType;
     };
     Content?: IThemeComponentConfigType;
     Footer?: IThemeComponentConfigType;
   };
+  Collapsible?: IThemeComponentConfigType & {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   Input?: IThemeComponentConfigType;
   // Select?: IThemeComponentConfigType;
-  // Card?: IThemeComponentConfigType;
   // Table?: IThemeComponentConfigType;
   // Tabs?: IThemeComponentConfigType;
   // Tooltip?: IThemeComponentConfigType;
   // Popover?: IThemeComponentConfigType;
   // Sheet?: IThemeComponentConfigType;
   // HoverCard?: IThemeComponentConfigType;
-  // Collapsible?: IThemeComponentConfigType;
   // DropdownMenu?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
   // Flex?: IThemeComponentConfigType;
