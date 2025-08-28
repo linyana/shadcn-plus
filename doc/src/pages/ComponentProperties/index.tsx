@@ -522,16 +522,14 @@ export const ComponentPropertiesPage: React.FC = () => {
           title: 'Basic HoverCard',
           component: (
             <HoverCard trigger={<Button variant="link">@username</Button>}>
-              <Card>
-                <div style={{ padding: '12px' }}>
-                  <h4 style={{ fontWeight: '600', marginBottom: '4px' }}>
-                    User Profile
-                  </h4>
-                  <p style={{ fontSize: '14px', color: '#6b7280' }}>
-                    Software Developer
-                  </p>
-                </div>
-              </Card>
+              <div style={{ padding: '12px' }}>
+                <h4 style={{ fontWeight: '600', marginBottom: '4px' }}>
+                  User Profile
+                </h4>
+                <p style={{ fontSize: '14px', color: '#6b7280' }}>
+                  Software Developer
+                </p>
+              </div>
             </HoverCard>
           ),
         },

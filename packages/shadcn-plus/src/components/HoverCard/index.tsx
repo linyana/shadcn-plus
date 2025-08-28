@@ -1,18 +1,11 @@
-import { HoverCardContent, HoverCardTrigger } from "@radix-ui/react-hover-card"
-import { HoverCard as ShadcnHoverCard } from "../ui/hover-card"
-import { IHoverCardType } from "./types"
+import { HoverCard as ShadcnHoverCard, HoverCardContent, HoverCardTrigger } from '../ui/hover-card';
+import { IHoverCardType } from './types';
 
-export const HoverCard = ({ 
-  trigger,
-  children,
-  ...props
-}: IHoverCardType) => { 
+export const HoverCard = ({ trigger, children, ...props }: IHoverCardType) => {
   return (
     <ShadcnHoverCard {...props}>
-      <HoverCardTrigger asChild>{trigger}</HoverCardTrigger>
-      <HoverCardContent>
-        {children}
-      </HoverCardContent>
+      <HoverCardTrigger>{trigger}</HoverCardTrigger>
+      <HoverCardContent>{children}</HoverCardContent>
     </ShadcnHoverCard>
-  )
-}
+  );
+};

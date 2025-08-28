@@ -1,4 +1,4 @@
-import { HoverCard, Button, Flex, Card } from 'shadcn-plus';
+import { HoverCard, Button, Flex } from 'shadcn-plus';
 import { Clock, Zap } from 'lucide-react';
 
 export const CustomDelayHoverCardComponent = () => {
@@ -16,24 +16,22 @@ export const CustomDelayHoverCardComponent = () => {
         openDelay={1000}
         closeDelay={500}
       >
-        <Card>
-          <div style={{ padding: '8px' }}>
-            <h4
-              style={{
-                fontSize: '14px',
-                fontWeight: '600',
-                margin: '0 0 8px 0',
-              }}
-            >
-              Slow Hover Card
-            </h4>
-            <p style={{ fontSize: '12px', color: '#6b7280', margin: '0' }}>
-              This hover card has a 1000ms open delay and 500ms close delay. It
-              takes longer to appear but also stays open longer when you move
-              your mouse away.
-            </p>
-          </div>
-        </Card>
+        <div style={{ padding: '8px' }}>
+          <h4
+            style={{
+              fontSize: '14px',
+              fontWeight: '600',
+              margin: '0 0 8px 0',
+            }}
+          >
+            Slow Hover Card
+          </h4>
+          <p style={{ fontSize: '12px', color: '#6b7280', margin: '0' }}>
+            This hover card has a 1000ms open delay and 500ms close delay. It
+            takes longer to appear but also stays open longer when you move your
+            mouse away.
+          </p>
+        </div>
       </HoverCard>
 
       <HoverCard
@@ -48,23 +46,21 @@ export const CustomDelayHoverCardComponent = () => {
         openDelay={100}
         closeDelay={100}
       >
-        <Card>
-          <div style={{ padding: '8px' }}>
-            <h4
-              style={{
-                fontSize: '14px',
-                fontWeight: '600',
-                margin: '0 0 8px 0',
-              }}
-            >
-              Fast Hover Card
-            </h4>
-            <p style={{ fontSize: '12px', color: '#6b7280', margin: '0' }}>
-              This hover card has a 100ms open delay and 100ms close delay. It
-              appears and disappears quickly for instant feedback.
-            </p>
-          </div>
-        </Card>
+        <div style={{ padding: '8px' }}>
+          <h4
+            style={{
+              fontSize: '14px',
+              fontWeight: '600',
+              margin: '0 0 8px 0',
+            }}
+          >
+            Fast Hover Card
+          </h4>
+          <p style={{ fontSize: '12px', color: '#6b7280', margin: '0' }}>
+            This hover card has a 100ms open delay and 100ms close delay. It
+            appears and disappears quickly for instant feedback.
+          </p>
+        </div>
       </HoverCard>
     </Flex>
   );
