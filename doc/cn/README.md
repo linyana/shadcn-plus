@@ -1,8 +1,6 @@
 # shadcn-plus ⚡️
 
 🌐 **文档**: 👉 [Shadcn Plus 文档](https://linyana.github.io/shadcn-plus)
-  
-
 
 🚀 一个基于 [shadcn/ui](https://ui.shadcn.com/) 的封装库，无需繁琐配置，开箱即用，专注提升开发效率。
 
@@ -33,12 +31,13 @@ npm install shadcn-plus
 ### 导入样式
 
 ```typescript
-import 'shadcn-plus/style.css'
+import 'shadcn-plus/style.css';
 ```
 
 或者使用`shadcn-plus`的扩展样式和你项目中的`tailwindcss`:
+
 ```typescript
-import 'shadcn-plus/expand.css'
+import 'shadcn-plus/expand.css';
 ```
 
 ### 开始使用
@@ -57,7 +56,7 @@ export default function App() {
 
 <img src="https://s2.loli.net/2025/04/12/9gcGdjsmy7Xnf3C.png" width="300px" />
 
-导入 [Lucide 图标](https://lucide.dev/icons): 
+导入 [Lucide 图标](https://lucide.dev/icons):
 
 ```typescript
 import { Store } from'shadcn-plus/icons'
@@ -69,3 +68,17 @@ export default function App() {
 ```
 
 <img src="https://s2.loli.net/2025/04/12/5WOqrgunhH7TKo2.png" width="300px" />
+
+### 导入原始 shadcn/ui 组件
+
+如果你需要直接使用原始的 shadcn/ui 组件：
+
+```typescript
+import { Button } from 'shadcn-plus/ui'
+
+export default function App() {
+  return (
+    <Button>Button</Button>
+  )
+}
+```

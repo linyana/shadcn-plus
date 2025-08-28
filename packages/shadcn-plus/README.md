@@ -68,3 +68,17 @@ export default function App() {
 ```
 
 <img src="https://s2.loli.net/2025/04/12/5WOqrgunhH7TKo2.png" width="300px" />
+
+### Import Original shadcn/ui Components
+
+If you need to use the original shadcn/ui components directly:
+
+```typescript
+import { Button } from 'shadcn-plus/ui'
+
+export default function App() {
+  return (
+    <Button>Button</Button>
+  )
+}
+```
