@@ -1,7 +1,7 @@
 import { Component } from '@/components';
 import { ControlledHoverCardComponent } from './component';
 
-const codeContent = `import { HoverCard, Button, Flex, Card } from 'shadcn-plus';
+const codeContent = `import { HoverCard, Button, Flex } from 'shadcn-plus';
 import { Settings } from 'lucide-react';
 import { useState } from 'react';
 
@@ -39,23 +39,21 @@ export const ControlledHoverCardComponent = () => {
           </Button>
         }
       >
-        <Card>
-          <div style={{ padding: '8px' }}>
-            <h4
-              style={{
-                fontSize: '14px',
-                fontWeight: '600',
-                margin: '0 0 8px 0',
-              }}
-            >
-              Controlled State
-            </h4>
-            <p style={{ fontSize: '12px', color: '#6b7280', margin: '0' }}>
-              This hover card's open state is controlled by external buttons.
-              You can programmatically open, close, or toggle the hover card.
-            </p>
-          </div>
-        </Card>
+        <div style={{ padding: '8px' }}>
+          <h4
+            style={{
+              fontSize: '14px',
+              fontWeight: '600',
+              margin: '0 0 8px 0',
+            }}
+          >
+            Controlled State
+          </h4>
+          <p style={{ fontSize: '12px', color: '#6b7280', margin: '0' }}>
+            This hover card's open state is controlled by external buttons. You
+            can programmatically open, close, or toggle the hover card.
+          </p>
+        </div>
       </HoverCard>
     </Flex>
   );
@@ -65,6 +63,8 @@ export const ControlledHoverCardComponent = () => {
 export const ControlledHoverCardExample = () => {
   return (
     <Component
+      title="Controlled"
+      description="A hover card with controlled open state that can be programmatically opened and closed."
       previewContent={<ControlledHoverCardComponent />}
       codeContent={codeContent}
     />

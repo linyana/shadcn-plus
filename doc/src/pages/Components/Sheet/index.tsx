@@ -1,8 +1,20 @@
 import { Page } from '@/components';
 import { Heading } from 'shadcn-plus';
 import { SheetProps } from './API';
-import { BasicSheetExample, SideSheetExample, FormSheetExample } from './Examples';
+import {
+  BasicSheetExample,
+  SideSheetExample,
+  FormSheetExample,
+} from './Examples';
 import { PropTable } from '../components';
+import {
+  SheetContentProps,
+  SheetDescriptionProps,
+  SheetHeaderProps,
+  SheetTitleProps,
+  SheetTriggerProps,
+} from './API';
+import { SheetTheme } from './Theme';
 
 export const SheetPage = () => {
   return (
@@ -14,9 +26,16 @@ export const SheetPage = () => {
       <BasicSheetExample />
       <SideSheetExample />
       <FormSheetExample />
+
+      <SheetTheme />
+
       <Heading>API</Heading>
-      <Heading level={5}>Props</Heading>
-      <PropTable data={SheetProps} />
+      <PropTable title="Sheet Props" data={SheetProps} />
+      <PropTable title="Trigger Props" data={SheetTriggerProps} />
+      <PropTable title="Content Props" data={SheetContentProps} />
+      <PropTable title="Header Props" data={SheetHeaderProps} />
+      <PropTable title="Title Props" data={SheetTitleProps} />
+      <PropTable title="Description Props" data={SheetDescriptionProps} />
     </Page>
   );
 };

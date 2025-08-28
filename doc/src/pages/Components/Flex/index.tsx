@@ -9,6 +9,7 @@ import {
 } from './Examples';
 import { FlexProps } from './API';
 import { PropTable } from '../components';
+import { FlexTheme } from './Theme';
 
 export const FlexPage = () => {
   return (
@@ -22,6 +23,8 @@ export const FlexPage = () => {
       <FlexDirectionFlexExample />
       <SpacingFlexExample />
       <LayoutFlexExample />
+
+      <FlexTheme />
 
       <Heading>API</Heading>
       <Heading level={5}>Props</Heading>

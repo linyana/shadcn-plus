@@ -3,11 +3,13 @@ import {
   TabsList,
   TabsTrigger,
   TabsContent,
-} from "@/components/ui/tabs";
-import { ITabsProps } from "./types";
-import { nanoid } from "nanoid";
-import { useMemo, useState } from "react";
-import { AnimatedHeightWrapper, TabContentTransition } from "../Custom";
+} from '@/components/ui/tabs';
+import { ITabsProps } from './types';
+import { nanoid } from 'nanoid';
+import { useMemo, useState } from 'react';
+import { AnimatedHeightWrapper, TabContentTransition } from '../Custom';
+import { useComponentTheme } from '@/hooks';
+import { cn, sn } from '@/lib/utils';
 
 export const Tabs = ({
   items: externalItems,
@@ -16,8 +18,10 @@ export const Tabs = ({
   value: externalValue,
   ...props
 }: ITabsProps) => {
+  const theme = useComponentTheme('Tabs');
+
   const items = useMemo(() => {
-    return externalItems.map(item => ({
+    return externalItems.map((item) => ({
       ...item,
       key: item.key || nanoid(),
     }));
@@ -35,20 +39,51 @@ export const Tabs = ({
         value={value}
         onValueChange={onValueChange}
         {...props}
+        style={sn(theme.style, props.style)}
+        className={cn(theme.className, props.className)}
       >
-        <TabsList 
-          className="grid w-full" 
-          style={{ gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))` }}
+        <TabsList
+          {...props.listProps}
+          className={cn(
+            'grid w-full',
+            theme.List?.className,
+            props.listProps?.className,
+          )}
+          style={sn(
+            {
+              gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))`,
+            },
+            theme.List?.style,
+            props.listProps?.style,
+          )}
         >
-          {items.map(item => (
-            <TabsTrigger key={item.key} value={item.key}>
+          {items.map((item) => (
+            <TabsTrigger
+              key={item.key}
+              value={item.key}
+              {...item.triggerProps}
+              style={sn(theme.Trigger?.style, item.triggerProps?.style)}
+              className={cn(
+                theme.Trigger?.className,
+                item.triggerProps?.className,
+              )}
+            >
               {item.label}
             </TabsTrigger>
           ))}
         </TabsList>
 
-        {items.map(item => (
-          <TabsContent key={item.key} value={item.key}>
+        {items.map((item) => (
+          <TabsContent
+            key={item.key}
+            value={item.key}
+            {...item.contentProps}
+            style={sn(theme.Content?.style, item.contentProps?.style)}
+            className={cn(
+              theme.Content?.className,
+              item.contentProps?.className,
+            )}
+          >
             <TabContentTransition tabKey={item.key}>
               {item.content}
             </TabContentTransition>

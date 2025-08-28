@@ -1,4 +1,6 @@
+import { useComponentTheme } from '@/hooks';
 import { IFlexPropsType } from './types';
+import { cn, sn } from '@/lib/utils';
 
 export const Flex = ({
   width = 'auto',
@@ -8,33 +10,39 @@ export const Flex = ({
   flexWrap = 'nowrap',
   justifyContent = 'normal',
   alignItems = 'normal',
-  className = '',
   flexDirection,
   children,
   gap,
-  style,
   rowGap,
   columnGap,
   onClick,
-}: IFlexPropsType) => (
-  <div
-    style={{
-      width,
-      height,
-      margin,
-      padding,
-      justifyContent,
-      alignItems,
-      flexWrap,
-      rowGap: rowGap ?? gap ?? undefined,
-      columnGap: columnGap ?? gap ?? undefined,
-      flexDirection,
-      display: 'flex',
-      ...style,
-    }}
-    onClick={onClick ? (e) => onClick(e) : undefined}
-    className={className}
-  >
-    {children}
-  </div>
-);
+  ...props
+}: IFlexPropsType) => {
+  const theme = useComponentTheme('Flex');
+
+  return (
+    <div
+      style={sn(
+        {
+          width,
+          height,
+          margin,
+          padding,
+          justifyContent,
+          alignItems,
+          flexWrap,
+          rowGap: rowGap ?? gap ?? undefined,
+          columnGap: columnGap ?? gap ?? undefined,
+          flexDirection,
+          display: 'flex',
+        },
+        theme.style,
+        props.style,
+      )}
+      onClick={onClick ? (e) => onClick(e) : undefined}
+      className={cn(theme.className, props.className)}
+    >
+      {children}
+    </div>
+  );
+};

@@ -5,9 +5,9 @@ import {
   PositioningPopoverExample,
   RichContentPopoverExample
 } from './Examples';
-import { PopoverProps } from './API';
-import { PopoverContentProps } from './API/PopoverContentProps';
+import { PopoverContentProps, PopoverProps, PopoverTriggerProps } from './API';
 import { PropTable } from '../components';
+import { PopoverTheme } from './Theme';
 
 export const PopoverPage = () => {
   return (
@@ -19,11 +19,13 @@ export const PopoverPage = () => {
       <BasicPopoverExample />
       <PositioningPopoverExample />
       <RichContentPopoverExample />
+
+      <PopoverTheme />
+
       <Heading>API</Heading>
-      <Heading level={5}>Props</Heading>
-      <PropTable data={PopoverProps} />
-      <Heading level={5}>PopoverContentProps</Heading>
-      <PropTable data={PopoverContentProps} />
+      <PropTable title="Popover Props" data={PopoverProps} />
+      <PropTable title="Trigger Props" data={PopoverTriggerProps} />
+      <PropTable title="Content Props" data={PopoverContentProps} />
     </Page>
   );
 };

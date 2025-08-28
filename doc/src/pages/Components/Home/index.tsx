@@ -17,6 +17,12 @@ const components: ComponentItem[] = [
     category: 'Form',
   },
   {
+    name: 'Badge',
+    path: '/components/badge',
+    description: 'Displays a callout for user attention.',
+    category: 'Data Display',
+  },
+  {
     name: 'Input',
     path: '/components/input',
     description:
@@ -196,7 +202,7 @@ export const ComponentsPage = () => {
                         gridTemplateColumns:
                           'repeat(auto-fit, minmax(300px, 1fr))',
                         gap: '24px',
-                        marginTop: 24
+                        marginTop: 24,
                       }}
                     >
                       {components

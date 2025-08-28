@@ -19,28 +19,58 @@ export interface IThemeConfigType {
   Button?: IThemeComponentConfigType;
   Card?: IThemeComponentConfigType & {
     Header?: IThemeComponentConfigType & {
-      Title?: IThemeComponentConfigType
-      Description?: IThemeComponentConfigType
+      Title?: IThemeComponentConfigType;
+      Description?: IThemeComponentConfigType;
     };
     Content?: IThemeComponentConfigType;
     Footer?: IThemeComponentConfigType;
   };
+  Collapsible?: IThemeComponentConfigType & {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
+  DropdownMenu?: IThemeComponentConfigType & {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
+  Flex?: IThemeComponentConfigType;
+  HoverCard?: {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   Input?: IThemeComponentConfigType;
-  // Select?: IThemeComponentConfigType;
-  // Card?: IThemeComponentConfigType;
+  Popover?: {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
+  Select?: {
+    Value?: IThemeComponentConfigType;
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
+  Separator?: IThemeComponentConfigType;
+  Sheet?: {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType & {
+      Header?: IThemeComponentConfigType & {
+        Title?: IThemeComponentConfigType;
+        Description?: IThemeComponentConfigType;
+      };
+    };
+  };
+  Skeleton?: IThemeComponentConfigType;
+  Tabs?: IThemeComponentConfigType & {
+    List?: IThemeComponentConfigType;
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
+  Tooltip?: {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   // Table?: IThemeComponentConfigType;
-  // Tabs?: IThemeComponentConfigType;
-  // Tooltip?: IThemeComponentConfigType;
-  // Popover?: IThemeComponentConfigType;
-  // Sheet?: IThemeComponentConfigType;
-  // HoverCard?: IThemeComponentConfigType;
-  // Collapsible?: IThemeComponentConfigType;
-  // DropdownMenu?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
-  // Flex?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;
-  // Separator?: IThemeComponentConfigType;
-  // Skeleton?: IThemeComponentConfigType;
 }
 
 export interface IThemeProviderPropsType {
@@ -50,7 +80,7 @@ export interface IThemeProviderPropsType {
 
 export interface IThemeContextType {
   config: IThemeConfigType;
-  getComponentTheme: (
-    componentName: keyof IThemeConfigType,
-  ) => IThemeComponentConfigType | undefined;
+  getComponentTheme: <T extends keyof IThemeConfigType>(
+    componentName: T,
+  ) => IThemeConfigType[T] | undefined;
 }

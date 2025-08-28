@@ -1,5 +1,3 @@
-import { Link } from '@/pages/Components/components';
-
 export const PopoverContentProps = [
   {
     property: 'side?',

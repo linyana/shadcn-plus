@@ -15,6 +15,7 @@ import {
   SelectProps,
 } from './API';
 import { PropTable } from '../components';
+import { SelectTheme } from './Theme';
 
 export const SelectPage = () => {
   return (
@@ -22,23 +23,27 @@ export const SelectPage = () => {
       title="Select"
       description="A flexible and customizable select component built on top of Radix UI. Supports custom options, grouping, different states, and advanced styling. Perfect for forms, filters, and user input scenarios."
     >
-      <Heading>Examples</Heading>
+      <Heading level={2}>Examples</Heading>
       <BasicSelectExample />
       <GroupedSelectExample />
       <StatesSelectExample />
       <AdvancedSelectExample />
       <UsageSelectExample />
-      <Heading>API</Heading>
-      <Heading level={5}>Props</Heading>
-      <PropTable data={SelectProps} />
-      <Heading level={5}>ISelectOptionType</Heading>
-      <PropTable data={ISelectOptionType} />
-      <Heading level={5}>ISelectTriggerPropsType</Heading>
-      <PropTable data={ISelectTriggerPropsType} />
-      <Heading level={5}>ISelectContentPropsType</Heading>
-      <PropTable data={ISelectContentPropsType} />
-      <Heading level={5}>ISelectValuePropsType</Heading>
-      <PropTable data={ISelectValuePropsType} />
+
+      <SelectTheme />
+
+      <Heading level={2}>API</Heading>
+      <PropTable title="Select Props" data={SelectProps} />
+      <PropTable title="ISelectOptionType" data={ISelectOptionType} />
+      <PropTable
+        title="ISelectTriggerPropsType"
+        data={ISelectTriggerPropsType}
+      />
+      <PropTable
+        title="ISelectContentPropsType"
+        data={ISelectContentPropsType}
+      />
+      <PropTable title="ISelectValuePropsType" data={ISelectValuePropsType} />
     </Page>
   );
 };

@@ -14,9 +14,9 @@ export const ThemeProvider: React.FC<IThemeProviderPropsType> = ({
   children,
   config = {},
 }) => {
-  const getComponentTheme = (
-    componentName: keyof IThemeConfigType,
-  ): IThemeComponentConfigType | undefined => {
+  const getComponentTheme = <T extends keyof IThemeConfigType>(
+    componentName: T,
+  ): IThemeConfigType[T] | undefined => {
     return config[componentName];
   };
 

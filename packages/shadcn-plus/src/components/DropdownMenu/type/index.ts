@@ -1,6 +1,7 @@
 import {
   DropdownMenuContentProps,
   DropdownMenuProps,
+  DropdownMenuTriggerProps,
 } from '@radix-ui/react-dropdown-menu';
 import {
   IDropdownMenuCheckboxItemType,
@@ -12,6 +13,7 @@ import {
 export type IDropdownMenuPropsType = DropdownMenuProps & {
   children: React.ReactNode;
   items: IDropdownMenuItemType[];
+  triggerProps?: DropdownMenuTriggerProps;
   contentProps?: DropdownMenuContentProps;
 };
 

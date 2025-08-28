@@ -10,6 +10,7 @@ import {
 } from './Examples';
 import { InputProps, IFormControlValidateRuleType } from './API';
 import { PropTable } from '../components';
+import { InputTheme } from './Theme';
 
 export const InputPage = () => {
   return (
@@ -17,18 +18,22 @@ export const InputPage = () => {
       title="Input"
       description="A versatile input component with built-in validation, status indicators, and customizable styling. Supports various input types, validation rules, and accessibility features."
     >
-      <Heading>Examples</Heading>
+      <Heading level={2}>Examples</Heading>
       <BasicInputExample />
       <SizesInputExample />
       <DisabledInputExample />
       <StatusInputExample />
       <ValidationInputExample />
       <RuleInputExample />
-      <Heading>API</Heading>
-      <Heading level={5}>Props</Heading>
-      <PropTable data={InputProps} />
-      <Heading level={5}>IFormControlValidateRuleType</Heading>
-      <PropTable data={IFormControlValidateRuleType} />
+
+      <InputTheme />
+
+      <Heading level={2}>API</Heading>
+      <PropTable title="Input Props" data={InputProps} />
+      <PropTable
+        title="IFormControlValidateRuleType"
+        data={IFormControlValidateRuleType}
+      />
     </Page>
   );
 };
