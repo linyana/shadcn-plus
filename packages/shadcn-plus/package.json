@@ -1,6 +1,6 @@
 {
   "name": "shadcn-plus",
-  "version": "0.0.19",
+  "version": "0.1.1",
   "description": "A configurable wrapper for shadcn/ui that simplifies integration with easy-to-use options.",
   "keywords": [
     "react",
@@ -39,10 +39,10 @@
   "scripts": {
     "dev": "concurrently \"yarn build:watch\" \"yarn build:css:watch\" \"yarn build:custom:css:watch\"",
     "build": "concurrently \"yarn build:main\" \"yarn build:css\" \"yarn build:custom:css\"",
-    "build:main": "tsup src/index.ts src/types/index.ts src/icons/index.ts src/hooks/index.ts --format esm,cjs --dts --external react",
+    "build:main": "tsup src/index.ts src/types/index.ts src/icons/index.ts src/hooks/index.ts src/ui.ts --format esm,cjs --dts --external react",
     "build:css": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css",
     "build:custom:css": "npx @tailwindcss/cli -i ./src/expand.css -o ./dist/expand.css",
-    "build:watch": "tsup src/index.ts src/types/index.ts src/icons/index.ts src/hooks/index.ts --format esm,cjs --dts --external react --watch",
+    "build:watch": "tsup src/index.ts src/types/index.ts src/icons/index.ts src/hooks/index.ts src/ui.ts --format esm,cjs --dts --external react --watch",
     "build:css:watch": "npx @tailwindcss/cli -i ./src/style.css -o ./dist/style.css --watch",
     "build:custom:css:watch": "npx @tailwindcss/cli -i ./src/expand.css -o ./dist/expand.css --watch"
   },
@@ -80,6 +80,12 @@
       "import": "./dist/hooks/index.mjs",
       "require": "./dist/hooks/index.js",
       "default": "./dist/hooks/index.mjs"
+    },
+    "./ui": {
+      "types": "./dist/ui.d.ts",
+      "import": "./dist/ui.mjs",
+      "require": "./dist/ui.js",
+      "default": "./dist/ui.mjs"
     }
   },
   "peerDependencies": {
