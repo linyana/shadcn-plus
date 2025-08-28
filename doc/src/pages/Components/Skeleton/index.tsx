@@ -5,26 +5,24 @@ import {
   TextSkeletonExample,
   CardSkeletonExample,
 } from './Examples';
+import { Page } from '@/components';
+import { SkeletonTheme } from './Theme';
 
 export const SkeletonPage = () => {
   return (
-    <Flex flexDirection="column" gap="32px">
-      <Flex flexDirection="column" gap="16px">
-        <Heading level={2}>Skeleton</Heading>
-        <p>Use to show a placeholder while content is loading.</p>
-      </Flex>
+    <Page
+      title="Skeleton"
+      description="Use to show a placeholder while content is loading."
+    >
+      <Heading level={2}>Examples</Heading>
+      <BasicSkeletonExample />
+      <TextSkeletonExample />
+      <CardSkeletonExample />
 
-      <Flex flexDirection="column" gap="24px">
-        <Heading level={3}>Examples</Heading>
-        <BasicSkeletonExample />
-        <TextSkeletonExample />
-        <CardSkeletonExample />
-      </Flex>
+      <SkeletonTheme />
 
-      <Flex flexDirection="column" gap="16px">
-        <Heading level={3}>API</Heading>
-        <SkeletonProps />
-      </Flex>
-    </Flex>
+      <Heading level={2}>API</Heading>
+      <SkeletonProps />
+    </Page>
   );
 };

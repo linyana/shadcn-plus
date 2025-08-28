@@ -58,12 +58,12 @@ export interface IThemeConfigType {
       };
     };
   };
+  Skeleton?: IThemeComponentConfigType;
   // Table?: IThemeComponentConfigType;
   // Tabs?: IThemeComponentConfigType;
   // Tooltip?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;
-  // Skeleton?: IThemeComponentConfigType;
 }
 
 export interface IThemeProviderPropsType {
