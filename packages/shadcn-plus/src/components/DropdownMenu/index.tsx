@@ -18,6 +18,8 @@ import {
 import { IDropdownMenuPropsType, IDropdownMenuItemType } from './types';
 import { nanoid } from 'nanoid';
 import { Show } from '../Show';
+import { useComponentTheme } from '@/hooks';
+import { cn, sn } from '@/lib/utils';
 
 export const MenuItem = ({ item }: { item: IDropdownMenuItemType }) => {
   if ('type' in item) {
@@ -113,13 +115,25 @@ export const MenuItem = ({ item }: { item: IDropdownMenuItemType }) => {
 export const DropdownMenu = ({
   children,
   items,
-  contentProps,
   ...props
 }: IDropdownMenuPropsType) => {
+  const theme = useComponentTheme('DropdownMenu');
+
   return (
     <ShadcnDropdownMenu {...props}>
-      <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
-      <DropdownMenuContent {...contentProps}>
+      <DropdownMenuTrigger
+        asChild
+        {...props.triggerProps}
+        style={sn(theme.Trigger?.style, props.triggerProps?.style)}
+        className={cn(theme.Trigger?.className, props.triggerProps?.className)}
+      >
+        {children}
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        {...props.contentProps}
+        style={sn(theme.Content?.style, props.contentProps?.style)}
+        className={cn(theme.Content?.className, props.contentProps?.className)}
+      >
         {items.map((item) => {
           const key = item.key || nanoid();
           return <MenuItem key={key} item={item} />;

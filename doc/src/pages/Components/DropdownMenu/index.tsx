@@ -14,6 +14,7 @@ import {
   IDropdownMenuRadioItemTypeProps,
 } from './API';
 import { Link, PropTable } from '../components';
+import { DropdownMenuTheme } from './Theme';
 
 export const DropdownMenuPage = () => {
   return (
@@ -25,6 +26,7 @@ export const DropdownMenuPage = () => {
       <BasicDropdownMenuExample />
       <CheckboxDropdownMenuExample />
       <RadioDropdownMenuExample />
+      <DropdownMenuTheme />
       <Heading>API</Heading>
       <PropTable title="Props" data={DropdownMenuProps} />
       <Heading level={5}>IDropdownMenuItemType</Heading>

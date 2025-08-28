@@ -29,6 +29,10 @@ export interface IThemeConfigType {
     Trigger?: IThemeComponentConfigType;
     Content?: IThemeComponentConfigType;
   };
+  DropdownMenu?: IThemeComponentConfigType & {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   Input?: IThemeComponentConfigType;
   // Select?: IThemeComponentConfigType;
   // Table?: IThemeComponentConfigType;
@@ -37,7 +41,6 @@ export interface IThemeConfigType {
   // Popover?: IThemeComponentConfigType;
   // Sheet?: IThemeComponentConfigType;
   // HoverCard?: IThemeComponentConfigType;
-  // DropdownMenu?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
   // Flex?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;
