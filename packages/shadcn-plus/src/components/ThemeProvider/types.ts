@@ -33,6 +33,10 @@ export interface IThemeConfigType {
     Trigger?: IThemeComponentConfigType;
     Content?: IThemeComponentConfigType;
   };
+  HoverCard?: IThemeComponentConfigType & {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   Input?: IThemeComponentConfigType;
   Flex?: IThemeComponentConfigType;
   // Select?: IThemeComponentConfigType;
@@ -41,7 +45,6 @@ export interface IThemeConfigType {
   // Tooltip?: IThemeComponentConfigType;
   // Popover?: IThemeComponentConfigType;
   // Sheet?: IThemeComponentConfigType;
-  // HoverCard?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;
   // Separator?: IThemeComponentConfigType;

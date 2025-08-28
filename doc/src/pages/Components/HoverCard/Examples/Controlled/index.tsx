@@ -63,6 +63,8 @@ export const ControlledHoverCardComponent = () => {
 export const ControlledHoverCardExample = () => {
   return (
     <Component
+      title="Controlled"
+      description="A hover card with controlled open state that can be programmatically opened and closed."
       previewContent={<ControlledHoverCardComponent />}
       codeContent={codeContent}
     />

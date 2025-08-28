@@ -77,6 +77,8 @@ export const CustomDelayHoverCardComponent = () => {
 export const CustomDelayHoverCardExample = () => {
   return (
     <Component
+      title="Custom Delay"
+      description="Hover cards with different open and close delays to control the timing of appearance and disappearance."
       previewContent={<CustomDelayHoverCardComponent />}
       codeContent={codeContent}
     />

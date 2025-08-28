@@ -69,6 +69,8 @@ export const BasicHoverCardComponent = () => {
 export const BasicHoverCardExample = () => {
   return (
     <Component
+      title="Basic"
+      description="A simple hover card that displays user profile information when hovering over a button."
       previewContent={<BasicHoverCardComponent />}
       codeContent={codeContent}
     />
