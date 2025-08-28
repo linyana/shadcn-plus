@@ -3,7 +3,7 @@ import { Heading } from 'shadcn-plus';
 
 const codeTemplate = `
 const themeConfig = {
-  HoverCard: {
+  Popover: {
     Trigger: {
       style: {}, //COMMENT: React.CSSProperties
       className: '', //COMMENT: string
@@ -16,13 +16,13 @@ const themeConfig = {
 };
 `;
 
-export const HoverCardTheme = () => {
+export const PopoverTheme = () => {
   return (
     <>
       <Heading level={2}>Theme Configuration</Heading>
       <p style={{ fontSize: '14px', color: '#6b7280', marginBottom: '16px' }}>
-        The Hover Card component supports comprehensive theme customization
-        through ThemeProvider. You can configure:
+        The Popover component supports comprehensive theme customization through
+        ThemeProvider. You can configure:
       </p>
       <ul
         style={{
@@ -33,10 +33,10 @@ export const HoverCardTheme = () => {
         }}
       >
         <li>
-          <strong>Trigger styles</strong> - Hover card trigger section
+          <strong>Trigger styles</strong> - Popover trigger section
         </li>
         <li>
-          <strong>Content styles</strong> - Hover card content section
+          <strong>Content styles</strong> - Popover content section
         </li>
       </ul>
       <StyledCodeBlock replaceComment>{codeTemplate}</StyledCodeBlock>

@@ -14,15 +14,15 @@ export const PopoverProps = [
     default: '-',
   },
   {
+    property: 'triggerProps?',
+    description: 'Props to customize the Trigger component.',
+    type: <Link>Trigger Props</Link>,
+    default: '-',
+  },
+  {
     property: 'contentProps?',
-    description: (
-      <>
-        Props for the popover content. Extends <Link>PopoverContentProps</Link>{' '}
-        from @radix-ui/react-popover. Supports positioning, alignment, collision
-        handling, and more.
-      </>
-    ),
-    type: <Link>PopoverContentProps</Link>,
+    description: 'Props to customize the Content component.',
+    type: <Link>Content Props</Link>,
     default: '-',
   },
   {

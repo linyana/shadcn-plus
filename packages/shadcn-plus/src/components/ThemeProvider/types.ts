@@ -33,17 +33,20 @@ export interface IThemeConfigType {
     Trigger?: IThemeComponentConfigType;
     Content?: IThemeComponentConfigType;
   };
-  HoverCard?: IThemeComponentConfigType & {
+  Flex?: IThemeComponentConfigType;
+  HoverCard?: {
     Trigger?: IThemeComponentConfigType;
     Content?: IThemeComponentConfigType;
   };
   Input?: IThemeComponentConfigType;
-  Flex?: IThemeComponentConfigType;
+  Popover?: {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType;
+  };
   // Select?: IThemeComponentConfigType;
   // Table?: IThemeComponentConfigType;
   // Tabs?: IThemeComponentConfigType;
   // Tooltip?: IThemeComponentConfigType;
-  // Popover?: IThemeComponentConfigType;
   // Sheet?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;
@@ -58,7 +61,7 @@ export interface IThemeProviderPropsType {
 
 export interface IThemeContextType {
   config: IThemeConfigType;
-  getComponentTheme: (
-    componentName: keyof IThemeConfigType,
-  ) => IThemeComponentConfigType | undefined;
+  getComponentTheme: <T extends keyof IThemeConfigType>(
+    componentName: T,
+  ) => IThemeConfigType[T] | undefined;
 }
