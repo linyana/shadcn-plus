@@ -48,13 +48,13 @@ export interface IThemeConfigType {
     Trigger?: IThemeComponentConfigType;
     Content?: IThemeComponentConfigType;
   };
+  Separator?: IThemeComponentConfigType;
   // Table?: IThemeComponentConfigType;
   // Tabs?: IThemeComponentConfigType;
   // Tooltip?: IThemeComponentConfigType;
   // Sheet?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;
-  // Separator?: IThemeComponentConfigType;
   // Skeleton?: IThemeComponentConfigType;
 }
 

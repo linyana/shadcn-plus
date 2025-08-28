@@ -7,6 +7,7 @@ import {
   ListSeparatorExample 
 } from './Examples';
 import { PropTable } from '../components';
+import { SeparatorTheme } from './Theme';
 
 export const SeparatorPage = () => {
   return (
@@ -18,9 +19,11 @@ export const SeparatorPage = () => {
       <BasicSeparatorExample />
       <OrientationSeparatorExample />
       <ListSeparatorExample />
+
+      <SeparatorTheme />
+
       <Heading>API</Heading>
-      <Heading level={5}>Props</Heading>
-      <PropTable data={SeparatorProps} />
+      <PropTable title="Separator Props" data={SeparatorProps} />
     </Page>
   );
 };

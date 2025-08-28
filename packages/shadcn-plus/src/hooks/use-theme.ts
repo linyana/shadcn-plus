@@ -19,8 +19,13 @@ export const useComponentTheme = <K extends keyof IThemeConfigType>(
   const { getComponentTheme } = useTheme();
   const componentTheme = getComponentTheme(componentName);
 
-  return {
-    style: componentTheme?.style || {},
-    className: componentTheme?.className || '',
-  } as NonNullable<IThemeConfigType[K]>;
+  if (componentTheme && 'style' in componentTheme) {
+    return {
+      ...componentTheme,
+      style: componentTheme?.style || {},
+      className: componentTheme?.className || '',
+    } as NonNullable<IThemeConfigType[K]>;
+  }
+
+  return (componentTheme || {}) as NonNullable<IThemeConfigType[K]>;
 };
