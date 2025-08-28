@@ -49,10 +49,18 @@ export interface IThemeConfigType {
     Content?: IThemeComponentConfigType;
   };
   Separator?: IThemeComponentConfigType;
+  Sheet?: {
+    Trigger?: IThemeComponentConfigType;
+    Content?: IThemeComponentConfigType & {
+      Header?: IThemeComponentConfigType & {
+        Title?: IThemeComponentConfigType;
+        Description?: IThemeComponentConfigType;
+      };
+    };
+  };
   // Table?: IThemeComponentConfigType;
   // Tabs?: IThemeComponentConfigType;
   // Tooltip?: IThemeComponentConfigType;
-  // Sheet?: IThemeComponentConfigType;
   // Sidebar?: IThemeComponentConfigType;
   // Typography?: IThemeComponentConfigType;
   // Skeleton?: IThemeComponentConfigType;
