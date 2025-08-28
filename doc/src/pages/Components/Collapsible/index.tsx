@@ -19,7 +19,9 @@ export const CollapsiblePage = () => {
       <BasicCollapsibleExample />
       <ControlledCollapsibleExample />
       <CustomTriggerCollapsibleExample />
+      
       <CollapsibleTheme />
+
       <Heading>API</Heading>
       <Heading level={5}>Props</Heading>
       <PropTable data={CollapsibleProps} />

@@ -6,7 +6,9 @@ import {
   RadioDropdownMenuExample,
 } from './Examples';
 import {
+  DropdownMenuContentProps,
   DropdownMenuProps,
+  DropdownMenuTriggerProps,
   IDropdownMenuCheckboxItemTypeProps,
   IDropdownMenuCustomItemTypeProps,
   IDropdownMenuDefaultItemTypeProps,
@@ -22,14 +24,25 @@ export const DropdownMenuPage = () => {
       title="Dropdown Menu"
       description="Displays a menu to the user — such as a set of actions or functions — triggered by a button."
     >
-      <Heading>Examples</Heading>
+      <Heading level={2}>Examples</Heading>
       <BasicDropdownMenuExample />
       <CheckboxDropdownMenuExample />
       <RadioDropdownMenuExample />
+
       <DropdownMenuTheme />
-      <Heading>API</Heading>
+
+      <Heading level={2}>API</Heading>
       <PropTable title="Props" data={DropdownMenuProps} />
-      <Heading level={5}>IDropdownMenuItemType</Heading>
+      <PropTable
+        title="DropdownMenuTriggerProps"
+        data={DropdownMenuTriggerProps}
+      />
+      <PropTable
+        title="DropdownMenuContentProps"
+        data={DropdownMenuContentProps}
+      />
+
+      <Heading level={2}>IDropdownMenuItemType</Heading>
       <Paragraph
         style={{
           marginBottom: 32,
