@@ -1,6 +1,6 @@
 {
   "exclude": ["node_modules"],
-  "extends": "@shadcn-plus/tsconfig/vite.json",
+  "extends": "../packages/tsconfig/vite.json",
   "compilerOptions": {
     "outDir": "dist",
     "paths": {

@@ -1,5 +1,5 @@
 import { HoverCard, Button, Flex } from 'shadcn-plus';
-import { Clock, Zap } from 'lucide-react';
+import { Clock, Zap } from 'shadcn-plus/icons';
 
 export const CustomDelayHoverCardComponent = () => {
   return (

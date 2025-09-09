@@ -1,5 +1,5 @@
 import { Alert, Flex } from 'shadcn-plus';
-import { Terminal, AlertCircle, CheckCircle, Info } from 'lucide-react';
+import { Terminal, AlertCircle, CheckCircle, Info } from 'shadcn-plus/icons';
 
 export const BasicAlertComponent = () => {
   return (

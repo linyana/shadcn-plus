@@ -2,7 +2,7 @@ import { Component } from '@/components';
 import { ControlledHoverCardComponent } from './component';
 
 const codeContent = `import { HoverCard, Button, Flex } from 'shadcn-plus';
-import { Settings } from 'lucide-react';
+import { Settings } from 'shadcn-plus/icons';
 import { useState } from 'react';
 
 export const ControlledHoverCardComponent = () => {

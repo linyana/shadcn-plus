@@ -14,7 +14,7 @@ import {
   LifeBuoy,
   Cloud,
   LogOut,
-} from 'lucide-react';
+} from 'shadcn-plus/icons';
 import { ISidebarItemType } from 'shadcn-plus/types';
 
 export const BasicSidebarComponent = () => {

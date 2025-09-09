@@ -9,7 +9,7 @@ export const BasicAlertExample = () => {
         description="A set of basic alerts demonstrating different types such as default, warning, success, info, and header-only alerts, each with optional custom icons."
         previewContent={<BasicAlertComponent />}
         codeContent={`import { Alert, Flex } from 'shadcn-plus';
-import { Terminal, AlertCircle, CheckCircle, Info } from 'lucide-react';
+import { Terminal, AlertCircle, CheckCircle, Info } from 'shadcn-plus/icons';
 
 export const BasicAlertComponent = () => {
   return (

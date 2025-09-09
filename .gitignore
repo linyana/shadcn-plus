@@ -40,6 +40,6 @@ yarn-error.log*
 # build
 dist
 
-#yarn
-# yarn.lock
-yarn.lock
+# pnpm
+# pnpm-lock
+pnpm-lock.yaml

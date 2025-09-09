@@ -9,7 +9,7 @@ export const BasicSheetExample = () => {
       <Component
         previewContent={<BasicSheetComponent />}
         codeContent={`import { Sheet, Button, Card, Flex } from 'shadcn-plus';
-import { Settings } from 'lucide-react';
+import { Settings } from 'shadcn-plus/icons';
 
 export const BasicSheetComponent = () => {
   return (

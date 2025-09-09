@@ -37,7 +37,7 @@ import {
   Cloud,
   LogOut,
   AlertTriangle,
-} from 'lucide-react';
+} from 'shadcn-plus/icons';
 
 export const ComponentPropertiesPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');

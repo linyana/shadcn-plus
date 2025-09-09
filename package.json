@@ -2,18 +2,15 @@
   "name": "@shacdn-plus/home",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "doc",
-    "packages/*"
-  ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel"
+    "build": "pnpm -r run build",
+    "dev": "pnpm -r --parallel run dev"
   },
   "devDependencies": {
-    "turbo": "latest",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
-    "prettier": "^3.5.3"
+    "@types/node": "^24.3.1",
+    "prettier": "^3.5.3",
+    "shadcn-plus": "^0.1.1"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -25,5 +22,5 @@
     "trailingComma": "all",
     "semi": true
   },
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "pnpm@9.12.0"
 }

@@ -1,5 +1,5 @@
 import { Sheet, Button, Card, Flex, Input } from 'shadcn-plus';
-import { UserPlus } from 'lucide-react';
+import { UserPlus } from 'shadcn-plus/icons';
 import { useState } from 'react';
 
 export const FormSheetComponent = () => {

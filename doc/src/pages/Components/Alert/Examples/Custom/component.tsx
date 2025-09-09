@@ -1,5 +1,5 @@
 import { Alert, Flex, Button } from 'shadcn-plus';
-import { Lightbulb, Download, Settings } from 'lucide-react';
+import { Lightbulb, Download, Settings } from 'shadcn-plus/icons';
 
 export const CustomAlertComponent = () => {
   return (

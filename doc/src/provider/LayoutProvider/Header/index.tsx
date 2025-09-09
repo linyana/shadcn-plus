@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'shadcn-plus/icons';
 import { useNavigate } from 'react-router-dom';
 
 export const Header = () => {

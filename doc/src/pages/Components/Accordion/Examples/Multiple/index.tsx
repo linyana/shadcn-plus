@@ -2,7 +2,7 @@ import { Component } from '@/components';
 import { MultipleAccordionComponent } from './component';
 
 const codeContent = `import { Accordion } from 'shadcn-plus';
-import { Settings, User, Bell, Shield } from 'lucide-react';
+import { Settings, User, Bell, Shield } from 'shadcn-plus/icons';
 
 export const MultipleAccordionComponent = () => {
   const items = [

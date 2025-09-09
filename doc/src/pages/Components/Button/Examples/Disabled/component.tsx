@@ -1,5 +1,5 @@
 import { Button, Flex } from 'shadcn-plus';
-import { Download, Mail } from 'lucide-react';
+import { Download, Mail } from 'shadcn-plus/icons';
 
 export const DisabledButtonComponent = () => {
   return (

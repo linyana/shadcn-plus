@@ -18,8 +18,8 @@ import {
   Code,
   Palette,
   Smartphone,
-} from 'lucide-react';
-import { Accordion, Tabs } from 'shadcn-plus';
+} from 'shadcn-plus/icons';
+import { Accordion, Flex, Tabs } from 'shadcn-plus';
 
 export const Dashboard = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -131,7 +131,7 @@ export const Dashboard = () => {
     {
       question: 'How to get started with shadcn-plus?',
       answer:
-        'You can install shadcn-plus via npm or yarn, then configure and use it according to our documentation. We provide detailed installation guides and example code.',
+        'You can install shadcn-plus via npm or pnpm, then configure and use it according to our documentation. We provide detailed installation guides and example code.',
     },
     {
       question: 'Which frameworks does shadcn-plus support?',
@@ -541,13 +541,10 @@ export const Dashboard = () => {
                   alignItems: 'center',
                 }}
               >
-                <div
-                  style={{
-                    display: 'flex',
-                    gap: '16px',
-                    flexWrap: 'flexWrap',
-                    justifyContent: 'center',
-                  }}
+                <Flex
+                  flexWrap="wrap"
+                  justifyContent='center'
+                  gap="16px"
                 >
                   <button
                     style={{
@@ -607,7 +604,7 @@ export const Dashboard = () => {
                   >
                     View Documentation
                   </button>
-                </div>
+                </Flex>
                 <div
                   style={{
                     display: 'flex',
@@ -1036,13 +1033,10 @@ export const Dashboard = () => {
                 Start using shadcn-plus today and build your next amazing
                 project
               </p>
-              <div
-                style={{
-                  display: 'flex',
-                  gap: '16px',
-                  justifyContent: 'center',
-                  flexWrap: 'flexWrap',
-                }}
+              <Flex
+                flexWrap="wrap"
+                justifyContent='center'
+                gap="16px"
               >
                 <button
                   style={{
@@ -1098,7 +1092,7 @@ export const Dashboard = () => {
                 >
                   View GitHub
                 </button>
-              </div>
+              </Flex>
             </motion.div>
           </div>
         </section>
@@ -1231,7 +1225,7 @@ export const Dashboard = () => {
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              flexWrap: 'flexWrap',
+              flexWrap: 'wrap',
               gap: '16px',
             }}
           >

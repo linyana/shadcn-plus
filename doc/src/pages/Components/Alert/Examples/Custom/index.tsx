@@ -9,7 +9,7 @@ export const CustomAlertExample = () => {
         description="Demonstrates custom alert content, including custom headers, action buttons, rich content, and alerts without icons, showcasing flexible usage of the Alert component."
         previewContent={<CustomAlertComponent />}
         codeContent={`import { Alert, Flex, Button } from 'shadcn-plus';
-import { Lightbulb, Download, Settings } from 'lucide-react';
+import { Lightbulb, Download, Settings } from 'shadcn-plus/icons';
 
 export const CustomAlertComponent = () => {
   return (

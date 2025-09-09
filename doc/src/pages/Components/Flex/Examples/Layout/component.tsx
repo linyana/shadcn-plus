@@ -1,5 +1,5 @@
 import { Button, Flex, Card, Input } from 'shadcn-plus';
-import { Search, Bell, User } from 'lucide-react';
+import { Search, Bell, User } from 'shadcn-plus/icons';
 
 export const LayoutFlexComponent = () => {
   return (

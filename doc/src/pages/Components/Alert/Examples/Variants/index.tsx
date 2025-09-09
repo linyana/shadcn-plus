@@ -9,7 +9,7 @@ export const VariantsAlertExample = () => {
         description="Demonstrates different alert variants including default, destructive, success, warning, and info, each with custom styling and icons to represent various message types."
         previewContent={<VariantsAlertComponent />}
         codeContent={`import { Alert, Flex } from 'shadcn-plus';
-import { AlertTriangle, CheckCircle, XCircle, Info } from 'lucide-react';
+import { AlertTriangle, CheckCircle, XCircle, Info } from 'shadcn-plus/icons';
 
 export const VariantsAlertComponent = () => {
   return (

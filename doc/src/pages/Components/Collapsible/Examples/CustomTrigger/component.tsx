@@ -1,5 +1,5 @@
 import { Collapsible, Card, Flex, Badge } from 'shadcn-plus';
-import { Settings, User, Bell, Plus, Minus } from 'lucide-react';
+import { Settings, User, Bell, Plus, Minus } from 'shadcn-plus/icons';
 import { useState } from 'react';
 
 export const CustomTriggerCollapsibleComponent = () => {

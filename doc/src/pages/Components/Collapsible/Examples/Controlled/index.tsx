@@ -9,7 +9,7 @@ export const ControlledCollapsibleExample = () => {
       <Component
         previewContent={<ControlledCollapsibleComponent />}
         codeContent={`import { Collapsible, Button, Card, Flex } from 'shadcn-plus';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'shadcn-plus/icons';
 import { useState } from 'react';
 
 export const ControlledCollapsibleComponent = () => {

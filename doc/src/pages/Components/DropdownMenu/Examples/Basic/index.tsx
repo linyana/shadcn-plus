@@ -24,7 +24,7 @@ import {
   LifeBuoy,
   Cloud,
   LogOut,
-} from 'lucide-react';
+} from 'shadcn-plus/icons';
 import { IDropdownMenuItemType } from 'shadcn-plus/types';
 
 export const BasicDropdownMenuComponent = () => {

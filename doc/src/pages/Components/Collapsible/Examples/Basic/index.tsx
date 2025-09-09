@@ -9,7 +9,7 @@ export const BasicCollapsibleExample = () => {
       <Component
         previewContent={<BasicCollapsibleComponent />}
         codeContent={`import { Collapsible, Button, Card, Flex } from 'shadcn-plus';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'shadcn-plus/icons';
 
 export const BasicCollapsibleComponent = () => {
   return (
