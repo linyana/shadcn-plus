@@ -1,8 +1,9 @@
 {
 	"compilerOptions": {
-		"lib": ["dom", "ES2015"]
+		"lib": ["dom", "ES2015"],
+		"jsx": "react-jsx"
 	},
-	"extends": "@shadcn-plus/tsconfig/react-library.json",
+	"extends": "./packages/tsconfig/react-library.json",
 	"include": ["."],
 	"exclude": ["dist", "build", "node_modules"]
 }

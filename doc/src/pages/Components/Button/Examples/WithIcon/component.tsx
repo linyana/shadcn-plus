@@ -1,5 +1,5 @@
 import { Button, Flex } from 'shadcn-plus';
-import { Download, Mail, Plus, ArrowRight, Github } from 'lucide-react';
+import { Download, Mail, Plus, ArrowRight, Github } from 'shadcn-plus/icons';
 
 export const WithIconButtonComponent = () => {
   return (

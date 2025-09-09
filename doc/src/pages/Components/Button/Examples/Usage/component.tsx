@@ -1,5 +1,5 @@
 import { Button, Flex, Card } from 'shadcn-plus';
-import { Save, X, Trash2, Edit, Plus, Download, Share } from 'lucide-react';
+import { Save, X, Trash2, Edit, Plus, Download, Share } from 'shadcn-plus/icons';
 import { useState } from 'react';
 
 export const UsageButtonComponent = () => {

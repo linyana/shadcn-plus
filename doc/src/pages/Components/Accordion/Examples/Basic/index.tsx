@@ -25,7 +25,7 @@ export const BasicAccordionComponent = () => {
       trigger: 'How do I install it?',
       content: (
         <div style={{ color: '#6b7280', fontSize: '14px', lineHeight: '1.6' }}>
-          <p style={{ margin: '0 0 12px 0' }}>You can install shadcn-plus using npm or yarn:</p>
+          <p style={{ margin: '0 0 12px 0' }}>You can install shadcn-plus using npm or pnpm:</p>
           <div
             style={{
               backgroundColor: '#f3f4f6',

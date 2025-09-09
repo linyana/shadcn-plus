@@ -9,7 +9,7 @@ export const SideSheetExample = () => {
       <Component
         previewContent={<SideSheetComponent />}
         codeContent={`import { Sheet, Button, Card, Flex } from 'shadcn-plus';
-import { ArrowLeft, ArrowRight, ArrowUp, ArrowDown } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUp, ArrowDown } from 'shadcn-plus/icons';
 
 export const SideSheetComponent = () => {
   return (

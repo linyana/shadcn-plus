@@ -23,7 +23,7 @@
 ### Install
 
 ```sh
-yarn add shadcn-plus
+pnpm add shadcn-plus
 # or
 npm install shadcn-plus
 ```

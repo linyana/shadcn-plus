@@ -40,5 +40,5 @@ export type ITabsListProps = React.ForwardRefExoticComponent<
 
 export type ITabsProps = TabsProps & {
   items: ITabItemType[];
-  listProps: ITabsListProps;
+  listProps?: ITabsListProps;
 };

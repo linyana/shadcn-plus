@@ -1,5 +1,5 @@
 import { Alert, Flex } from 'shadcn-plus';
-import { AlertTriangle, CheckCircle, XCircle, Info } from 'lucide-react';
+import { AlertTriangle, CheckCircle, XCircle, Info } from 'shadcn-plus/icons';
 
 export const VariantsAlertComponent = () => {
   return (

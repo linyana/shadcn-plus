@@ -2,7 +2,7 @@ import { Component } from '@/components';
 import { CustomDelayHoverCardComponent } from './component';
 
 const codeContent = `import { HoverCard, Button, Flex, Card } from 'shadcn-plus';
-import { Clock, Zap } from 'lucide-react';
+import { Clock, Zap } from 'shadcn-plus/icons';
 
 export const CustomDelayHoverCardComponent = () => {
   return (

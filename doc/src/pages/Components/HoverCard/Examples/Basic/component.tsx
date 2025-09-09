@@ -1,5 +1,5 @@
 import { HoverCard, Button } from 'shadcn-plus';
-import { User } from 'lucide-react';
+import { User } from 'shadcn-plus/icons';
 
 export const BasicHoverCardComponent = () => {
   return (

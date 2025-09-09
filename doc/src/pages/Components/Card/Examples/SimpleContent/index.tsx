@@ -2,7 +2,7 @@ import { Component } from '@/components';
 import { SimpleContentCardComponent } from './component';
 
 const codeContent = `import { Button, Card, Flex } from 'shadcn-plus';
-import { Heart, MessageCircle, Share } from 'lucide-react';
+import { Heart, MessageCircle, Share } from 'shadcn-plus/icons';
 
 export const SimpleContentCardComponent = () => {
   return (

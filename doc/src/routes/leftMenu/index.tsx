@@ -8,7 +8,7 @@ import {
   MousePointer,
   Layout,
   Palette,
-} from 'lucide-react';
+} from 'shadcn-plus/icons';
 
 export const leftMenu: ISidebarItemType[] = [
   {

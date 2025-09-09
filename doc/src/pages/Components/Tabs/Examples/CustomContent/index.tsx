@@ -9,7 +9,7 @@ export const CustomContentTabsExample = () => {
       <Component
         previewContent={<CustomContentTabsComponent />}
         codeContent={`import { Tabs, Button, Input, Flex } from 'shadcn-plus';
-import { User, Settings, Bell } from 'lucide-react';
+import { User, Settings, Bell } from 'shadcn-plus/icons';
 
 export const CustomContentTabsComponent = () => {
   return (

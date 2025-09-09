@@ -25,7 +25,7 @@ export const Test = () => {
       content: (
         <div style={{ color: '#6b7280', fontSize: '14px', lineHeight: '1.6' }}>
           <p style={{ margin: '0 0 12px 0' }}>
-            You can install shadcn-plus using npm or yarn:
+            You can install shadcn-plus using npm or pnpm:
           </p>
           <div
             style={{
@@ -37,7 +37,7 @@ export const Test = () => {
               margin: '0 0 12px 0',
             }}
           >
-            npm install shadcn-plus
+            pnpm add shadcn-plus
           </div>
           <p style={{ margin: '0' }}>
             Then import the components you need in your React application.
