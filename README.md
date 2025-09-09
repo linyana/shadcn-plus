@@ -25,6 +25,8 @@
 ```sh
 pnpm add shadcn-plus
 # or
+yarn add shadcn-plus
+# or
 npm install shadcn-plus
 ```
 
