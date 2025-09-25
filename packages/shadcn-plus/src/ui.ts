@@ -16,4 +16,4 @@ export * from './components/ui/skeleton'
 export * from './components/ui/table'
 export * from './components/ui/tabs'
 export * from './components/ui/tooltip'
-
+export * from './components/ui/dialog'

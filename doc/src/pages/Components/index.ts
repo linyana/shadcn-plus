@@ -18,3 +18,4 @@ export * from './Sheet';
 export * from './Separator';
 export * from './Skeleton';
 export * from './Badge'
+export * from './Dialog'

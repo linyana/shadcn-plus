@@ -31,15 +31,6 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
   return (
     <Card
       className={className}
-      style={{
-        padding: 0,
-      }}
-      headerProps={{
-        style: {
-          padding: 0,
-          backgroundColor: '#F5F5F5',
-        },
-      }}
       contentProps={{
         style: {
           padding: 0,
@@ -51,6 +42,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
           alignItems="center"
           style={{
             padding: '8px 16px',
+            backgroundColor: '#faf8f8',
           }}
         >
           <div>
@@ -69,7 +61,6 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
         style={{
           maxHeight: 600,
           overflowY: 'auto',
-          backgroundColor: 'rgb(246, 248, 250)'
         }}
       >
         <Highlight theme={themes.github} code={code} language={language}>
@@ -85,6 +76,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({
               style={{
                 padding: 16,
                 ...style,
+                backgroundColor: 'white'
               }}
             >
               {tokens.map((line, i) => (

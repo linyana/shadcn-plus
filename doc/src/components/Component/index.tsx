@@ -31,6 +31,7 @@ export const Component = ({
             label: 'Preview',
             content: (
               <Card
+                header={null}
                 style={{
                   margin: '8px 0',
                 }}

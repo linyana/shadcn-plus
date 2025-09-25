@@ -19,6 +19,7 @@ import {
   TabsPage,
   ThemeProviderPage,
   TooltipPage,
+  DialogPage,
 } from '@/pages';
 
 export const leftMenuRoutes = {
@@ -42,4 +43,5 @@ export const leftMenuRoutes = {
   '/components/skeleton': <SkeletonPage />,
   '/components/alert': <AlertPage />,
   '/components/badge': <BadgePage />,
+  '/components/dialog': <DialogPage />,
 };

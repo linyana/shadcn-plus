@@ -131,12 +131,16 @@ export const leftMenu: ISidebarItemType[] = [
     icon: MessageSquare,
     children: [
       {
+        key: '/components/alert',
+        label: 'Alert',
+      },
+      {
         key: '/components/skeleton',
         label: 'Skeleton',
       },
       {
-        key: '/components/alert',
-        label: 'Alert',
+        key: '/components/dialog',
+        label: 'Dialog',
       },
     ],
   },

@@ -1,4 +1,4 @@
-import { Flex, Heading } from 'shadcn-plus';
+import { Heading } from 'shadcn-plus';
 import {
   AlertDescriptionProps,
   AlertHeaderProps,

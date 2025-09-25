@@ -29,6 +29,7 @@ export * from './HoverCard/types';
 export * from './Accordion/types';
 export * from './Table/types';
 export * from './Badge/types';
+export * from './Dialog/types';
 
 // Feedback
 export * from './Skeleton/types';

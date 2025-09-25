@@ -119,6 +119,12 @@ const components: ComponentItem[] = [
     description: 'Displays a callout for user attention.',
     category: 'Feedback',
   },
+  {
+    name: 'Dialog',
+    path: '/components/dialog',
+    description: 'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.',
+    category: 'Feedback',
+  },
 ];
 
 const categories = [
