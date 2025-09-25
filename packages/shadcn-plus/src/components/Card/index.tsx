@@ -12,8 +12,8 @@ import { cn, sn } from '@/lib/utils';
 import { useComponentTheme } from '@/hooks';
 
 export const Card = ({
-  footer,
-  description,
+  footer = null,
+  description = null,
   header,
   children,
   ...props
@@ -27,42 +27,46 @@ export const Card = ({
       className={cn(theme?.className, props.className)}
     >
       <Show hideWhen={null} condition={header || description}>
-        <CardHeader
-          {...props.headerProps}
-          className={cn(theme.Header?.className, props.headerProps?.className)}
-          style={sn(theme.Header?.style, props.headerProps?.style)}
-        >
-          <Show hideWhen={null} condition={header}>
-            <CardTitle
-              {...props.headerProps?.titleProps}
-              className={cn(
-                theme.Header?.Title?.className,
-                props.headerProps?.titleProps?.className,
-              )}
-              style={sn(
-                theme.Header?.Title?.style,
-                props.headerProps?.titleProps?.style,
-              )}
+        { 
+          header ? <>{header}</> : (
+            <CardHeader
+              {...props.headerProps}
+              className={cn(theme.Header?.className, props.headerProps?.className)}
+              style={sn(theme.Header?.style, props.headerProps?.style)}
             >
-              {header}
-            </CardTitle>
-          </Show>
-          <Show hideWhen={null} condition={description}>
-            <CardDescription
-              {...props.headerProps?.descriptionProps}
-              className={cn(
-                theme.Header?.Description?.className,
-                props.headerProps?.descriptionProps?.className,
-              )}
-              style={sn(
-                theme.Header?.Description?.style,
-                props.headerProps?.descriptionProps?.style,
-              )}
-            >
-              {description}
-            </CardDescription>
-          </Show>
-        </CardHeader>
+              <Show hideWhen={null} condition={header}>
+                <CardTitle
+                  {...props.headerProps?.titleProps}
+                  className={cn(
+                    theme.Header?.Title?.className,
+                    props.headerProps?.titleProps?.className,
+                  )}
+                  style={sn(
+                    theme.Header?.Title?.style,
+                    props.headerProps?.titleProps?.style,
+                  )}
+                >
+                  {header}
+                </CardTitle>
+              </Show>
+              <Show hideWhen={null} condition={description}>
+                <CardDescription
+                  {...props.headerProps?.descriptionProps}
+                  className={cn(
+                    theme.Header?.Description?.className,
+                    props.headerProps?.descriptionProps?.className,
+                  )}
+                  style={sn(
+                    theme.Header?.Description?.style,
+                    props.headerProps?.descriptionProps?.style,
+                  )}
+                >
+                  {description}
+                </CardDescription>
+              </Show>
+            </CardHeader>
+          )
+        }
       </Show>
 
       <CardContent

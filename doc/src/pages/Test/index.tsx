@@ -1,76 +1,26 @@
-import { Accordion, Button } from 'shadcn-plus';
+import { Button, Dialog, Flex } from 'shadcn-plus';
 import { TestProvider } from './provider';
+import { useState } from 'react';
 
 export const Test = () => {
-  const items = [
-    {
-      trigger: 'What is shadcn-plus?',
-      content: (
-        <div style={{ color: '#6b7280', fontSize: '14px', lineHeight: '1.6' }}>
-          <p style={{ margin: '0 0 12px 0' }}>
-            shadcn-plus is a collection of high-quality React components built
-            on top of shadcn/ui. It provides additional functionality and
-            enhanced user experience while maintaining the same design
-            principles and accessibility standards.
-          </p>
-          <p style={{ margin: '0' }}>
-            All components are fully customizable and work seamlessly with your
-            existing shadcn/ui setup.
-          </p>
-        </div>
-      ),
-    },
-    {
-      trigger: 'How do I install it?',
-      content: (
-        <div style={{ color: '#6b7280', fontSize: '14px', lineHeight: '1.6' }}>
-          <p style={{ margin: '0 0 12px 0' }}>
-            You can install shadcn-plus using npm or pnpm:
-          </p>
-          <div
-            style={{
-              backgroundColor: '#f3f4f6',
-              padding: '12px',
-              borderRadius: '6px',
-              fontFamily: 'monospace',
-              fontSize: '13px',
-              margin: '0 0 12px 0',
-            }}
-          >
-            pnpm add shadcn-plus
-          </div>
-          <p style={{ margin: '0' }}>
-            Then import the components you need in your React application.
-          </p>
-        </div>
-      ),
-    },
-    {
-      trigger: 'Is it compatible with TypeScript?',
-      content: (
-        <div style={{ color: '#6b7280', fontSize: '14px', lineHeight: '1.6' }}>
-          <p style={{ margin: '0 0 12px 0' }}>
-            Yes! shadcn-plus is built with TypeScript and provides full type
-            definitions for all components and their props.
-          </p>
-          <p style={{ margin: '0' }}>
-            You'll get excellent IntelliSense support and type checking out of
-            the box.
-          </p>
-        </div>
-      ),
-    },
-  ];
+  const [open, setOpen] = useState(false)
 
   return (
     <TestProvider>
-      <Button className="bg-destructive">Button</Button>
-      <Accordion
-        type="multiple"
-        items={items}
-      >
-        1
-      </Accordion>
+      <Button onClick={() => setOpen(true)}>Open the modal</Button>
+        <Dialog
+          open={open}
+          onOpenChange={setOpen}
+          header="Title"
+          description="Description"
+          footer={
+            <Flex justifyContent='flex-end'>
+              <Button onClick={() => setOpen(false)}>Confirm</Button>
+            </Flex>
+          }
+        >
+          Content
+        </Dialog>
     </TestProvider>
   );
 };

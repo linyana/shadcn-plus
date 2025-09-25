@@ -26,6 +26,7 @@ export * from './HoverCard';
 export * from './Accordion';
 export * from './Table';
 export * from './Badge';
+export * from './Dialog';
 
 // Feedback
 export * from './Skeleton';

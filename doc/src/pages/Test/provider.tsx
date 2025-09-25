@@ -9,7 +9,7 @@ export const TestProvider = ({ children }: IPropsType) => {
   const config: IThemeConfigType = {
     Button: {
       style: {
-        backgroundColor: 'blue',
+        // backgroundColor: 'blue',
       },
     },
   };

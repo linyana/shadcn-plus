@@ -3,7 +3,6 @@ import {
   IThemeProviderPropsType,
   IThemeContextType,
   IThemeConfigType,
-  IThemeComponentConfigType,
 } from './types';
 
 export const ThemeContext = createContext<IThemeContextType | undefined>(

@@ -1,4 +1,5 @@
 import React from 'react';
+import { IDialogThemeType } from '../Dialog/types';
 
 export interface IThemeComponentConfigType {
   style?: React.CSSProperties;
@@ -29,6 +30,7 @@ export interface IThemeConfigType {
     Trigger?: IThemeComponentConfigType;
     Content?: IThemeComponentConfigType;
   };
+  Dialog?: IDialogThemeType
   DropdownMenu?: IThemeComponentConfigType & {
     Trigger?: IThemeComponentConfigType;
     Content?: IThemeComponentConfigType;
