@@ -5,7 +5,7 @@ export const Show = ({
   hideWhen,
   children,
   condition,
-  strictComparison = true,
+  strictComparison,
   animated = false,
 }: IShowType) => {
   const shouldHide = strictComparison

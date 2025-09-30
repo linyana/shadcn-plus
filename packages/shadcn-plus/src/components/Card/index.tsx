@@ -16,6 +16,7 @@ export const Card = ({
   description = null,
   header,
   children,
+  title,
   ...props
 }: ICardType) => {
   const theme = useComponentTheme('Card');
@@ -34,31 +35,31 @@ export const Card = ({
               className={cn(theme.Header?.className, props.headerProps?.className)}
               style={sn(theme.Header?.style, props.headerProps?.style)}
             >
-              <Show hideWhen={null} condition={header}>
+              <Show hideWhen={null} condition={title}>
                 <CardTitle
-                  {...props.headerProps?.titleProps}
+                  {...props.titleProps}
                   className={cn(
                     theme.Header?.Title?.className,
-                    props.headerProps?.titleProps?.className,
+                    props.titleProps?.className,
                   )}
                   style={sn(
                     theme.Header?.Title?.style,
-                    props.headerProps?.titleProps?.style,
+                    props.titleProps?.style,
                   )}
                 >
-                  {header}
+                  {title}
                 </CardTitle>
               </Show>
               <Show hideWhen={null} condition={description}>
                 <CardDescription
-                  {...props.headerProps?.descriptionProps}
+                  {...props.descriptionProps}
                   className={cn(
                     theme.Header?.Description?.className,
-                    props.headerProps?.descriptionProps?.className,
+                    props.descriptionProps?.className,
                   )}
                   style={sn(
                     theme.Header?.Description?.style,
-                    props.headerProps?.descriptionProps?.style,
+                    props.descriptionProps?.style,
                   )}
                 >
                   {description}

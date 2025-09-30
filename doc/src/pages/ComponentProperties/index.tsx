@@ -314,29 +314,18 @@ export const ComponentPropertiesPage: React.FC = () => {
         {
           title: 'Simple Card',
           component: (
-            <Card style={{ width: '200px' }}>
-              <div style={{ padding: '16px' }}>
-                <h3
-                  style={{
-                    margin: '0 0 8px 0',
-                    fontSize: '16px',
-                    fontWeight: '600',
-                  }}
-                >
-                  Card Title
-                </h3>
-                <p style={{ margin: 0, color: '#6b7280', fontSize: '14px' }}>
-                  This is a simple card with some content.
-                </p>
-              </div>
+            <Card style={{ width: '200px' }} title="Card Title">
+              <p style={{ margin: 0, color: '#6b7280', fontSize: '14px' }}>
+                This is a simple card with some content.
+              </p>
             </Card>
           ),
         },
         {
-          title: 'Card with Header',
+          title: 'Card with Title',
           component: (
             <Card
-              header="Card Header"
+              title="Card Header"
               description="Card description"
               style={{ width: '200px' }}
             >

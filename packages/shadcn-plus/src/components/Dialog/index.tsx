@@ -34,7 +34,7 @@ export const Dialog = ({
   return (
     <ShadcnDialog open={open} onOpenChange={onOpenChange} {...props}>
       <DialogPortal>
-        <Show hideWhen={null} condition={overlay}>
+        <Show hideWhen={null} strictComparison={true} condition={overlay}>
           { 
             overlay ? <>{overlay}</> : (
               <DialogOverlay className={cn(theme.Overlay)} style={sn(theme.Overlay)} />
@@ -48,7 +48,7 @@ export const Dialog = ({
           style={sn(theme.Content, contentProps)}
         >
 
-          <Show hideWhen={null} condition={header || description}>
+          <Show hideWhen={null} strictComparison={true} condition={header || description}>
             <DialogHeader
               {...headerProps}
               className={cn(theme.Header, headerProps)}
@@ -70,7 +70,7 @@ export const Dialog = ({
                 </DialogTitle>
               </Show>
 
-              <Show hideWhen={null} condition={description}>
+              <Show hideWhen={null} strictComparison={true} condition={description}>
                 <DialogDescription
                   {...headerProps?.descriptionProps}
                   className={cn(
@@ -93,7 +93,7 @@ export const Dialog = ({
             {children}
           </div>
 
-          <Show hideWhen={null} condition={footer}>
+          <Show hideWhen={null} strictComparison={true} condition={footer}>
             <div
               {...footerProps}
               data-slot="dialog-footer"
@@ -105,7 +105,7 @@ export const Dialog = ({
           </Show>
 
           {/* Close Button */}
-          <Show hideWhen={null} condition={closeButton}>
+          <Show hideWhen={null} strictComparison={true} condition={closeButton}>
             {closeButton ? <>{closeButton}</> : (
               <DialogClose
                 data-slot="dialog-close"

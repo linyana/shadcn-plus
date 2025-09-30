@@ -6,7 +6,7 @@ const codeContent = `import { Card, Button, Flex } from 'shadcn-plus';
 export const WithFooterCardComponent = () => {
   return (
     <Card
-      header="Project Settings"
+      title="Project Settings"
       description="Manage your project configuration and preferences."
       footer={
         <Flex gap="8px" justifyContent="flex-end" width="100%">

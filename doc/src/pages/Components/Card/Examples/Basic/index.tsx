@@ -6,7 +6,7 @@ const codeContent = `import { Card } from 'shadcn-plus';
 export const BasicCardComponent = () => {
   return (
     <Card
-      header="Card Title"
+      title="Card Title"
       description="This is a simple card with header, description, and content."
       style={{ width: '300px' }}
     >
